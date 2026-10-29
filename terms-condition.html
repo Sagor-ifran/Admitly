@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <title>Admitly HTML Template</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Mobile top bar -->
+    <header class="mobilebar d-lg-none">
+        <button class="icon-btn menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" aria-hidden="true">
+                <line class="l1" x1="5" y1="7" x2="19" y2="7" />
+                <line class="l2" x1="5" y1="12" x2="19" y2="12" />
+                <line class="l3" x1="5" y1="17" x2="19" y2="17" />
+            </svg>
+        </button>
+        <a href="#" class="logo" aria-label="Admitly home">
+            <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+        </a>
+        <a href="#" class="profile" aria-label="Profile">
+            <div class="user_img">
+                <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+            </div>
+        </a>
+    </header>
+
+    <!-- Sidebar: static on desktop, slide-in menu on mobile -->
+    <aside class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-label="Main menu">
+        <div class="offcanvas-header d-lg-none justify-content-end pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-body">
+            <div class="sidebar-top">
+                <a href="#" class="logo" aria-label="Admitly home">
+                    <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+                </a>
+                <a href="#" class="upgrade-btn">Upgrade</a>
+            </div>
+
+            <nav aria-label="Primary">
+                <ul class="menu list-unstyled" id="menu">
+                    <li>
+                        <a href="index.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="learn.html" aria-current="page">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 7v14" />
+                                <path
+                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                            </svg>
+                            Learn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="question-bank.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <path d="M12 17h.01" />
+                            </svg>
+                            Question Bank
+                        </a>
+                    </li>
+                    <li>
+                        <a href="practice.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 20h9" />
+                                <path
+                                    d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
+                                <path d="m15 5 3 3" />
+                            </svg>
+                            Practice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mock-exam.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                <path d="M10 9H8" />
+                                <path d="M16 13H8" />
+                                <path d="M16 17H8" />
+                            </svg>
+                            Mock Exam
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progress.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                            Progress
+                        </a>
+                    </li>
+                    <li>
+                        <a href="leaderboard.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                            Leaderboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="essay-coach.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                <path d="M13 8H7" />
+                                <path d="M17 12H7" />
+                            </svg>
+                            Essay Coach
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M12 7v5l4 2" />
+                            </svg>
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="premium.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+                                <path d="M5 21h14" />
+                            </svg>
+                            Admitly Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user">
+                <a href="#" class="user-link">
+                    <div class="user_img">
+                        <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+                    </div>
+                    <span>Sagor Ifran</span>
+                </a>
+                <a href="#settings" class="settings icon-btn active" aria-label="Settings">
+                    <svg class="icon-fill" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M27 16.76v-1.53l1.92-1.68A2 2 0 0 0 29.3 11l-2.36-4a2 2 0 0 0-1.73-1a2 2 0 0 0-.64.1l-2.43.82a11 11 0 0 0-1.31-.75l-.51-2.52a2 2 0 0 0-2-1.61h-4.68a2 2 0 0 0-2 1.61l-.51 2.52a11.5 11.5 0 0 0-1.32.75l-2.38-.86A2 2 0 0 0 6.79 6a2 2 0 0 0-1.73 1L2.7 11a2 2 0 0 0 .41 2.51L5 15.24v1.53l-1.89 1.68A2 2 0 0 0 2.7 21l2.36 4a2 2 0 0 0 1.73 1a2 2 0 0 0 .64-.1l2.43-.82a11 11 0 0 0 1.31.75l.51 2.52a2 2 0 0 0 2 1.61h4.72a2 2 0 0 0 2-1.61l.51-2.52a11.5 11.5 0 0 0 1.32-.75l2.42.82a2 2 0 0 0 .64.1a2 2 0 0 0 1.73-1l2.28-4a2 2 0 0 0-.41-2.51ZM25.21 24l-3.43-1.16a8.9 8.9 0 0 1-2.71 1.57L18.36 28h-4.72l-.71-3.55a9.4 9.4 0 0 1-2.7-1.57L6.79 24l-2.36-4l2.72-2.4a8.9 8.9 0 0 1 0-3.13L4.43 12l2.36-4l3.43 1.16a8.9 8.9 0 0 1 2.71-1.57L13.64 4h4.72l.71 3.55a9.4 9.4 0 0 1 2.7 1.57L25.21 8l2.36 4l-2.72 2.4a8.9 8.9 0 0 1 0 3.13L27.57 20Z" />
+                        <path
+                            d="M16 22a6 6 0 1 1 6-6a5.94 5.94 0 0 1-6 6m0-10a3.91 3.91 0 0 0-4 4a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main_content">
+        <div class="content-scroll">
+
+            <section class="terms_privacy">
+                <div class="container-fluid">
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7">
+                            <div class="admitly_title">
+                                <h2>Terms of Use</h2>
+                                <p>Learn about account rules, subscriptions, payments, refunds and acceptable use of Admitly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-xxl-7">
+                            <div class="terms_privacy_content">
+                                <p>Last Updated: October 29, 2026</p>
+                                <h3>Our terms</h3>
+                                <p>By using Admitly, you agree to these Terms & Conditions.</p>
+                                <h3>Use of Our Services</h3>
+                                <p>Admitly provides educational resources, video lessons, practice questions, mock exams, progress tracking, and AI-assisted essay evaluation for university admission preparation.</p>
+                                <h3>User Accounts</h3>
+                                <p>You must provide accurate information and keep your login credentials secure. You must not misuse, share, or access accounts without authorization.</p>
+                                <h3>Plans and Payments</h3>
+                                <p>Admitly may offer Free, Weekly, Monthly, and Complete Admission Pack plans. Prices, features, and access duration will be displayed at checkout.</p>
+                                <p>Payments must be verified before premium access is activated. Unless stated otherwise, purchases do not automatically renew.</p>
+                                <h3>Refunds and Payment Issues</h3>
+                                <p>For duplicate payments, failed access activation, or other payment issues, contact [Your Support Email]. Refund requests will be reviewed based on the circumstances and applicable law.</p>
+                                <h3>Content and Intellectual Property</h3>
+                                <p>Admitly's lessons, videos, questions, and other protected content may not be copied, resold, or redistributed without authorization.</p>
+                                <h3>AI Essay Evaluation</h3>
+                                <p>AI-generated scores and feedback are for educational purposes only. They may contain errors and do not guarantee admission or official examination 
+                                results.</p>
+                                <h3>Disclaimer</h3>
+                                <p>Admitly is an independent preparation platform and does not guarantee admission to any university. Unless explicitly stated, it is not affiliated with any university.</p>
+                                <h3>Account Suspension</h3>
+                                <p>We may restrict accounts involved in fraud, unauthorized access, or serious violations of these terms, subject to applicable law.</p>
+                                <h3>Changes to These Terms</h3>
+                                <p>We may update these terms when necessary. Updates will be published on this page.</p>
+                                <h3>Contact Us</h3>
+                                <p>For questions about these terms, payments, or refunds, contact: <a href="emailto:admitlybd@gmail.com">admitlybd@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="admitly_copy_rights">
+                                <p>© 2026 Admitly LLC | All rights reserved</p>
+                                <ul>
+                                    <li>
+                                        <a href="about.html">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="terms-condition.html">Terms</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </main>
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+
+
+    <!--main js-->
+    <script src="js/main.js"></script>
+    <!--learn slider-->
+    <script src="js/learn-slider.js"></script>
+</body>
+
+</html>
