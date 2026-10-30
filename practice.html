@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <title>Admitly HTML Template</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Mobile top bar -->
+    <header class="mobilebar d-lg-none">
+        <button class="icon-btn menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" aria-hidden="true">
+                <line class="l1" x1="5" y1="7" x2="19" y2="7" />
+                <line class="l2" x1="5" y1="12" x2="19" y2="12" />
+                <line class="l3" x1="5" y1="17" x2="19" y2="17" />
+            </svg>
+        </button>
+        <a href="#" class="logo" aria-label="Admitly home">
+            <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+        </a>
+        <a href="#" class="profile" aria-label="Profile">
+            <div class="user_img">
+                <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+            </div>
+        </a>
+    </header>
+
+    <!-- Sidebar: static on desktop, slide-in menu on mobile -->
+    <aside class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-label="Main menu">
+        <div class="offcanvas-header d-lg-none justify-content-end pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-body">
+            <div class="sidebar-top">
+                <a href="#" class="logo" aria-label="Admitly home">
+                    <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+                </a>
+                <a href="pricing-plan.html" class="upgrade-btn">Upgrade</a>
+            </div>
+
+            <nav aria-label="Primary">
+                <ul class="menu list-unstyled" id="menu">
+                    <li>
+                        <a href="index.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="learn.html" aria-current="page">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 7v14" />
+                                <path
+                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                            </svg>
+                            Learn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="question-bank.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <path d="M12 17h.01" />
+                            </svg>
+                            Question Bank
+                        </a>
+                    </li>
+                    <li>
+                        <a href="practice.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 20h9" />
+                                <path
+                                    d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
+                                <path d="m15 5 3 3" />
+                            </svg>
+                            Practice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mock-exam.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                <path d="M10 9H8" />
+                                <path d="M16 13H8" />
+                                <path d="M16 17H8" />
+                            </svg>
+                            Mock Exam
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progress.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                            Progress
+                        </a>
+                    </li>
+                    <li>
+                        <a href="leaderboard.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                            Leaderboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="essay-coach.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                <path d="M13 8H7" />
+                                <path d="M17 12H7" />
+                            </svg>
+                            Essay Coach
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M12 7v5l4 2" />
+                            </svg>
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pricing-plan.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+                                <path d="M5 21h14" />
+                            </svg>
+                            Admitly Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user">
+                <a href="#" class="user-link">
+                    <div class="user_img">
+                        <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+                    </div>
+                    <span>Sagor Ifran</span>
+                </a>
+                <a href="#settings" class="settings icon-btn" aria-label="Settings">
+                    <svg class="icon-fill" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M27 16.76v-1.53l1.92-1.68A2 2 0 0 0 29.3 11l-2.36-4a2 2 0 0 0-1.73-1a2 2 0 0 0-.64.1l-2.43.82a11 11 0 0 0-1.31-.75l-.51-2.52a2 2 0 0 0-2-1.61h-4.68a2 2 0 0 0-2 1.61l-.51 2.52a11.5 11.5 0 0 0-1.32.75l-2.38-.86A2 2 0 0 0 6.79 6a2 2 0 0 0-1.73 1L2.7 11a2 2 0 0 0 .41 2.51L5 15.24v1.53l-1.89 1.68A2 2 0 0 0 2.7 21l2.36 4a2 2 0 0 0 1.73 1a2 2 0 0 0 .64-.1l2.43-.82a11 11 0 0 0 1.31.75l.51 2.52a2 2 0 0 0 2 1.61h4.72a2 2 0 0 0 2-1.61l.51-2.52a11.5 11.5 0 0 0 1.32-.75l2.42.82a2 2 0 0 0 .64.1a2 2 0 0 0 1.73-1l2.28-4a2 2 0 0 0-.41-2.51ZM25.21 24l-3.43-1.16a8.9 8.9 0 0 1-2.71 1.57L18.36 28h-4.72l-.71-3.55a9.4 9.4 0 0 1-2.7-1.57L6.79 24l-2.36-4l2.72-2.4a8.9 8.9 0 0 1 0-3.13L4.43 12l2.36-4l3.43 1.16a8.9 8.9 0 0 1 2.71-1.57L13.64 4h4.72l.71 3.55a9.4 9.4 0 0 1 2.7 1.57L25.21 8l2.36 4l-2.72 2.4a8.9 8.9 0 0 1 0 3.13L27.57 20Z" />
+                        <path
+                            d="M16 22a6 6 0 1 1 6-6a5.94 5.94 0 0 1-6 6m0-10a3.91 3.91 0 0 0-4 4a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main_content">
+        <div class="content-scroll">
+
+            <section class="practice">
+                <div class="container-fluid">
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="practice_sub">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                                <path d="M0 0h48v48H0z" fill="none" />
+                                                <g fill="none" stroke-linejoin="round" stroke-width="4">
+                                                    <path fill="#2F88FF" stroke="#000"
+                                                        d="M40 4H8.0002C6.89565 4 6.00022 4.89541 6.0002 5.99996L5.99955 42C5.99953 43.1045 6.89497 44 7.99955 44H40C41.1046 44 42 43.1046 42 42V6C42 4.89543 41.1046 4 40 4Z" />
+                                                    <path fill="#43CCF8" stroke="#fff" d="M35 10H13V19H35V10Z" />
+                                                    <path stroke="#fff" stroke-linecap="round" d="M12 28L19 35" />
+                                                    <path stroke="#fff" stroke-linecap="round" d="M19 28L12 35" />
+                                                    <path stroke="#fff" stroke-linecap="round" d="M28 35H36" />
+                                                    <path stroke="#fff" stroke-linecap="round" d="M28 29H36" />
+                                                </g>
+                                            </svg>
+                                            General Mathematics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                                <path fill="#c10018"
+                                                    d="M22 0v7l-7-7zm-9 0l9 9v12c0 1.662-1.338 3-3 3H5c-1.662 0-3-1.338-3-3V3c0-1.662 1.338-3 3-3zM8 17H6v1h2zm5 0h-2v1h2zm2.293-1.293a1 1 0 0 0 1.414-1.414l-.793-.793l.793-.793a1 1 0 0 0-1.414-1.414l-.793.793l-.793-.793a1 1 0 1 0-1.414 1.414l.793.793l-.793.793a1 1 0 0 0 1.414 1.414l.793-.793zM18 17h-2v1h2zm0-8H9.862L8 13.653L7.338 12H6v1h.662L8 16.347L10.539 10H18z" />
+                                            </svg>
+                                            Higher Mathematics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                viewBox="0 0 48 48">
+                                                <path d="M0 0h48v48H0z" fill="none" />
+                                                <g fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="4">
+                                                    <rect width="36" height="36" x="6" y="6" fill="#2F88FF"
+                                                        stroke="#000" rx="3" />
+                                                    <path stroke="#fff" d="M13 31V17H21" />
+                                                    <path stroke="#fff" d="M13 24H20.5" />
+                                                    <path stroke="#fff" d="M13 31H20.5" />
+                                                    <path stroke="#fff" d="M26 31L26 19" />
+                                                    <path stroke="#fff"
+                                                        d="M26 31L26 24.5C26 22.0147 28.0147 20 30.5 20V20C32.9853 20 35 22.0147 35 24.5L35 31" />
+                                                </g>
+                                            </svg>
+
+                                            english grammar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                viewBox="0 0 64 64">
+                                                <path d="M0 0h64v64H0z" fill="none" />
+                                                <path fill="#1b75bb"
+                                                    d="M63.912 57.025a6.89 6.89 0 0 1-6.887 6.895H6.885C3.083 63.92 0 60.834 0 57.025V6.891A6.89 6.89 0 0 1 6.885 0h50.14a6.887 6.887 0 0 1 6.887 6.891z" />
+                                                <path fill="#fff"
+                                                    d="M21.898 7.299c-.456-1.198-1.42-1.876-2.719-1.924l-.124-.467l-.124.463c-1.296.033-2.26.713-2.719 1.912L8.697 26.155a2.4 2.4 0 0 0-.129.781c0 .974.699 1.83 1.676 2.076c1.284.363 2.417-.159 2.812-1.29l1.887-5.04h8.173l1.932 5.06c.322.872 1.107 1.415 2.05 1.415q.39 0 .77-.121c1.021-.271 1.7-1.088 1.7-2.046c0-.314-.059-.589-.193-.866L21.898 7.297m-.359 11.11h-5.02l2.533-6.506l2.483 6.506m31.442-1.894c1.38-1.07 2.058-2.652 2.058-4.789c0-3.875-2.703-6.186-7.234-6.186h-6.502c-2.535 0-3.766 1.293-3.766 3.956v15.541c0 2.608 1.269 3.929 3.766 3.929h6.807c4.732 0 7.676-2.656 7.676-6.932c-.002-2.58-.964-4.449-2.805-5.519m-5.233 2.313c2.996 0 3.345 1.688 3.345 2.957c0 1.258-.343 2.931-3.289 2.931h-5.741v-5.888zm-.084-4.225h-5.602V9.787h5.549c2.485 0 2.819 1.148 2.819 2.267c0 2.105-1.503 2.547-2.766 2.547M26.691 48.913c-1.343-.385-2.551.188-2.994 1.409c-.766 2.362-2.291 3.511-4.659 3.511c-3.571 0-5.879-3.043-5.879-7.752c0-4.798 2.255-7.777 5.879-7.777c2.264 0 3.55.869 4.457 3.047c.384.812 1.13 1.278 2.046 1.278c.369 0 .699-.058.971-.16c.76-.254 1.526-.981 1.526-2.037a2.4 2.4 0 0 0-.181-.923c-1.042-2.541-3.434-5.567-8.929-5.567c-6.275 0-10.488 4.869-10.488 12.11c0 7.392 4.194 12.169 10.682 12.169c5.935 0 8.255-4.053 9.113-6.484a2.4 2.4 0 0 0 .134-.78c0-1.087-.866-1.857-1.678-2.046M45.74 34.35h-4.906c-2.517 0-3.793 1.33-3.793 3.956v15.541c0 2.606 1.276 3.929 3.793 3.929h4.906c6.569 0 10.651-4.576 10.651-11.947c0-7.188-3.984-11.479-10.651-11.479m5.959 11.506c0 4.805-2.226 7.56-6.1 7.56l-3.977-.004l.002-14.729h4.058c3.988 0 6.02 2.414 6.02 7.173" />
+                                            </svg>
+
+
+                                            english vocabulary
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                viewBox="0 0 14 14">
+                                                <path d="M0 0h14v14H0z" fill="none" />
+                                                <g fill="none">
+                                                    <path fill="#d7e0ff"
+                                                        d="M.724 9.11a.9.9 0 0 0 .564.292a8.2 8.2 0 0 1 3.9 1.627c.18.174.646.521 1.065.524c.42 0 .888-.35 1.07-.524a8.2 8.2 0 0 1 3.903-1.627a.886.886 0 0 0 .789-.886v-7.13a.886.886 0 0 0-1.01-.877a8.24 8.24 0 0 0-4.748 2.586A8.24 8.24 0 0 0 1.51.51a.886.886 0 0 0-1.01.877v7.13a.9.9 0 0 0 .224.594Z" />
+                                                    <path fill="#fff"
+                                                        d="M6.969 14V8.25a1.25 1.25 0 0 1 2.5 0V11h2a2 2 0 0 1 2 2v1" />
+                                                    <path stroke="#4147d5" stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M6.969 13.5V8.25A1.25 1.25 0 0 1 8.219 7v0a1.25 1.25 0 0 1 1.25 1.25V11h2a2 2 0 0 1 2 2v.5M6.257 3.095A8.24 8.24 0 0 0 1.51.51a.886.886 0 0 0-1.01.877v7.13a.886.886 0 0 0 .788.886a8.2 8.2 0 0 1 3.9 1.627m1.07-5.172V3.095m4.968 6.307a.886.886 0 0 0 .789-.886v-7.13a.886.886 0 0 0-1.01-.877a8.24 8.24 0 0 0-4.748 2.586" />
+                                                </g>
+                                            </svg>
+
+                                            reading Comparision
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" d="M9 17h6a2 2 0 0 0 2-2V7h-2v8h-2V8h-2v7H9V7H7v8a2 2 0 0 0 2 2m3-15a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2" />
+</svg>
+
+
+                                            english Essay
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+
+
+    <!--main js-->
+    <script src="js/main.js"></script>
+    <!--learn slider-->
+    <script src="js/learn-slider.js"></script>
+</body>
+
+</html>

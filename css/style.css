@@ -1207,7 +1207,7 @@ button {
     justify-content: center;
     font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--white);
     background: var(--black);
     border-radius: 50%;
 }
@@ -1215,10 +1215,10 @@ button {
 .co_hint {
     margin: 14px 0 0;
     font-size: 14px;
+    line-height: 18px;
     color: #6b6b6b;
 }
 
-/* Account */
 .co_account {
     display: flex;
     align-items: center;
@@ -1244,7 +1244,7 @@ button {
     width: 48px;
     height: 48px;
     overflow: hidden;
-    border: 2px solid #fff;
+    border: 2px solid var(--white);
     border-radius: 50%;
 }
 
@@ -1255,7 +1255,6 @@ button {
     display: block;
 }
 
-/* Payment method cards */
 .pay_methods {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1270,6 +1269,11 @@ button {
 
 .pay_method input {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
     opacity: 0;
     pointer-events: none;
 }
@@ -1305,7 +1309,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: var(--white);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1336,8 +1340,8 @@ button {
     box-shadow: inset 0 0 0 4px var(--primaryBg);
 }
 
-/* Terms checkbox */
 .co_check {
+    position: relative;     
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -1348,6 +1352,11 @@ button {
 
 .co_check input {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    margin: 0;
     opacity: 0;
     pointer-events: none;
 }
@@ -1389,7 +1398,6 @@ button {
     display: none;
 }
 
-/* Pay button */
 .co_pay_btn {
     width: 100%;
     margin-top: 22px;
@@ -1420,6 +1428,7 @@ button {
     gap: 8px;
     margin: 14px 0 0;
     font-size: 14px;
+    line-height: 18px;
     color: #6b6b6b;
     text-align: center;
 }
@@ -1435,7 +1444,6 @@ button {
     stroke-linejoin: round;
 }
 
-/* Order summary */
 .order_summary {
     padding: 28px;
     background: var(--primaryBg);
@@ -1517,10 +1525,10 @@ button {
 .os_note {
     margin: 16px 0 0;
     font-size: 14px;
+    line-height: 18px;
     color: #6b6b6b;
 }
 
-/* Desktop: summary scroll-er shomoy sathe thakbe */
 @media (min-width: 1200px) {
     .order_summary {
         position: sticky;
@@ -1528,7 +1536,6 @@ button {
     }
 }
 
-/* Mobile */
 @media (max-width: 575.98px) {
     .co_block,
     .order_summary {
@@ -1669,3 +1676,56 @@ button {
 .terms_privacy .admitly_copy_rights{
     margin-top: 60px;
 }
+
+
+
+/* --- practice pages --- */
+
+.practice{
+    margin-top: 50px;
+}
+
+
+
+.practice_sub{}
+.practice_sub ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.practice_sub ul li{
+    width: 50%;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+}
+.practice_sub ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 30px;
+    text-transform: capitalize;
+    border: 2px dashed #c9c2bb;
+    border-radius: 20px;
+    transition: all linear .3s;
+}
+.practice_sub ul li a:hover{
+    border-color: #6f6d6b;
+}
+.practice_sub ul li a svg{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
