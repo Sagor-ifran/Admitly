@@ -153,7 +153,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="pricing-plan.html">
+                        <a href="pricing-plan.html" class="active" aria-current="page">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
@@ -172,7 +172,7 @@
                     </div>
                     <span>Sagor Ifran</span>
                 </a>
-                <a href="#settings" class="settings icon-btn active" aria-label="Settings">
+                <a href="#settings" class="settings icon-btn" aria-label="Settings">
                     <svg class="icon-fill" viewBox="0 0 32 32" aria-hidden="true">
                         <path
                             d="M27 16.76v-1.53l1.92-1.68A2 2 0 0 0 29.3 11l-2.36-4a2 2 0 0 0-1.73-1a2 2 0 0 0-.64.1l-2.43.82a11 11 0 0 0-1.31-.75l-.51-2.52a2 2 0 0 0-2-1.61h-4.68a2 2 0 0 0-2 1.61l-.51 2.52a11.5 11.5 0 0 0-1.32.75l-2.38-.86A2 2 0 0 0 6.79 6a2 2 0 0 0-1.73 1L2.7 11a2 2 0 0 0 .41 2.51L5 15.24v1.53l-1.89 1.68A2 2 0 0 0 2.7 21l2.36 4a2 2 0 0 0 1.73 1a2 2 0 0 0 .64-.1l2.43-.82a11 11 0 0 0 1.31.75l.51 2.52a2 2 0 0 0 2 1.61h4.72a2 2 0 0 0 2-1.61l.51-2.52a11.5 11.5 0 0 0 1.32-.75l2.42.82a2 2 0 0 0 .64.1a2 2 0 0 0 1.73-1l2.28-4a2 2 0 0 0-.41-2.51ZM25.21 24l-3.43-1.16a8.9 8.9 0 0 1-2.71 1.57L18.36 28h-4.72l-.71-3.55a9.4 9.4 0 0 1-2.7-1.57L6.79 24l-2.36-4l2.72-2.4a8.9 8.9 0 0 1 0-3.13L4.43 12l2.36-4l3.43 1.16a8.9 8.9 0 0 1 2.71-1.57L13.64 4h4.72l.71 3.55a9.4 9.4 0 0 1 2.7 1.57L25.21 8l2.36 4l-2.72 2.4a8.9 8.9 0 0 1 0 3.13L27.57 20Z" />
@@ -209,16 +209,21 @@
 
                                 <div class="os_plan">
                                     <div>
-                                        <strong id="sumPlan">Monthly Plan</strong>
-                                        <span id="sumValidity">Access for 30 days</span>
+                                        <strong id="sumPlan">Complete Admission Pack</strong>
+                                        <span id="sumValidity">Access until the admission preparation package
+                                            expires</span>
                                     </div>
-                                    <a href="pricing-plan.html" class="os_change">Change plan</a>
+                                    <a href="pricing.html" class="os_change">Change plan</a>
                                 </div>
 
                                 <dl class="os_rows">
                                     <div>
                                         <dt>Price</dt>
-                                        <dd id="sumPrice">৳249</dd>
+                                        <dd id="sumPrice">৳499</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Service charge</dt>
+                                        <dd id="sumService">৳10</dd>
                                     </div>
                                     <div>
                                         <dt>Discount</dt>
@@ -228,7 +233,7 @@
 
                                 <div class="os_total">
                                     <span>Total</span>
-                                    <strong id="sumTotal">৳249</strong>
+                                    <strong id="sumTotal">৳509</strong>
                                 </div>
 
                                 <p class="os_note">Your access starts as soon as the payment is confirmed.</p>
@@ -248,7 +253,7 @@
                                         </div>
                                         <div>
                                             <strong>Sagor Ifran</strong>
-                                            <span>sagor@example.com</span>
+                                            <span>No: 01608579970 </span>
                                         </div>
                                     </div>
                                     <p class="co_hint">Your plan will be added to this account.</p>
@@ -263,7 +268,7 @@
                                             <input type="radio" name="method" value="bkash" checked>
                                             <span class="pay_method_box">
                                                 <span class="pay_logo">
-                                                    <!-- <img src="image/bkash.png" alt=""> -->
+                                                    <img src="image/bKash.png" alt="bkash" class="im-fluid w-100">
                                                 </span>
                                                 <span class="pay_name">bKash</span>
                                                 <span class="pay_tick" aria-hidden="true"></span>
@@ -274,7 +279,7 @@
                                             <input type="radio" name="method" value="nagad">
                                             <span class="pay_method_box">
                                                 <span class="pay_logo">
-                                                    <!-- <img src="image/nagad.png" alt=""> -->
+                                                    <img src="image/nagad.png" alt="bkash" class="im-fluid w-100">
                                                 </span>
                                                 <span class="pay_name">Nagad</span>
                                                 <span class="pay_tick" aria-hidden="true"></span>
@@ -304,7 +309,7 @@
                                         Policy to continue.</p>
 
                                     <button type="submit" class="co_pay_btn" id="payBtn">
-                                        Pay <span id="payBtnPrice">৳249</span>
+                                        Pay <span id="payBtnPrice">৳509</span>
                                     </button>
 
                                     <p class="co_secure">
