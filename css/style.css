@@ -1927,6 +1927,7 @@ button {
     justify-content: flex-start;
     text-align: left;
     overflow-y: auto;
+    overflow-x: hidden; 
 }
 
 .session {
@@ -1954,9 +1955,11 @@ button {
     gap: 12px;
 }
 
-.session_top::after {
-    content: "";
-    flex: 0 0 44px;
+@media (min-width: 768px) {
+    .session_top::after {
+        content: "";
+        flex: 0 0 44px;
+    }
 }
 
 .session_back {
@@ -2555,57 +2558,61 @@ button {
         padding: 2px 0 0;
     }
 
-    /* Top bar: upore (back, count, points), niche boro progress bar */
+    /* Top bar: ek line-e (back, count, progress bar, points) */
     .session_top {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas:
-            "back count points"
-            "segs segs segs";
-        align-items: center;
-        gap: 10px 10px;
-    }
-
-    .session_top::after {
-        display: none;            /* dan-er faka 44px jaga bondho */
-    }
-
-    .session_meta {
-        display: contents;        /* count, segs, points ekhon grid-er sorashori item */
+        width: 100%;
+        gap: 8px;
     }
 
     .session_back {
-        grid-area: back;
-        width: 38px;
-        height: 38px;
-        margin-left: -6px;
+        flex: 0 0 28px;
+        width: 28px;
+        height: 36px;
+        border-radius: 8px;
+    }
+
+    .session_back .s_icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .session_meta {
+        flex: 1 1 auto;
+        max-width: none;
+        margin: 0;
+        gap: 8px;
+        min-width: 0;
     }
 
     .s_count {
-        grid-area: count;
-        justify-self: start;
-    }
-
-    .s_points {
-        grid-area: points;
-        justify-self: end;
+        font-size: 14px;
     }
 
     .s_segs {
-        grid-area: segs;
-        width: 100%;
-        gap: 5px;
+        gap: 3px;
+        min-width: 0;
     }
 
     .seg {
         height: 10px;
     }
 
-    /* Bookmark: icon-er pashe-r faka jayga kom */
-    .q_bookmark {
-        margin-right: -8px;
+    .s_points {
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .s_star {
+        width: 18px;
+        height: 18px;
+    }
+
+    .pts_word {
+        display: none;
     }
 }
+
+
 
 /* ---------- Result modal ---------- */
 .result_dialog {
