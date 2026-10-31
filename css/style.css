@@ -1681,51 +1681,237 @@ button {
 
 /* --- practice pages --- */
 
-.practice{
+.practice {
     margin-top: 50px;
 }
 
-
-
-.practice_sub{}
-.practice_sub ul {
+.practice_head {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 20px;
+    margin-bottom: 22px;
 }
-.practice_sub ul li{
-    width: 50%;
-    padding: 0px 10px;
-    margin-bottom: 20px;
+
+.practice_head h2 {
+    font-size: clamp(22px, 1.2rem + .7vw, 30px);
+    font-weight: 700;
+    line-height: 1.25;
 }
-.practice_sub ul li a {
+
+.practice_head p {
+    margin: 0;
+    font-size: 15px;
+    color: #6b6b6b;
+}
+
+.practice_list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+}
+
+.pc_col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.pc_item {
+    background: var(--primaryBg);
+    border: 2px dashed transparent;   
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color .25s;
+}
+
+.pc_item:hover {
+    border-color: #b5ada5;
+}
+
+.pc_item:has(.pc_btn:not(.collapsed)) {
+    border-color: #8c857e;
+}
+
+.pc_header {
+    margin: 0;
+}
+
+.pc_btn {
+    width: 100%;
     display: flex;
     align-items: center;
-    font-size: 24px;
+    gap: 12px;
+    padding: 17px 20px;
+    font: inherit;
+    text-align: left;
+    color: #111;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.pc_btn:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: -4px;
+    border-radius: 16px;
+}
+
+.pc_btn .pc_icon {
+    flex: 0 0 auto;       
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+}
+
+.pc_icon svg {
+    width: 32px;                  
+    height: 32px;
+}
+
+.pc_name {
+    flex: 1;
+    font-size: 22px;
     font-weight: 600;
-    padding: 15px 30px;
+    color: var(--paracolor);
     text-transform: capitalize;
-    border: 2px dashed #c9c2bb;
-    border-radius: 20px;
+    line-height: 24px;
     transition: all linear .3s;
 }
-.practice_sub ul li a:hover{
-    border-color: #6f6d6b;
-}
-.practice_sub ul li a svg{
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+
+.pc_item:hover .pc_name{
+    color: var(--black);
 }
 
+.pc_btn:not(.collapsed) .pc_name {
+    color: var(--black);
+}
+
+.pc_arrow {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border-right: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    transform: rotate(-45deg);
+    transition: transform .3s;
+}
+
+.pc_btn:not(.collapsed) .pc_arrow {
+    transform: rotate(45deg);
+}
+
+.practice_list .collapsing {
+    transition: height .4s ease;
+}
+
+.pc_body {
+    padding: 8px 8px 10px;
+    border-top: 2px dashed #c9c2bb;  
+}
+
+.pc_topics {
+    max-height: 220px; 
+    margin: 0;
+    padding: 0 8px 0 0;
+    list-style: none;
+    counter-reset: topic;
+    overflow-y: auto;
+    overscroll-behavior: contain; 
+    scrollbar-width: thin;
+    scrollbar-color: #bdb5ad transparent;
+}
+
+.pc_topics::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pc_topics::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pc_topics::-webkit-scrollbar-thumb {
+    background: #bdb5ad;
+    border-radius: 999px;
+}
+
+.pc_topics::-webkit-scrollbar-thumb:hover {
+    background: #8c857e;
+}
+
+.pc_topics li {
+    counter-increment: topic;
+}
+
+.pc_topics a {
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+    font-size: 17px;
+    line-height: 1.4;
+    color: #111;
+    border-radius: 10px;
+    transition: background .2s;
+}
+
+.pc_topics a::before {
+    content: counter(topic, decimal-leading-zero) ".";
+    flex: 0 0 auto;
+    color: #6b6b6b;
+}
+
+.pc_topics a:hover {
+    background: #fff;
+}
+
+.pc_topics a:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+}
+
+@media (max-width: 575.98px) {
+    .practice{
+        margin-top: 20px;
+    }
+
+    .pc_btn {
+        padding: 12px 14px;
+    }
+
+    .pc_name,
+    .pc_topics a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .practice{
+        margin-top: 20px;
+    }
+}
 
 
+@media (min-width: 768px) {
+    .practice_list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
 
+@media (prefers-reduced-motion: reduce) {
+    .practice_list .collapsing {
+        transition: none;
+    }
 
-
-
-
-
-
-
+    .pc_item,
+    .pc_arrow {
+        transition: none;
+    }
+}
