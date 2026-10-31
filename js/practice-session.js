@@ -2,7 +2,39 @@
     // ===== Settings =====
     var CORRECT_POINTS = 1;
     var WRONG_POINTS = -0.5;
-    var RESULT_PAGE = "practice-result.html";
+    var CONTINUE_URL = "practice.html";   // Continue click korle kothay jabe
+
+        // ===== Result messages (correct answer-er shonkha onujayi) =====
+    // max = ei shonkha porjonto. Order thik rakhben (chhoto theke boro).
+    var RESULT_MESSAGES = [
+        {
+            max: 3,
+            title: "Keep going, you've got this",
+            text: "This topic needs more practice, and that is completely okay. Read the explanations for the questions you missed, then try again. Every attempt makes you stronger."
+        },
+        {
+            max: 5,
+            title: "Good start",
+            text: "You know the basics, but a few concepts need more attention. Go through the explanations and practice this topic once more."
+        },
+        {
+            max: 9,
+            title: "Great work!",
+            text: "You are doing really well. Take a look at the questions you missed to close the last few gaps."
+        },
+        {
+            max: 10,
+            title: "Perfect score!",
+            text: "Outstanding! You answered every question correctly. Try a harder topic or practice another subject to keep the momentum going."
+        }
+    ];
+
+    function getResultMessage(correct) {
+        for (var i = 0; i < RESULT_MESSAGES.length; i++) {
+            if (correct <= RESULT_MESSAGES[i].max) return RESULT_MESSAGES[i];
+        }
+        return RESULT_MESSAGES[RESULT_MESSAGES.length - 1];
+    }
 
     // ===== Geometry figures (inline SVG, rong text-er rong-er sathe mile jay) =====
     var FIG_TRIANGLE = [
@@ -140,10 +172,22 @@
     var opts = $("opts"), explain = $("explain"), exToggle = $("exToggle"), exBody = $("exBody");
     var sBar = $("sBar"), barStatus = $("barStatus"), barSkip = $("barSkip"), barNext = $("barNext");
     var backBtn = $("backBtn"), leaveDialog = $("leaveDialog"), leaveStay = $("leaveStay");
+    var resultDialog = $("resultDialog"), rsPoints = $("rsPoints"), rsAccuracy = $("rsAccuracy");
+        var rsTime = $("rsTime"), rsContinue = $("rsContinue");
+    var resultTitle = $("resultTitle"), resultMsg = $("resultMsg");
     var scroller = document.querySelector(".content-scroll");
 
     // ===== State =====
-    var state = { i: 0, points: 0, answered: false, results: [], bookmarks: {} };
+    var state = {
+        i: 0,
+        points: 0,
+        answered: false,
+        finished: false,
+        results: [],
+        bookmarks: {},
+        times: [],          // prottek question-e koto ms legeche
+        qStart: 0
+    };
 
     function pad(n) { return n < 10 ? "0" + n : String(n); }
 
@@ -198,7 +242,6 @@
         barNext.innerHTML = (state.i === total - 1 ? "Finish" : "Next question") + ICON_NEXT;
     }
 
-    // Explanation khola/bondho (animation CSS-e)
     function setExplain(open) {
         explain.classList.toggle("is-collapsed", !open);
         exToggle.setAttribute("aria-expanded", open ? "true" : "false");
@@ -207,12 +250,12 @@
     function renderQuestion() {
         var q = QUESTIONS[state.i];
         state.answered = false;
+        state.qStart = Date.now();     // timer shuru
 
         qNum.textContent = pad(state.i + 1) + ".";
         qText.innerHTML = q.text;
         sCount.textContent = pad(state.i + 1) + "/" + pad(total);
 
-        // Geometry figure
         if (q.figure) {
             qFigure.innerHTML = q.figure;
             qFigure.hidden = false;
@@ -251,8 +294,9 @@
     }
 
     function choose(idx) {
-        if (state.answered) return;
+        if (state.answered || state.finished) return;
         state.answered = true;
+        state.times[state.i] = Date.now() - state.qStart;
 
         var q = QUESTIONS[state.i];
         var ok = idx === q.answer;
@@ -277,13 +321,12 @@
             }
         });
 
-        // Explanation: bondho obosthay dekhiye, tarpor smooth kore khola
         exBody.innerHTML = q.explanation;
         math(exBody);
         explain.classList.add("is-collapsed");
         exToggle.setAttribute("aria-expanded", "false");
         explain.hidden = false;
-        void explain.offsetHeight;      // reflow, jate transition chole
+        void explain.offsetHeight;
         setExplain(true);
 
         var shownFor = state.i;
@@ -309,31 +352,63 @@
     }
 
     function next() {
-        if (state.answered) advance();
+        if (state.answered && !state.finished) advance();
     }
 
     function skip() {
-        if (state.answered) return;
+        if (state.answered || state.finished) return;
+        state.times[state.i] = Date.now() - state.qStart;
         state.results[state.i] = null;
         advance();
     }
 
-    function finish() {
-        var correct = 0, wrong = 0, skipped = 0;
+    // ===== Result modal =====
+    function formatTime(ms) {
+        var s = Math.round(ms / 1000);
+        if (s < 60) return s + " sec";
+        var m = Math.floor(s / 60);
+        var r = s % 60;
+        return m + " min" + (r ? " " + r + " sec" : "");
+    }
+
+        function finish() {
+        state.finished = true;
+
+        var correct = 0;
         for (var k = 0; k < total; k++) {
             if (state.results[k] === true) correct++;
-            else if (state.results[k] === false) wrong++;
-            else skipped++;
         }
-        var params = new URLSearchParams({
-            total: total,
-            correct: correct,
-            wrong: wrong,
-            skipped: skipped,
-            points: state.points.toFixed(2)
+        var accuracy = Math.round((correct / total) * 100);
+
+        var sum = 0, count = 0;
+        state.times.forEach(function (t) {
+            if (typeof t === "number") { sum += t; count++; }
         });
-        location.href = RESULT_PAGE + "?" + params.toString();
+        var avg = count ? sum / count : 0;
+
+        // Score onujayi message
+        var msg = getResultMessage(correct);
+        resultTitle.textContent = msg.title;
+        resultMsg.textContent = msg.text;
+
+        rsPoints.textContent = String(Math.round(state.points * 100) / 100);
+        rsAccuracy.textContent = accuracy + "%";
+        rsTime.textContent = formatTime(avg);
+        rsContinue.setAttribute("href", CONTINUE_URL);
+
+        barNext.disabled = true;
+        barSkip.disabled = true;
+
+        if (typeof resultDialog.showModal === "function") {
+            resultDialog.showModal();
+        } else {
+            resultDialog.setAttribute("open", "");
+        }
+        rsContinue.focus();
     }
+
+    // Esc ba bairey click korle modal bondho hobe na, Continue-i ekমাত্র rasta
+    resultDialog.addEventListener("cancel", function (e) { e.preventDefault(); });
 
     // ===== Events =====
     barNext.addEventListener("click", next);
@@ -353,7 +428,7 @@
     // Back arrow: kono answer dewa thakle confirm
     backBtn.addEventListener("click", function (e) {
         var started = state.results.length > 0;
-        if (started && typeof leaveDialog.showModal === "function") {
+        if (started && !state.finished && typeof leaveDialog.showModal === "function") {
             e.preventDefault();
             leaveDialog.showModal();
         }
@@ -362,7 +437,8 @@
 
     // Keyboard: 1-4 diye option, ArrowRight diye porer question
     document.addEventListener("keydown", function (e) {
-        if (leaveDialog.open || e.ctrlKey || e.metaKey || e.altKey) return;
+        if (state.finished || leaveDialog.open || resultDialog.open) return;
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
         if (e.key >= "1" && e.key <= "9" && !state.answered) {
             var n = Number(e.key) - 1;
             if (n < QUESTIONS[state.i].options.length) choose(n);

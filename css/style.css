@@ -2309,21 +2309,42 @@ button {
 }
 
 .explain_body {
-    padding: 14px 18px 18px;
-    line-height: 1.7;
-    color: var(--black);
+    padding: 14px 18px 12px;
     border-top: 2px dashed #c9c2bb;
 }
 
-.explain_body p {
+/* Puro explanation ekshathe scroll hobe, scrollbar shobar niche */
+.explain_scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    line-height: 1.7;
+    color: var(--black);
+    scrollbar-width: thin;
+    scrollbar-color: #bdb5ad transparent;
+}
+
+.explain_scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.explain_scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.explain_scroll::-webkit-scrollbar-thumb {
+    background: #bdb5ad;
+    border-radius: 999px;
+}
+
+.explain_scroll p {
     margin: 0 0 8px;
     color: var(--black);
 }
 
-.explain_body .katex-display {
+.explain_scroll .katex-display {
     margin: 10px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: visible;      /* alada scroll nai, bahire-r container-ei scroll hobe */
 }
 
 /* ---------- Bottom bar ---------- */
@@ -2519,5 +2540,225 @@ button {
     .explain_clip,
     .opt_radio::after {
         transition: none;
+    }
+}
+
+/* ---------- Practice session: mobile/tablet fix ---------- */
+@media (max-width: 767.98px) {
+
+    /* Charpashe-r faka jayga kombano */
+    .content:has(> .session_page) {
+        padding: 10px 12px;
+    }
+
+    .content-scroll.session_page {
+        padding: 2px 0 0;
+    }
+
+    /* Top bar: upore (back, count, points), niche boro progress bar */
+    .session_top {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+            "back count points"
+            "segs segs segs";
+        align-items: center;
+        gap: 10px 10px;
+    }
+
+    .session_top::after {
+        display: none;            /* dan-er faka 44px jaga bondho */
+    }
+
+    .session_meta {
+        display: contents;        /* count, segs, points ekhon grid-er sorashori item */
+    }
+
+    .session_back {
+        grid-area: back;
+        width: 38px;
+        height: 38px;
+        margin-left: -6px;
+    }
+
+    .s_count {
+        grid-area: count;
+        justify-self: start;
+    }
+
+    .s_points {
+        grid-area: points;
+        justify-self: end;
+    }
+
+    .s_segs {
+        grid-area: segs;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .seg {
+        height: 10px;
+    }
+
+    /* Bookmark: icon-er pashe-r faka jayga kom */
+    .q_bookmark {
+        margin-right: -8px;
+    }
+}
+
+/* ---------- Result modal ---------- */
+.result_dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: calc(100% - 32px);
+    max-width: 520px;
+    height: fit-content;
+    max-height: calc(100% - 32px);
+    padding: 28px;
+    color: var(--black);
+    background: var(--secondaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 24px;
+    overflow-y: auto;
+}
+
+.result_dialog[open] {
+    animation: resultIn .35s ease;
+}
+
+.result_dialog::backdrop {
+    background: rgba(0, 0, 0, .4);
+}
+
+.result_dialog[open]::backdrop {
+    animation: resultFade .35s ease;
+}
+
+.result_dialog h2 {
+    margin: 0 0 8px;
+    font-size: clamp(22px, 1.2rem + .6vw, 28px);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.result_msg {
+    max-width: 400px;
+    margin: 0 auto 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    color: #6b6b6b;
+}
+
+.result_stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.rs_card {
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 16px;
+}
+
+.rs_label {
+    padding: 8px 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.rs_value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 62px;
+    padding: 10px 8px;
+    font-size: clamp(17px, 1rem + .3vw, 20px);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.rs_card .s_icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* Points */
+.rs_card--points { border-color: #ecd08a; }
+.rs_card--points .rs_label { color: #8a5a00; background: #fbecc8; }
+.rs_star { fill: #f2b01e; stroke: #f2b01e; }
+
+/* Accuracy */
+.rs_card--accuracy { border-color: #9ad5b3; }
+.rs_card--accuracy .rs_label { color: #1d6b3d; background: #d9f3e3; }
+.rs_check { color: #1d8a4c; }
+
+/* Average time */
+.rs_card--time { border-color: #a9cde6; }
+.rs_card--time .rs_label { color: #1b5f8c; background: #dcecf7; }
+.rs_clock { color: #2a7db3; }
+
+.result_btn {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 24px;
+    font-size: 17px;
+}
+
+@keyframes resultIn {
+    from { opacity: 0; transform: translateY(14px) scale(.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes resultFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Chhoto phone: card gulo ekটার niche ekটা (bam-e label, dan-e value) */
+@media (max-width: 479.98px) {
+    .result_dialog {
+        padding: 22px 18px;
+    }
+
+    .result_stats {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .rs_card {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .rs_label {
+        display: flex;
+        align-items: center;
+        flex: 0 0 46%;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .rs_value {
+        flex: 1;
+        min-height: 54px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .result_dialog[open],
+    .result_dialog[open]::backdrop {
+        animation: none;
     }
 }

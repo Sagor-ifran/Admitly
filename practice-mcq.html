@@ -247,7 +247,9 @@
                         </button>
                         <div class="explain_wrap">
                             <div class="explain_clip">
-                                <div class="explain_body" id="exBody"></div>
+                                <div class="explain_body">
+                                    <div class="explain_scroll" id="exBody"></div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -278,6 +280,52 @@
             <a href="practice.html" class="s_btn s_btn--dark">Leave</a>
         </div>
     </dialog>
+
+    <!-- Session shesh-er result modal -->
+    <dialog class="result_dialog" id="resultDialog" aria-labelledby="resultTitle">
+        <h2 id="resultTitle">Session complete</h2>
+        <p class="result_msg" id="resultMsg"></p>
+
+        <div class="result_stats">
+            <div class="rs_card rs_card--points">
+                <div class="rs_label">Points earned</div>
+                <div class="rs_value">
+                    <svg class="s_icon rs_star" viewBox="0 0 24 24" aria-hidden="true">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span id="rsPoints">0</span>
+                </div>
+            </div>
+
+            <div class="rs_card rs_card--accuracy">
+                <div class="rs_label">Accuracy</div>
+                <div class="rs_value">
+                    <svg class="s_icon rs_check" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="m8 12.5 3 3 5-6" />
+                    </svg>
+                    <span id="rsAccuracy">0%</span>
+                </div>
+            </div>
+
+            <div class="rs_card rs_card--time">
+                <div class="rs_label">Average time</div>
+                <div class="rs_value">
+                    <svg class="s_icon rs_clock" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 7v5l3 2" />
+                    </svg>
+                    <span id="rsTime">0 sec</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="practice.html" class="s_btn s_btn--dark result_btn" id="rsContinue">Continue</a>
+    </dialog>
+
+
+
 
 
     <!--jquery library js-->
