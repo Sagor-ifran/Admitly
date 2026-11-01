@@ -3550,7 +3550,6 @@ button {
     margin: 0 auto;
 }
 
-/* ---------- Hero: score ring + summary ---------- */
 .rv_hero {
     --sc: #1d6b3d;
     display: flex;
@@ -3566,7 +3565,6 @@ button {
 .rv_hero.is-mid { --sc: #8a5a00; }
 .rv_hero.is-low { --sc: #b3261e; }
 
-/* Gol gauge: --p (0-100) JS bosay */
 .rv_ring {
     --p: 0;
     position: relative;
@@ -3669,7 +3667,6 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Bam-e criteria, dan-e notes ---------- */
 .rv_grid {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
@@ -3742,7 +3739,6 @@ button {
     width: var(--w);
 }
 
-/* Dan column: duto note, panel-er shoman height */
 .rv_side {
     display: flex;
     flex-direction: column;
@@ -3798,7 +3794,6 @@ button {
     font-size: 17px;
 }
 
-/* ---------- Improve button ---------- */
 .rv_improve_wrap {
     display: flex;
     justify-content: center;
@@ -3811,7 +3806,6 @@ button {
     color: inherit;
 }
 
-/* Improved essay: smooth khola/bondho */
 .rv_reveal {
     display: grid;
     grid-template-rows: 0fr;
@@ -3847,12 +3841,10 @@ button {
     color: var(--paracolor);
 }
 
-/* Nichey sticky bar */
 .session_bar.rv_bar {
     max-width: 1100px;
 }
 
-/* ---------- Tablet: grid ekটার niche ekটা ---------- */
 @media (max-width: 991.98px) {
     .rv_grid {
         grid-template-columns: minmax(0, 1fr);
@@ -3863,7 +3855,6 @@ button {
     }
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 575.98px) {
     .rv_hero {
         flex-direction: column;
@@ -3909,6 +3900,494 @@ button {
 @media (prefers-reduced-motion: reduce) {
     .rv_fill,
     .rv_reveal {
+        transition: none;
+    }
+}
+
+
+
+
+
+/* ---------- Mock exam ---------- */
+.mk_page {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+}
+
+.mk_title {
+    margin: 6px 0 6px;
+    font-size: clamp(24px, 1.3rem + 1vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.mk_sub {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--black);
+}
+
+.mk_note {
+    max-width: 620px;
+    margin: 8px auto 0;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--paracolor);
+}
+
+/* ---------- Select all button ---------- */
+.mk_toolbar {
+    display: flex;
+    justify-content: start;
+    margin: 22px 0 12px;
+}
+
+.mk_all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px 8px 12px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--black);
+    background: transparent;
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .25s, background .25s, color .25s;
+}
+
+.mk_all:hover {
+    border-color: var(--black);
+}
+
+.mk_all:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.mk_all_text {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.mk_all_box {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8c857e;
+    border-radius: 50%;
+    transition: background .25s, border-color .25s;
+}
+
+/* Kichu select: dash */
+.mk_all.is-some {
+    border-color: var(--black);
+}
+
+.mk_all.is-some .mk_all_box {
+    background: var(--black) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 8h8'/%3E%3C/svg%3E") center / 12px no-repeat;
+    border-color: var(--black);
+}
+
+/* Sob select: puro button kalo */
+.mk_all.is-all {
+    color: var(--white);
+    background: var(--black);
+    border-color: var(--black);
+}
+
+.mk_all.is-all .mk_all_box {
+    background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231d1d1d' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E") center / 12px no-repeat;
+    border-color: var(--white);
+}
+
+/* ---------- Grid: mobile 1, tablet 2, boro screen 3 column ---------- */
+.mk_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.mk_stack {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .mk_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mk_stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1400px) {
+    .mk_grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .mk_stack {
+        grid-column: auto;
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---------- Card ---------- */
+.mk_card {
+    background: var(--primaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color .25s;
+}
+
+.mk_card:hover {
+    border-color: #8c857e;
+}
+
+/* Select kora card: dashed-i thake, shudhu rong kalo (hover-er pore likha, tai hover-e o kalo thake) */
+.mk_card.is-selected {
+    border-color: var(--black);
+}
+
+/* ---------- Checkbox (circle) ---------- */
+.mk_check {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+/* Hidden input label-er bhitore-i, tai click korle page jump korbe na */
+.mk_check input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mk_box {
+    position: relative;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: 2px solid #8c857e;
+    border-radius: 50%;
+    transition: background .2s, border-color .2s;
+}
+
+.mk_check input:checked + .mk_box {
+    background: var(--black) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E") center / 14px no-repeat;
+    border-color: var(--black);
+}
+
+/* Kichu topic select: dash */
+.mk_check input:indeterminate + .mk_box {
+    background: var(--black) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 8h8'/%3E%3C/svg%3E") center / 14px no-repeat;
+    border-color: var(--black);
+}
+
+.mk_check input:focus-visible + .mk_box {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+/* ---------- Segment header ---------- */
+.mk_head {
+    display: flex;
+    align-items: center;
+}
+
+.mk_segcheck {
+    align-self: stretch;
+    padding: 0 0 0 18px;
+}
+
+.mk_toggle {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px 14px 12px;
+    font: inherit;
+    text-align: left;
+    color: var(--black);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.mk_toggle:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: -4px;
+    border-radius: 14px;
+}
+
+.mk_info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mk_name {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--black);
+}
+
+.mk_meta {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--paracolor);
+}
+
+.mk_arrow {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-right: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    transform: rotate(-45deg);
+    transition: transform .3s;
+}
+
+.mk_card.is-open .mk_arrow {
+    transform: rotate(45deg);
+}
+
+/* ---------- Accordion body (smooth khola/bondho) ---------- */
+.mk_body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .35s ease;
+}
+
+.mk_card.is-open .mk_body {
+    grid-template-rows: 1fr;
+}
+
+.mk_clip {
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0s .35s;
+}
+
+.mk_card.is-open .mk_clip {
+    visibility: visible;
+    transition: visibility 0s;
+}
+
+/* Topic list: eikhane-i scroll */
+.mk_topics {
+    max-height: 250px;
+    margin: 0;
+    padding: 12px 8px 12px 12px;
+    list-style: none;
+    counter-reset: mk;
+    border-top: 2px dashed #c9c2bb;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #bdb5ad transparent;
+}
+
+.mk_topics::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mk_topics::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mk_topics::-webkit-scrollbar-thumb {
+    background: #bdb5ad;
+    border-radius: 999px;
+}
+
+.mk_topics li {
+    counter-increment: mk;
+}
+
+/* Item-er majhe gap, tai select kora background mishe jay na */
+.mk_topics li + li {
+    margin-top: 6px;
+}
+
+.mk_topic {
+    padding: 10px 12px;
+    border-radius: 12px;
+    transition: background .2s;
+}
+
+.mk_topic:hover {
+    background: rgba(255, 255, 255, .6);
+}
+
+.mk_topic:has(input:checked) {
+    background: var(--white);
+}
+
+.mk_t_text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.mk_t_text::before {
+    content: counter(mk, decimal-leading-zero) ".";
+    margin-right: 8px;
+    color: var(--paracolor);
+}
+
+/* ---------- Reading / Essay card ---------- */
+.mk_simple {
+    padding: 16px 18px;
+}
+
+/* ---------- Nichey sticky bar ---------- */
+.session_bar.mk_bar {
+    max-width: 1200px;
+}
+
+.mk_status {
+    min-width: 0;
+}
+
+.mk_sum {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--black);
+}
+
+.mk_begin:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.mk_begin:disabled:hover {
+    color: #fff;
+    background: var(--black);
+}
+
+/* ---------- Mock exam: Architecture note ---------- */
+.mk_notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 17px;
+    background: transparent;
+    border: 2px dashed #B22222;
+    border-radius: 18px;
+}
+
+.mk_notice_icon {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    fill: none;
+    stroke: #B22222;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mk_notice_body {
+    min-width: 0;
+}
+
+.mk_notice_title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.mk_notice_text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 25px;
+    color: var(--paracolor);
+}
+
+/* Tablet: Reading ar Essay-er niche puro width-e */
+@media (min-width: 768px) and (max-width: 1399.98px) {
+    .mk_notice {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mk_notice {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mk_segcheck {
+        padding-left: 14px;
+    }
+
+    .mk_toggle {
+        padding: 12px 14px 12px 10px;
+    }
+
+    .mk_simple {
+        padding: 14px;
+    }
+
+    .mk_topics {
+        padding: 10px 6px 10px 10px;
+    }
+
+    .mk_bar .mk_status {
+        text-align: center;
+    }
+
+    .mk_bar .s_btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mk_body,
+    .mk_arrow,
+    .mk_clip,
+    .mk_box,
+    .mk_all,
+    .mk_all_box {
         transition: none;
     }
 }
