@@ -3167,12 +3167,10 @@ button {
     line-height: 1.7;
 }
 
-/* Type-er naam (jemon "descriptive") */
 .write_intro_text strong {
     color: var(--black);
 }
 
-/* Highlight: criteria, word limit ar shomoy (bold + alada rong) */
 .write_intro_text .w_hl {
     font-weight: 700;
     color: var(--highlight, #8a5a00);
@@ -3187,7 +3185,6 @@ button {
     overflow-wrap: anywhere;
 }
 
-/* Editor: alada card nai, shudhu textarea */
 .write_card {
     padding: 0;
     background: transparent;
@@ -3203,7 +3200,6 @@ button {
     margin-bottom: 14px;
 }
 
-/* Timer button */
 .wt_btn {
     display: inline-flex;
     align-items: center;
@@ -3282,7 +3278,6 @@ button {
     border-radius: 999px;
 }
 
-/* Timer note: shuru-te neutral, shesh 1 minute-e lal */
 .wt_note {
     margin: -4px 0 12px;
     font-size: 14px;
@@ -3298,7 +3293,6 @@ button {
     display: none;
 }
 
-/* Textarea */
 .write_area {
     display: block;
     width: 100%;
@@ -3331,7 +3325,6 @@ button {
     border: 2px solid #d9483b;
 }
 
-/* Footer: word count ar autosave */
 .write_foot {
     display: flex;
     flex-wrap: wrap;
@@ -3366,7 +3359,6 @@ button {
     color: #1d6b3d;
 }
 
-/* Niche */
 .write_note {
     margin-top: 24px;
     font-size: 14px;
@@ -3399,6 +3391,10 @@ button {
 }
 
 @media (max-width: 575.98px) {
+    .write_intro_text{
+        font-size: 16px;
+    }
+
     .write_area {
         padding: 14px;
         font-size: 16px;
@@ -3406,5 +3402,513 @@ button {
 
     .write_btn {
         width: 100%;
+    }
+}
+
+
+
+
+/* ---------- Essay reading ---------- */
+.er_page {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.er_type {
+    display: table;
+    margin: 6px auto 14px;
+    padding: 3px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: var(--paracolor);
+    background: var(--primaryBg);
+    border-radius: 999px;
+}
+
+.er_type[hidden] {
+    display: none;
+}
+
+.er_card {
+    display: flex;
+    flex-direction: column;
+    height: clamp(340px, calc(100dvh - 310px), 800px);
+    padding: 24px 12px 20px 30px;
+    background: var(--primaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.er_title {
+    flex: 0 0 auto;
+    margin: 0 18px 16px 0 !important;
+    padding-bottom: 16px;
+    font-size: clamp(20px, 1.1rem + .7vw, 28px) !important;
+    font-weight: 700 !important;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--black);
+    border-bottom: 2px dashed #c9c2bb;
+    overflow-wrap: anywhere;
+}
+
+.er_scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-right: 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #bdb5ad transparent;
+}
+
+.er_scroll:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+.er_scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.er_scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.er_scroll::-webkit-scrollbar-thumb {
+    background: #bdb5ad;
+    border-radius: 999px;
+}
+
+.er_scroll::-webkit-scrollbar-thumb:hover {
+    background: #8c857e;
+}
+
+.er_scroll p {
+    margin: 0 0 16px;
+    font-size: clamp(16px, 15px + .3vw, 18px);
+    line-height: 1.85;
+    color: var(--black);
+}
+
+.er_scroll p:last-child {
+    margin-bottom: 0;
+}
+
+.session_bar.er_bar {
+    max-width: 1100px;
+}
+
+.er_ask {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+@media (max-width: 575.98px) {
+    .er_card {
+        height: clamp(320px, 58vh, 520px);
+        padding: 18px 8px 16px 16px;
+    }
+
+    .er_title {
+        margin-right: 12px;
+    }
+
+    .er_scroll {
+        padding-right: 12px;
+    }
+
+    .er_ask {
+        text-align: center;
+    }
+
+    .er_bar .s_btn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+/* ---------- Essay review ---------- */
+.rv_page {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------- Hero: score ring + summary ---------- */
+.rv_hero {
+    --sc: #1d6b3d;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 8px;
+    padding: 28px 32px;
+    background: var(--primaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 20px;
+}
+
+.rv_hero.is-mid { --sc: #8a5a00; }
+.rv_hero.is-low { --sc: #b3261e; }
+
+/* Gol gauge: --p (0-100) JS bosay */
+.rv_ring {
+    --p: 0;
+    position: relative;
+    flex: 0 0 auto;
+    width: 160px;
+    height: 160px;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(var(--sc) calc(var(--p) * 1%), #ddd7d1 0);
+    border-radius: 50%;
+}
+
+.rv_ring::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    background: var(--primaryBg);
+    border-radius: 50%;
+}
+
+.rv_ring_in {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.rv_num {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--sc);
+    font-variant-numeric: tabular-nums;
+}
+
+.rv_den {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--paracolor);
+}
+
+.rv_hero_text {
+    flex: 1;
+    min-width: 0;
+}
+
+.rv_pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rv_band,
+.rv_pill {
+    padding: 4px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    background: var(--white);
+    border-radius: 999px;
+}
+
+.rv_band {
+    color: var(--sc);
+}
+
+.rv_pill {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--paracolor);
+}
+
+.rv_pill[hidden] {
+    display: none;
+}
+
+.rv_topic {
+    margin: 0 0 8px;
+    font-size: clamp(20px, 1.1rem + .6vw, 26px);
+    font-weight: 800;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.rv_summary {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--black);
+}
+
+.rv_disclaimer {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+/* ---------- Bam-e criteria, dan-e notes ---------- */
+.rv_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.rv_panel {
+    padding: 24px 28px;
+    background: var(--primaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 20px;
+}
+
+.rv_h {
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.rv_criteria {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.rv_c { --cc: #2fa862; }
+.rv_c.is-mid { --cc: #e0a21a; }
+.rv_c.is-low { --cc: #d9483b; }
+
+.rv_c_top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 7px;
+}
+
+.rv_c_name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.rv_c_score {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+    font-variant-numeric: tabular-nums;
+}
+
+.rv_track {
+    height: 9px;
+    background: #ddd7d1;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.rv_fill {
+    width: 0;
+    height: 100%;
+    background: var(--cc);
+    border-radius: 999px;
+    transition: width .8s ease;
+}
+
+.rv_criteria.is-in .rv_fill {
+    width: var(--w);
+}
+
+/* Dan column: duto note, panel-er shoman height */
+.rv_side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rv_note {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--black);
+    border-radius: 20px;
+}
+
+.rv_note--good { background: #e8f6ee; border: 2px solid #9ad5b3; }
+.rv_note--improve { background: #fff6e0; border: 2px solid #ecd08a; }
+
+.rv_note_icon {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.rv_note--good .rv_note_icon { color: #1d6b3d; }
+.rv_note--improve .rv_note_icon { color: #8a5a00; }
+
+.rv_note_icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.rv_note_body {
+    min-width: 0;
+}
+
+.rv_note_body strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 17px;
+}
+
+/* ---------- Improve button ---------- */
+.rv_improve_wrap {
+    display: flex;
+    justify-content: center;
+    margin: 26px 0;
+}
+
+.rv_btn_label {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* Improved essay: smooth khola/bondho */
+.rv_reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .45s ease;
+    scroll-margin-top: 12px;
+}
+
+.rv_reveal.is-open {
+    grid-template-rows: 1fr;
+}
+
+.rv_clip {
+    min-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0s .45s;
+}
+
+.rv_reveal.is-open .rv_clip {
+    visibility: visible;
+    transition: visibility 0s;
+}
+
+.er_card.rv_card {
+    height: clamp(300px, 52dvh, 480px);
+}
+
+.rv_hint {
+    margin: 14px 0 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--paracolor);
+}
+
+/* Nichey sticky bar */
+.session_bar.rv_bar {
+    max-width: 1100px;
+}
+
+/* ---------- Tablet: grid ekটার niche ekটা ---------- */
+@media (max-width: 991.98px) {
+    .rv_grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rv_note {
+        flex: 0 0 auto;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 575.98px) {
+    .rv_hero {
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+    .rv_ring {
+        width: 136px;
+        height: 136px;
+    }
+
+    .rv_ring::before {
+        inset: 11px;
+    }
+
+    .rv_num {
+        font-size: 38px;
+    }
+
+    .rv_pills {
+        justify-content: center;
+    }
+
+    .rv_panel {
+        padding: 20px 18px;
+    }
+
+    .rv_note {
+        padding: 16px;
+    }
+
+    .er_card.rv_card {
+        height: clamp(280px, 56dvh, 440px);
+    }
+
+    .rv_bar .er_ask {
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rv_fill,
+    .rv_reveal {
+        transition: none;
     }
 }

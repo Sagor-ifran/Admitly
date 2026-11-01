@@ -1,6 +1,7 @@
 /* =========================================================
-   Essay Coach (essay-coach.html) ar Essay Write (essay-write.html)
-   Duto page-e ekই file load hoy. Prottek part nijer element
+   Essay Coach (essay-coach.html), Essay Reading (essay-reading.html)
+   ar Essay Write (essay-write.html)
+   Tinta page-e ekই file load hoy. Prottek part nijer element
    na pele sathe sathe return kore, tai kono page-e error hoy na.
    ========================================================= */
 
@@ -69,24 +70,55 @@
 })();
 
 
-/* ---------- 2. Topic list-er link-e topic ar type joge deya (essay-coach.html) ---------- */
+/* ---------- 2. Topic list-er link: reading page-e, topic ar type soho (essay-coach.html) ---------- */
 (function () {
+    var READING_URL = "essay-reading.html";
+
     document.querySelectorAll(".pc_item .pc_topics a[href]").forEach(function (a) {
         var item = a.closest(".pc_item");
         var nameEl = item && item.querySelector(".pc_name");
         if (!nameEl) return;
 
-        var base = a.getAttribute("href").split("?")[0];
         var q = new URLSearchParams({
             topic: a.textContent.trim(),
             type: nameEl.textContent.trim()
         });
-        a.setAttribute("href", base + "?" + q.toString());
+        a.setAttribute("href", READING_URL + "?" + q.toString());
     });
 })();
 
 
-/* ---------- 3. Essay write page (essay-write.html) ---------- */
+/* ---------- 3. Essay reading page (essay-reading.html) ---------- */
+(function () {
+    var titleEl = document.getElementById("erTitle");
+    var writeBtn = document.getElementById("erWrite");
+    if (!titleEl || !writeBtn) return;
+
+    var WRITE_URL = "essay-write.html";
+    var typeEl = document.getElementById("erType");
+
+    // URL theke topic ar type (textContent diye bosai, tai safe)
+    var params = new URLSearchParams(location.search);
+    var topic = (params.get("topic") || "").trim().slice(0, 150);
+    var type = (params.get("type") || "").trim().slice(0, 40);
+
+    titleEl.textContent = topic || "Sample essay";
+
+    if (type && typeEl) {
+        typeEl.textContent = /letter/i.test(type) ? type : type + " essay";
+        typeEl.hidden = false;
+    }
+
+    // Go to write: ekই topic ar type niye write page-e
+    var q = new URLSearchParams();
+    if (topic) q.set("topic", topic);
+    if (type) q.set("type", type);
+    var qs = q.toString();
+    writeBtn.setAttribute("href", WRITE_URL + (qs ? "?" + qs : ""));
+})();
+
+
+/* ---------- 4. Essay write page (essay-write.html) ---------- */
 (function () {
     // Ei page-e na thakle kichui korbe na
     var form = document.getElementById("writeForm");
@@ -98,7 +130,7 @@
     var MAX_WORDS = 400;          // er beshi likha jabe na
     var TIMER_MINUTES = 20;       // timer add korle, shomoy shesh hole auto submit
     var AUTOSAVE_DELAY = 600;     // ms
-    var FEEDBACK_URL = "essay-feedback.html";
+    var FEEDBACK_URL = "essay-review.html";
     var CRITERIA = [
         "Topic Relevance",
         "Organization",
@@ -322,7 +354,8 @@
         // DEMO: backend-e ekhane topic, type ar essay server-e pathate hobe,
         // server "ok" bolle tarpor draft muche feedback page-e jete hobe.
         try { localStorage.removeItem(KEY); } catch (e) { }
-        setTimeout(function () { location.href = FEEDBACK_URL; }, 900);
+        var rq = new URLSearchParams({ topic: topic, type: typeLower });
+        setTimeout(function () { location.href = FEEDBACK_URL + "?" + rq.toString(); }, 900);
     }
 
     form.addEventListener("submit", function (e) {
@@ -410,4 +443,172 @@
         if (timerBtn.classList.contains("is-running")) removeTimer();
         else startTimer();
     });
+})();
+
+
+
+
+
+
+/* ---------- 5. Essay review page (essay-review.html) ---------- */
+(function () {
+    var scoreEl = document.getElementById("rvScore");
+    if (!scoreEl) return;
+
+    var WRITE_URL = "essay-write.html";
+
+    // ===== DEMO feedback =====
+    // Asol project-e eta server (AI) theke ashbe. Score ekhane criteria-r average theke hishab hoy.
+    var DEMO = {
+        summary: "Your essay is well organised and stays on topic. The ideas are clear, and your vocabulary is strong. With a few specific examples, it could be even more convincing.",
+        criteria: [
+            { name: "Topic Relevance", score: 9 },
+            { name: "Idea Development", score: 8 },
+            { name: "Grammar & Vocabulary", score: 8.5 },
+            { name: "Organization", score: 9 },
+            { name: "Clarity & Style", score: 8 }
+        ],
+        strength: "The essay clearly explains how a rainy day changes daily life, and the introduction and conclusion are easy to follow.",
+        improvement: "Add a specific example to support the point about flooded streets, and try to vary your sentence openings.",
+        improved: [
+            "A rainy day in Bangladesh is unlike any other. When the monsoon arrives between June and September, the sky turns a deep grey and the whole country seems to pause and listen to the rain.",
+            "In the morning, the first sound is the steady patter of raindrops on tin roofs. Village paths turn to mud, paddy fields shine green and silver, and in the city, rickshaw pullers push through flooded streets with plastic sheets over their heads.",
+            "Inside the home, the day moves slowly. Children watch the rain from the window, while the smell of khichuri and fried hilsa drifts from the kitchen. For many families, this is the most comforting meal of the year.",
+            "Yet the rain also brings hardship. In Dhaka, waterlogging in areas like Mirpur and Motijheel can stop traffic for hours, and poor families in low-lying areas lose their belongings to rising water.",
+            "To conclude, a rainy day in Bangladesh is a mixture of beauty and hardship. It cools the heat and gives life to the land, but it also reminds us how closely our lives depend on nature."
+        ]
+    };
+
+    function el(id) { return document.getElementById(id); }
+    function band(n) { return n >= 8 ? "is-good" : (n >= 5 ? "is-mid" : "is-low"); }
+    function bandLabel(n) {
+        if (n >= 9) return "Excellent";
+        if (n >= 8) return "Very good";
+        if (n >= 6.5) return "Good";
+        if (n >= 5) return "Fair";
+        return "Keep practicing";
+    }
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // URL theke topic ar type (textContent diye, tai safe)
+    var params = new URLSearchParams(location.search);
+    var topic = (params.get("topic") || "").trim().slice(0, 150);
+    var type = (params.get("type") || "").trim().slice(0, 40);
+
+    // Score = criteria-r average (0.1 porjonto)
+    var sum = 0;
+    DEMO.criteria.forEach(function (c) { sum += c.score; });
+    var score = Math.round((sum / DEMO.criteria.length) * 10) / 10;
+
+    // Hero: rong, label, topic, type, summary
+    var box = el("rvScoreBox");
+    box.classList.remove("is-good", "is-mid", "is-low");
+    box.classList.add(band(score));
+
+    el("rvBand").textContent = bandLabel(score);
+    el("rvTopic").textContent = topic || "Your essay";
+    el("rvSummary").textContent = DEMO.summary;
+    el("rvStrength").textContent = DEMO.strength;
+    el("rvImprovement").textContent = DEMO.improvement;
+
+    var typeEl = el("rvType");
+    if (type) {
+        typeEl.textContent = /letter/i.test(type) ? type : type + " essay";
+        typeEl.hidden = false;
+    }
+
+    // Score ring: 0 theke count-up
+    var ring = el("rvRing");
+
+    function paint(v) {
+        scoreEl.textContent = String(Math.round(v * 10) / 10);
+        ring.style.setProperty("--p", v * 10);
+    }
+
+    function finalScore() {
+        paint(score);
+        ring.setAttribute("aria-label", "Score " + score + " out of 10");
+    }
+
+    if (reduceMotion) {
+        finalScore();
+    } else {
+        var t0 = null, DURATION = 1000;
+        var frame = function (now) {
+            if (t0 === null) t0 = now;
+            var p = Math.min((now - t0) / DURATION, 1);
+            paint(score * (1 - Math.pow(1 - p, 3)));      // shuru-te druto, shesh-e dhire
+            if (p < 1) requestAnimationFrame(frame);
+            else finalScore();
+        };
+        requestAnimationFrame(frame);
+    }
+
+    // Criteria bar
+    var list = el("rvCriteria");
+    DEMO.criteria.forEach(function (c) {
+        var li = document.createElement("li");
+        li.className = "rv_c " + band(c.score);
+        li.style.setProperty("--w", (c.score / 10 * 100) + "%");
+
+        var top = document.createElement("div");
+        top.className = "rv_c_top";
+        var name = document.createElement("div");
+        name.className = "rv_c_name";
+        name.textContent = c.name;
+        var val = document.createElement("div");
+        val.className = "rv_c_score";
+        val.textContent = c.score + "/10";
+        top.appendChild(name);
+        top.appendChild(val);
+
+        var bar = document.createElement("div");
+        bar.className = "rv_track";
+        bar.setAttribute("aria-hidden", "true");
+        var fill = document.createElement("div");
+        fill.className = "rv_fill";
+        bar.appendChild(fill);
+
+        li.appendChild(top);
+        li.appendChild(bar);
+        list.appendChild(li);
+    });
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () { list.classList.add("is-in"); });
+    });
+
+    // Improved essay
+    el("rvTitle").textContent = topic || "Your essay";
+    var essay = el("rvEssay");
+    DEMO.improved.forEach(function (text) {
+        var p = document.createElement("p");
+        p.textContent = text;
+        essay.appendChild(p);
+    });
+
+    // Improve My Own Essay: khola/bondho
+    var btn = el("rvImproveBtn");
+    var label = el("rvImproveLabel");
+    var reveal = el("rvReveal");
+
+    btn.addEventListener("click", function () {
+        var open = !reveal.classList.contains("is-open");
+        reveal.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        label.textContent = open ? "Hide improved essay" : "Improve My Own Essay";
+
+        if (open) {
+            setTimeout(function () {
+                reveal.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+            }, 200);
+        }
+    });
+
+    // Try again: ekই topic ar type niye write page-e
+    var q = new URLSearchParams();
+    if (topic) q.set("topic", topic);
+    if (type) q.set("type", type);
+    var qs = q.toString();
+    el("rvTry").setAttribute("href", WRITE_URL + (qs ? "?" + qs : ""));
 })();
