@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <title>Admitly HTML Template</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Mobile top bar -->
+    <header class="mobilebar d-lg-none">
+        <button class="icon-btn menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" aria-hidden="true">
+                <line class="l1" x1="5" y1="7" x2="19" y2="7" />
+                <line class="l2" x1="5" y1="12" x2="19" y2="12" />
+                <line class="l3" x1="5" y1="17" x2="19" y2="17" />
+            </svg>
+        </button>
+        <a href="#" class="logo" aria-label="Admitly home">
+            <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+        </a>
+        <a href="#" class="profile" aria-label="Profile">
+            <div class="user_img">
+                <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+            </div>
+        </a>
+    </header>
+
+    <!-- Sidebar: static on desktop, slide-in menu on mobile -->
+    <aside class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-label="Main menu">
+        <div class="offcanvas-header d-lg-none justify-content-end pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-body">
+            <div class="sidebar-top">
+                <a href="#" class="logo" aria-label="Admitly home">
+                    <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+                </a>
+                <a href="pricing-plan.html" class="upgrade-btn">Upgrade</a>
+            </div>
+
+            <nav aria-label="Primary">
+                <ul class="menu list-unstyled" id="menu">
+                    <li>
+                        <a href="index.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="learn.html" aria-current="page">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 7v14" />
+                                <path
+                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                            </svg>
+                            Learn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="question-bank.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <path d="M12 17h.01" />
+                            </svg>
+                            Question Bank
+                        </a>
+                    </li>
+                    <li>
+                        <a href="practice.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 20h9" />
+                                <path
+                                    d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
+                                <path d="m15 5 3 3" />
+                            </svg>
+                            Practice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mock-exam.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                <path d="M10 9H8" />
+                                <path d="M16 13H8" />
+                                <path d="M16 17H8" />
+                            </svg>
+                            Mock Exam
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progress.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                            Progress
+                        </a>
+                    </li>
+                    <li>
+                        <a href="leaderboard.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                            Leaderboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="essay-coach.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                <path d="M13 8H7" />
+                                <path d="M17 12H7" />
+                            </svg>
+                            Essay Coach
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M12 7v5l4 2" />
+                            </svg>
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pricing-plan.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+                                <path d="M5 21h14" />
+                            </svg>
+                            Admitly Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user">
+                <a href="#" class="user-link">
+                    <div class="user_img">
+                        <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+                    </div>
+                    <span>Sagor Ifran</span>
+                </a>
+                <a href="#settings" class="settings icon-btn" aria-label="Settings">
+                    <svg class="icon-fill" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M27 16.76v-1.53l1.92-1.68A2 2 0 0 0 29.3 11l-2.36-4a2 2 0 0 0-1.73-1a2 2 0 0 0-.64.1l-2.43.82a11 11 0 0 0-1.31-.75l-.51-2.52a2 2 0 0 0-2-1.61h-4.68a2 2 0 0 0-2 1.61l-.51 2.52a11.5 11.5 0 0 0-1.32.75l-2.38-.86A2 2 0 0 0 6.79 6a2 2 0 0 0-1.73 1L2.7 11a2 2 0 0 0 .41 2.51L5 15.24v1.53l-1.89 1.68A2 2 0 0 0 2.7 21l2.36 4a2 2 0 0 0 1.73 1a2 2 0 0 0 .64-.1l2.43-.82a11 11 0 0 0 1.31.75l.51 2.52a2 2 0 0 0 2 1.61h4.72a2 2 0 0 0 2-1.61l.51-2.52a11.5 11.5 0 0 0 1.32-.75l2.42.82a2 2 0 0 0 .64.1a2 2 0 0 0 1.73-1l2.28-4a2 2 0 0 0-.41-2.51ZM25.21 24l-3.43-1.16a8.9 8.9 0 0 1-2.71 1.57L18.36 28h-4.72l-.71-3.55a9.4 9.4 0 0 1-2.7-1.57L6.79 24l-2.36-4l2.72-2.4a8.9 8.9 0 0 1 0-3.13L4.43 12l2.36-4l3.43 1.16a8.9 8.9 0 0 1 2.71-1.57L13.64 4h4.72l.71 3.55a9.4 9.4 0 0 1 2.7 1.57L25.21 8l2.36 4l-2.72 2.4a8.9 8.9 0 0 1 0 3.13L27.57 20Z" />
+                        <path
+                            d="M16 22a6 6 0 1 1 6-6a5.94 5.94 0 0 1-6 6m0-10a3.91 3.91 0 0 0-4 4a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main_content content">
+        <div class="content-scroll session_page">
+
+            <a href="index.html" class="session_back" aria-label="Back to Dashboard">
+                <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m12 19-7-7 7-7" />
+                    <path d="M19 12H5" />
+                </svg>
+            </a>
+
+            <div class="essay_page">
+                <h1 class="visually-hidden">Essay Coach</h1>
+
+                <!-- Switch -->
+                <div class="essay_switch" role="tablist" aria-label="Essay mode">
+                    <button class="nav-link active" id="tabTopic" data-bs-toggle="pill" data-bs-target="#paneTopic"
+                        type="button" role="tab" aria-controls="paneTopic" aria-selected="true">Choose a topic</button>
+                    <button class="nav-link" id="tabOwn" data-bs-toggle="pill" data-bs-target="#paneOwn" type="button"
+                        role="tab" aria-controls="paneOwn" aria-selected="false">Write your own topic</button>
+                </div>
+
+                <div class="tab-content">
+
+                    <!-- Tab 1: Choose a topic -->
+                    <div class="tab-pane fade show active" id="paneTopic" role="tabpanel" aria-labelledby="tabTopic"
+                        tabindex="0">
+                        <p class="essay_sub">Explore admission-style essay topics curated by Admitly.</p>
+
+                        <div class="essay_list" id="essayList">
+
+                            <div class="pc_item">
+                                <h2 class="pc_header">
+                                    <button class="pc_btn" type="button" data-bs-toggle="collapse" data-bs-target="#es1"
+                                        aria-expanded="true" aria-controls="es1">
+                                        <span class="pc_icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                            </svg>
+                                        </span>
+                                        <span class="pc_name">Argumentative</span>
+                                        <span class="pc_arrow" aria-hidden="true"></span>
+                                    </button>
+                                </h2>
+                                <div id="es1" class="collapse show" data-bs-parent="#essayList">
+                                    <div class="pc_body">
+                                        <ol class="pc_topics">
+                                            <li><a href="essay-write.html">Should students use mobile phones in
+                                                    class?</a></li>
+                                            <li><a href="essay-write.html">Is online learning better than classroom
+                                                    learning?</a></li>
+                                            <li><a href="essay-write.html">Should school uniforms be compulsory?</a>
+                                            </li>
+                                            <li><a href="essay-write.html">Do exams measure real intelligence?</a></li>
+                                            <li><a href="essay-write.html">Should homework be banned?</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pc_item">
+                                <h2 class="pc_header">
+                                    <button class="pc_btn collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#es2" aria-expanded="false" aria-controls="es2">
+                                        <span class="pc_icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                                                <circle cx="12" cy="12" r="3" />
+                                            </svg>
+                                        </span>
+                                        <span class="pc_name">Descriptive</span>
+                                        <span class="pc_arrow" aria-hidden="true"></span>
+                                    </button>
+                                </h2>
+                                <div id="es2" class="collapse" data-bs-parent="#essayList">
+                                    <div class="pc_body">
+                                        <ol class="pc_topics">
+                                            <li><a href="essay-write.html">Describe a place that feels like home</a>
+                                            </li>
+                                            <li><a href="essay-write.html">Describe a person who inspires you</a></li>
+                                            <li><a href="essay-write.html">Describe a busy market in your city</a></li>
+                                            <li><a href="essay-write.html">Describe a rainy day in Bangladesh</a></li>
+                                            <li><a href="essay-write.html">Describe your favourite season</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pc_item">
+                                <h2 class="pc_header">
+                                    <button class="pc_btn collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#es3" aria-expanded="false" aria-controls="es3">
+                                        <span class="pc_icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 7v14" />
+                                                <path
+                                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                                            </svg>
+                                        </span>
+                                        <span class="pc_name">Narrative</span>
+                                        <span class="pc_arrow" aria-hidden="true"></span>
+                                    </button>
+                                </h2>
+                                <div id="es3" class="collapse" data-bs-parent="#essayList">
+                                    <div class="pc_body">
+                                        <ol class="pc_topics">
+                                            <li><a href="essay-write.html">A day I will never forget</a></li>
+                                            <li><a href="essay-write.html">A lesson I learned from failure</a></li>
+                                            <li><a href="essay-write.html">My first day at a new school</a></li>
+                                            <li><a href="essay-write.html">A journey that changed me</a></li>
+                                            <li><a href="essay-write.html">The best advice I ever received</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pc_item">
+                                <h2 class="pc_header">
+                                    <button class="pc_btn collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#es4" aria-expanded="false" aria-controls="es4">
+                                        <span class="pc_icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 20h9" />
+                                                <path
+                                                    d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
+                                                <path d="m15 5 3 3" />
+                                            </svg>
+                                        </span>
+                                        <span class="pc_name">Opinion</span>
+                                        <span class="pc_arrow" aria-hidden="true"></span>
+                                    </button>
+                                </h2>
+                                <div id="es4" class="collapse" data-bs-parent="#essayList">
+                                    <div class="pc_body">
+                                        <ol class="pc_topics">
+                                            <li><a href="essay-write.html">Social media does more harm than good</a>
+                                            </li>
+                                            <li><a href="essay-write.html">Technology makes people lonely</a></li>
+                                            <li><a href="essay-write.html">Money cannot buy happiness</a></li>
+                                            <li><a href="essay-write.html">Reading books is better than watching
+                                                    films</a></li>
+                                            <li><a href="essay-write.html">Cities are better places to live than
+                                                    villages</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Write your own topic -->
+                    <div class="tab-pane fade" id="paneOwn" role="tabpanel" aria-labelledby="tabOwn" tabindex="0">
+                        <p class="essay_sub">Have a topic in mind? Write about anything you want and get AI feedback.
+                        </p>
+
+                        <form class="essay_form" action="essay-write.html" method="get">
+
+                            <div class="ef_field">
+                                <label for="essayTopic">Essay topic</label>
+                                <input type="text" id="essayTopic" name="topic" maxlength="150" required
+                                    placeholder="e.g. The impact of social media on students">
+                            </div>
+
+                            <!-- Essay type: accordion style -->
+                            <div class="et_field">
+                                <span class="ef_label" id="etTitle">Essay type</span>
+
+                                <div class="pc_item et_item" id="etItem">
+                                    <div class="pc_header">
+                                        <button type="button" class="pc_btn collapsed" id="etBtn"
+                                            data-bs-toggle="collapse" data-bs-target="#etPanel" aria-expanded="false"
+                                            aria-controls="etPanel" aria-labelledby="etTitle etLabel">
+                                            <span class="pc_icon" aria-hidden="true">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+                                                </svg>
+                                            </span>
+                                            <span class="pc_name" id="etLabel">Choose a type</span>
+                                            <span class="pc_arrow" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                    <div id="etPanel" class="collapse">
+                                        <div class="pc_body">
+                                            <ul class="pc_topics et_options" role="radiogroup"
+                                                aria-labelledby="etTitle">
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Argumentative">
+                                                        <span class="et_text">Argumentative</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Descriptive">
+                                                        <span class="et_text">Descriptive</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Narrative">
+                                                        <span class="et_text">Narrative</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Expository">
+                                                        <span class="et_text">Expository</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Opinion">
+                                                        <span class="et_text">Opinion</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="et_opt">
+                                                        <input type="radio" name="type" value="Formal letter">
+                                                        <span class="et_text">Formal letter</span>
+                                                        <svg class="et_check" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="co_error" id="etError" hidden>Please choose an essay type.</p>
+                            </div>
+
+                            <button type="submit" class="s_btn s_btn--dark essay_btn">Start writing</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+
+    <!--main js-->
+    <script src="js/main.js"></script>
+    <!--learn slider-->
+    <script src="js/learn-slider.js"></script>
+    <!--practice js-->
+    <script src="js/practice.js"></script>
+    <!--practice session js-->
+    <script defer src="js/practice-session.js"></script>
+    <!--practice reading js-->
+    <script src="js/practice-reading.js"></script>
+    <!--essay-coach js-->
+    <script src="js/essay-coach.js"></script>
+
+</body>
+
+</html>

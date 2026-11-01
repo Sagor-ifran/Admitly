@@ -2812,9 +2812,9 @@ button {
 
 
 
-/* ---------- Reading comprehension ---------- */
+/* ---Practice Reading com.--- */
 .rc_main {
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .rc_passage {
@@ -2849,7 +2849,6 @@ button {
     border-top: 2px dashed #c9c2bb;
 }
 
-/* Question list */
 .rc_list {
     display: flex;
     flex-direction: column;
@@ -2877,7 +2876,6 @@ button {
     margin-top: 14px;
 }
 
-/* Sticky bar: bam-e count, dan-e Finish */
 .rc_count {
     font-size: 20px;
     font-weight: 700;
@@ -2885,7 +2883,7 @@ button {
 }
 
 .session_bar.rc_bar {
-    max-width: 1000px;
+    max-width: 1200px;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
@@ -2905,5 +2903,508 @@ button {
         flex-direction: row;
         align-items: center;
         padding: 12px 12px 12px 16px;
+    }
+}
+
+
+
+
+/* ---------- Essay Coach ---------- */
+.essay_page {
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.essay_switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    max-width: 520px;
+    margin: 4px auto 22px;
+    padding: 4px;
+    background: var(--primaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+}
+
+.essay_switch .nav-link {
+    padding: 12px 10px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--paracolor);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all linear .3s;
+}
+
+.essay_switch .nav-link:hover {
+    color: var(--black);
+}
+
+.essay_switch .nav-link.active,
+.essay_switch .nav-link:hover {
+    color: var(--white);
+    background: #6f6760;
+}
+
+.essay_switch .nav-link:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.essay_sub {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.essay_list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.essay_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    border: 2px dashed #c9c2bb;
+    border-radius: 20px;
+}
+
+.ef_field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.ef_field input,
+.ef_field select {
+    width: 100%;
+    padding: 14px 16px;
+    font: inherit;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    transition: border-color .25s;
+}
+
+.ef_field input::placeholder {
+    color: #9a938c;
+}
+
+.ef_field input:hover,
+.ef_field select:hover {
+    border-color: #8c857e;
+}
+
+.ef_field input:focus,
+.ef_field select:focus {
+    border: 2px solid var(--black);
+}
+
+.ef_field input:user-invalid,
+.ef_field select:user-invalid {
+    border: 2px solid #d9483b;
+}
+
+.ef_field select {
+    padding-right: 48px;
+    cursor: pointer;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d1d1d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 16px center / 18px;
+}
+
+.ef_field select:invalid {
+    color: #9a938c;      
+}
+
+.ef_field select option {
+    color: var(--black);
+}
+
+.essay_btn {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+    padding: 14px 24px;
+    font-size: 17px;
+}
+
+@media (max-width: 575.98px) {
+    .essay_form {
+        padding: 18px;
+    }
+
+    .essay_switch .nav-link {
+        padding: 11px 6px;
+        font-size: 15px;
+    }
+}
+
+.ef_label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--black);
+}
+
+.et_item.has-value .pc_name {
+    color: var(--black);
+}
+
+.essay_form .pc_item.et_item.is-invalid {
+    border-color: #d9483b;
+}
+
+.et_options {
+    max-height: 240px;
+}
+
+.et_opt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 12px;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--black);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.et_opt:hover {
+    background: var(--white);
+}
+
+.et_opt input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.et_text {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.et_check {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.et_opt:has(input:checked) {
+    font-weight: 600;
+    background: var(--white);
+}
+
+.et_opt:has(input:checked) .et_check {
+    opacity: 1;
+}
+
+.et_opt:has(input:focus-visible) {
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+}
+
+@media (max-width: 768px) {
+    .content-scroll > .session_back {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .essay_switch {
+        grid-template-columns: 1fr;
+        border-radius: 26px;
+    }
+
+    .essay_switch .nav-link {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* ---------- Essay write ---------- */
+.write_page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.write_intro_text {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* Type-er naam (jemon "descriptive") */
+.write_intro_text strong {
+    color: var(--black);
+}
+
+/* Highlight: criteria, word limit ar shomoy (bold + alada rong) */
+.write_intro_text .w_hl {
+    font-weight: 700;
+    color: var(--highlight, #8a5a00);
+}
+
+.write_topic {
+    margin: 18px 0 26px;
+    font-size: clamp(20px, 1.1rem + .6vw, 28px);
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Editor: alada card nai, shudhu textarea */
+.write_card {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.write_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+/* Timer button */
+.wt_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    background: transparent;
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .25s, background .25s, color .25s;
+}
+
+.wt_btn:hover {
+    border-color: var(--black);
+}
+
+.wt_btn:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.wt_btn:disabled {
+    opacity: .7;
+    cursor: default;
+}
+
+.wt_btn svg {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wt_label {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    font-variant-numeric: tabular-nums;
+}
+
+.wt_x {
+    display: none;
+}
+
+.wt_btn.is-running {
+    background: var(--white);
+    border: 2px solid var(--black);
+}
+
+.wt_btn.is-running .wt_x {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.wt_btn.is-over {
+    color: #b3261e;
+    border-color: #d9483b;
+}
+
+.wt_badge {
+    padding: 3px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--paracolor);
+    background: var(--primaryBg);
+    border-radius: 999px;
+}
+
+/* Timer note: shuru-te neutral, shesh 1 minute-e lal */
+.wt_note {
+    margin: -4px 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+.wt_note.is-warn {
+    color: #b3261e;
+}
+
+.wt_note[hidden] {
+    display: none;
+}
+
+/* Textarea */
+.write_area {
+    display: block;
+    width: 100%;
+    min-height: clamp(260px, 45vh, 380px);
+    padding: 16px 18px;
+    font: inherit;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    resize: vertical;
+    transition: border-color .25s;
+}
+
+.write_area::placeholder {
+    color: #9a938c;
+}
+
+.write_area:hover {
+    border-color: #8c857e;
+}
+
+.write_area:focus {
+    border: 2px dashed var(--black);
+}
+
+.write_area[aria-invalid="true"] {
+    border: 2px solid #d9483b;
+}
+
+/* Footer: word count ar autosave */
+.write_foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px 16px;
+    margin-top: 12px;
+    padding: 0 4px;
+}
+
+.wf_left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+}
+
+.wc,
+.wc_range,
+.ws {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+.wc {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.wc.is-ok {
+    color: #1d6b3d;
+}
+
+/* Niche */
+.write_note {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.write_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0 24px;
+}
+
+.write_actions .co_error {
+    margin: 0;
+    text-align: center;
+}
+
+.write_btn {
+    min-width: 220px;
+    padding: 14px 32px;
+    font-size: 17px;
+}
+
+.write_btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+@media (max-width: 575.98px) {
+    .write_area {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .write_btn {
+        width: 100%;
     }
 }
