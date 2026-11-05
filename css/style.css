@@ -3942,7 +3942,6 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Select all button ---------- */
 .mk_toolbar {
     display: flex;
     justify-content: start;
@@ -3990,7 +3989,6 @@ button {
     transition: background .25s, border-color .25s;
 }
 
-/* Kichu select: dash */
 .mk_all.is-some {
     border-color: var(--black);
 }
@@ -4000,7 +3998,6 @@ button {
     border-color: var(--black);
 }
 
-/* Sob select: puro button kalo */
 .mk_all.is-all {
     color: var(--white);
     background: var(--black);
@@ -4012,7 +4009,6 @@ button {
     border-color: var(--white);
 }
 
-/* ---------- Grid: mobile 1, tablet 2, boro screen 3 column ---------- */
 .mk_grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -4049,7 +4045,6 @@ button {
     }
 }
 
-/* ---------- Card ---------- */
 .mk_card {
     background: var(--primaryBg);
     border: 2px dashed #c9c2bb;
@@ -4062,12 +4057,10 @@ button {
     border-color: #8c857e;
 }
 
-/* Select kora card: dashed-i thake, shudhu rong kalo (hover-er pore likha, tai hover-e o kalo thake) */
 .mk_card.is-selected {
     border-color: var(--black);
 }
 
-/* ---------- Checkbox (circle) ---------- */
 .mk_check {
     position: relative;
     display: flex;
@@ -4076,7 +4069,6 @@ button {
     cursor: pointer;
 }
 
-/* Hidden input label-er bhitore-i, tai click korle page jump korbe na */
 .mk_check input {
     position: absolute;
     top: 0;
@@ -4104,7 +4096,6 @@ button {
     border-color: var(--black);
 }
 
-/* Kichu topic select: dash */
 .mk_check input:indeterminate + .mk_box {
     background: var(--black) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 8h8'/%3E%3C/svg%3E") center / 14px no-repeat;
     border-color: var(--black);
@@ -4115,7 +4106,6 @@ button {
     outline-offset: 3px;
 }
 
-/* ---------- Segment header ---------- */
 .mk_head {
     display: flex;
     align-items: center;
@@ -4183,7 +4173,6 @@ button {
     transform: rotate(45deg);
 }
 
-/* ---------- Accordion body (smooth khola/bondho) ---------- */
 .mk_body {
     display: grid;
     grid-template-rows: 0fr;
@@ -4206,7 +4195,6 @@ button {
     transition: visibility 0s;
 }
 
-/* Topic list: eikhane-i scroll */
 .mk_topics {
     max-height: 250px;
     margin: 0;
@@ -4237,7 +4225,6 @@ button {
     counter-increment: mk;
 }
 
-/* Item-er majhe gap, tai select kora background mishe jay na */
 .mk_topics li + li {
     margin-top: 6px;
 }
@@ -4268,12 +4255,10 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Reading / Essay card ---------- */
 .mk_simple {
     padding: 16px 18px;
 }
 
-/* ---------- Nichey sticky bar ---------- */
 .session_bar.mk_bar {
     max-width: 1200px;
 }
@@ -4300,7 +4285,6 @@ button {
     background: var(--black);
 }
 
-/* ---------- Mock exam: Architecture note ---------- */
 .mk_notice {
     display: flex;
     align-items: flex-start;
@@ -4342,7 +4326,6 @@ button {
     color: var(--paracolor);
 }
 
-/* Tablet: Reading ar Essay-er niche puro width-e */
 @media (min-width: 768px) and (max-width: 1399.98px) {
     .mk_notice {
         grid-column: 1 / -1;
@@ -4392,15 +4375,8 @@ button {
     }
 }
 
+/* -- Mock exam test (focus mode)-- */
 
-
-
-
-
-
-/* ---------- Mock exam test (focus mode) ---------- */
-
-/* Sidebar nai, tai content puro width-e */
 @media (min-width: 992px) {
     body.focus_mode .content {
         left: var(--gap);
@@ -4427,7 +4403,6 @@ button {
     cursor: pointer;
 }
 
-/* ---------- Section steps ---------- */
 .mx_steps {
     flex: 1;
     display: flex;
@@ -4503,7 +4478,6 @@ button {
     color: var(--black);
 }
 
-/* ---------- Card (intro, done, empty) ---------- */
 .mx_card {
     margin-top: 36px;
     padding: 32px;
@@ -4637,7 +4611,6 @@ button {
     font-size: 17px;
 }
 
-/* ---------- Test ---------- */
 .mx_sec_head {
     margin: 24px 0 20px;
     padding-bottom: 16px;
@@ -4648,7 +4621,6 @@ button {
     margin-top: 0;
 }
 
-/* Select kora option: solid kalo border (instant result nai) */
 .mx_list .opt.is-selected {
     background: var(--white);
     border: 2px solid var(--black);
@@ -4658,7 +4630,6 @@ button {
     border-color: var(--black);
 }
 
-/* Essay */
 .mx_essay {
     margin-top: 8px;
 }
@@ -4683,7 +4654,6 @@ button {
     color: #b3261e;
 }
 
-/* ---------- Nichey sticky bar: bam-e time, majhe Submit, dan-e count ---------- */
 .session_bar.mx_bar {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -4716,7 +4686,6 @@ button {
     color: inherit;
 }
 
-/* Shesh 5 minute: amber, shesh 1 minute: lal */
 .mx_timer.is-warn {
     color: #8a5a00;
 }
@@ -4751,7 +4720,6 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Done, empty ---------- */
 .mx_page.is-center {
     display: flex;
     flex-direction: column;
@@ -4803,14 +4771,10 @@ button {
     line-height: 1.6;
 }
 
-
-
-
 @media (prefers-reduced-motion: reduce) {
     .mx_done_icon { animation: none; }
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 575.98px) {
     .mx_card {
         margin-top: 24px;
@@ -4857,16 +4821,6 @@ button {
     }
 }
 
-
-
-
-
-
-
-
-
-
-/* ---------- Mock: safety (global p, span rule-er jonno) ---------- */
 .q_title > span,
 .opt_label,
 .rs_value span {
@@ -4876,9 +4830,7 @@ button {
     color: inherit;
 }
 
-/* ---------- Mock test: steps ---------- */
 @media (max-width: 575.98px) {
-    /* Sob section shesh hole, sob step-er naam dekhabe */
     .mx_steps.is-finished .mx_step {
         padding: 5px 12px 5px 6px;
     }
@@ -4888,7 +4840,6 @@ button {
     }
 }
 
-/* ---------- Mock test: essay topic picker ---------- */
 .mx_ehint {
     margin: 0 0 12px;
     font-size: 15px;
@@ -4909,7 +4860,6 @@ button {
     border-color: var(--black);
 }
 
-/* Likha shuru korle choice lock */
 .mx_prompts.is-locked .opt {
     cursor: default;
 }
@@ -4949,7 +4899,6 @@ button {
     line-height: 1.3;
 }
 
-/* Section cards */
 .mr_sections {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5066,9 +5015,9 @@ button {
     margin-top: 28px;
 }
 
+
 /* ---------- Mock review ---------- */
 
-/* Back arrow: top-left corner (.session_back-er style, shudhu button reset) */
 .mr_back {
     padding: 0;
     background: transparent;
@@ -5085,7 +5034,6 @@ button {
     outline-offset: 3px;
 }
 
-/* Mobile-eo review-e back arrow dekhabe (Essay Coach-er hide rule override) */
 @media (max-width: 768px) {
     .content-scroll > .session_back.mr_back {
         display: flex;
@@ -5143,12 +5091,10 @@ button {
     stroke-linejoin: round;
 }
 
-/* Explanation accordion (.explain-er CSS Practice session theke reuse hocche) */
 .mr_list .explain {
     margin-top: 14px;
 }
 
-/* Essay review */
 .mr_essay {
     padding: 24px 28px;
     background: var(--primaryBg);
@@ -5238,11 +5184,6 @@ button {
     }
 }
 
-
-
-
-
-/* ---------- Mock test: wizard ar card-er duto pash-er gap shoman ---------- */
 .mx_top {
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr) 44px;
@@ -5250,7 +5191,6 @@ button {
     gap: 12px;
 }
 
-/* Dan-er faka (back button-er shoman), jate steps card-er thik majhkhane thake */
 .mx_top::after {
     content: "";
 }
@@ -5275,5 +5215,210 @@ button {
 
     .mx_done_btn {
         width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Question bank ---------- */
+.qb_page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+}
+
+.qb_head {
+    margin: 6px 0 22px;
+    text-align: center;
+}
+
+.qb_head h1 {
+    margin: 0 0 6px;
+    font-size: clamp(22px, 1.2rem + .8vw, 30px);
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--black);
+}
+
+.qb_head p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: clamp(15px, .9rem + .2vw, 17px);
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+/* ---------- Rongin tile ---------- */
+.qb_grid {
+    /* Tile-er rong ekhane bodlan. Reference-er ujjol rong chaile niche snippet dekhun. */
+    --c1-bg: #dbe0e6; --c1-line: #aeb7c2;
+    --c2-bg: #ffd9bf; --c2-line: #f0a878;
+    --c3-bg: #cdeedb; --c3-line: #8fcfaa;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 760px;
+    margin: 28px auto 0;
+}
+
+@media (min-width: 768px) {
+    .qb_grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+.qb_grid > li:nth-child(3n+1) { --bg: var(--c1-bg); --line: var(--c1-line); }
+.qb_grid > li:nth-child(3n+2) { --bg: var(--c2-bg); --line: var(--c2-line); }
+.qb_grid > li:nth-child(3n)   { --bg: var(--c3-bg); --line: var(--c3-line); }
+
+.qb_tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 12px;
+    text-align: center;
+    color: var(--black);
+    background: var(--bg);
+    border: 2px dashed var(--line);
+    border-radius: 28px;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.qb_tile:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .qb_tile:hover {
+        border-color: var(--black);
+        transform: translateY(-4px);
+    }
+}
+
+.qb_k {
+    display: block;
+    font-size: clamp(26px, 1.2rem + 1.2vw, 38px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--black);
+}
+
+.qb_v {
+    display: block;
+    font-size: clamp(15px, .9rem + .4vw, 20px);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--black);
+}
+
+/* ---------- Subject list (view page) ---------- */
+.qb_subjects {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    max-width: 1000px;
+    margin: 26px auto 0;
+}
+
+@media (min-width: 768px) {
+    .qb_subjects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 20px;
+    }
+}
+
+.qb_subject {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 17px 20px;
+    background: var(--primaryBg);
+    border: 2px dashed transparent;
+    border-radius: 18px;
+    transition: all linear .3s;
+}
+
+.qb_subject:hover {
+    border-color: #b5ada5;
+}
+
+.qb_subject:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.qb_subject .pc_icon{
+    color: var(--black);
+}
+
+.qb_s_name {
+    flex: 1;
+    min-width: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--paracolor);
+    transition: all linear .3s;
+}
+
+.qb_subject:hover .qb_s_name,
+.qb_subject:focus-visible .qb_s_name {
+    color: var(--black);
+}
+
+.qb_arrow{
+    font-size: 35px;
+    transition: all linear .3s;
+}
+
+.qb_subject:hover .qb_arrow{
+    color: var(--black);
+}
+
+/* Back arrow mobile-eo dekhabe (Essay Coach-er hide rule override) */
+@media (max-width: 768px) {
+    .content-scroll > .session_back.qb_back {
+        display: flex;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .qb_tile {
+        border-radius: 22px;
+    }
+
+    .qb_subject {
+        padding: 12px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qb_tile,
+    .qb_subject,
+    .qb_s_name {
+        transition: none;
+    }
+
+    .qb_tile:hover {
+        transform: none;
     }
 }
