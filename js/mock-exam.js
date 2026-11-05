@@ -1,4 +1,6 @@
-/* Mock exam page (mock-exam.html) */
+/* =========================================================
+   PART 1: Mock exam select page (mock-exam.html)
+   ========================================================= */
 (function () {
     var form = document.getElementById("mockForm");
     if (!form) return;
@@ -157,9 +159,6 @@
 })();
 
 
-
-
-
 /* =========================================================
    PART 2: Mock exam test page (mock-exam-test.html)
    Flow: intro -> test -> submit -> next section intro ... -> done
@@ -188,15 +187,6 @@
         var s = Math.max(0, Math.ceil(ms / 1000));
         var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), r = s % 60;
         return h > 0 ? h + ":" + pad(m) + ":" + pad(r) : pad(m) + ":" + pad(r);
-    }
-
-    function fmtDur(ms) {
-        var s = Math.round(ms / 1000);
-        if (s < 60) return s + " sec";
-        var m = Math.round(s / 60);
-        if (m < 60) return m + " min";
-        var h = Math.floor(m / 60), r = m % 60;
-        return h + "h" + (r ? " " + r + "m" : "");
     }
 
     function shuffle(a) {
@@ -256,7 +246,7 @@
         iInfo: $("mxIInfo"), iNotes: $("mxINotes"), iStart: $("mxStart"),
         tLabel: $("mxTLabel"), tName: $("mxTName"), passage: $("mxPassage"), list: $("mxList"),
         essay: $("mxEssay"), prompts: $("mxPrompts"), eArea: $("mxEArea"), eNote: $("mxENote"),
-        doneH: $("mxDoneH"), doneList: $("mxDoneList"),
+        doneH: $("mxDoneH"),
         barWrap: $("mxBarWrap"), timer: $("mxTimer"), time: $("mxTime"), submit: $("mxSubmit"),
         countNum: $("mxCountNum"), countLabel: $("mxCountLabel"), sr: $("mxSr"),
         cf: $("cfDialog"), cfTitle: $("cfTitle"), cfText: $("cfText"), cfKeep: $("cfKeep"), cfGo: $("cfGo"),
@@ -757,58 +747,12 @@
         }
     }
 
-    // Sob section shesh: summary list
-    function renderDone() {
-        el.doneList.innerHTML = "";
-        state.sections.forEach(function (s) {
-            var li = document.createElement("li");
-            li.className = "mx_dl_row";
-
-            var ico = document.createElement("span");
-            ico.className = "mx_dl_ico";
-            ico.innerHTML = ICON_OK;
-
-            var main = document.createElement("span");
-            main.className = "mx_dl_main";
-
-            var name = document.createElement("span");
-            name.className = "mx_dl_name";
-            name.textContent = s.name;
-
-            var meta = document.createElement("span");
-            meta.className = "mx_dl_meta";
-            var detail;
-            if (s.type === "essay") {
-                var w = countWords(s.essay || "");
-                detail = w + (w === 1 ? " word" : " words");
-            } else {
-                detail = Object.keys(s.answers).length + " of " + s.ids.length + " answered";
-            }
-            meta.textContent = detail + " · " + fmtDur(s.used || 0) + " used";
-
-            main.appendChild(name);
-            main.appendChild(meta);
-
-            if (s.auto) {
-                var tag = document.createElement("span");
-                tag.className = "mx_dl_tag";
-                tag.textContent = "Auto-submitted";
-                main.appendChild(tag);
-            }
-
-            li.appendChild(ico);
-            li.appendChild(main);
-            el.doneList.appendChild(li);
-        });
-    }
-
     function finishAll() {
         state.finished = true;
         guardOn = false;
         save();
         try { localStorage.setItem(KEY_RESULT, JSON.stringify(state)); } catch (e) { }
         renderSteps();
-        renderDone();
         show("done");
         toTop();
         el.doneH.focus({ preventScroll: true });
@@ -866,7 +810,6 @@
         renderSteps();
 
         if (state.finished) {
-            renderDone();
             show("done");
             return;
         }
@@ -887,10 +830,6 @@
         resume();
     }
 })();
-
-
-
-
 
 
 /* =========================================================
@@ -949,11 +888,19 @@
     var ICON_OK = '<svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
     var ICON_NO = '<svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
     var ICON_BM = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+    var ICON_CHEV = '<svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
 
     var emptyEl = $("mrEmpty");
     var reviewEl = $("mrReview");
+    var backBtn = $("mrBack");
     var scroller = document.querySelector(".content-scroll");
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Shurute sob lukano. "No result found" shudhu result na thakle dekhabe.
+    emptyEl.hidden = true;
+    overview.hidden = true;
+    reviewEl.hidden = true;
+    backBtn.hidden = true;
 
     // ===== Result load =====
     var state = null;
@@ -979,7 +926,7 @@
 
     // ===== Hishab =====
     function evaluate(st) {
-        var R = { sections: [], mcqMax: 0, mcqScore: 0, essay: null, total: 0, max: 0, used: 0 };
+        var R = { sections: [], mcqMax: 0, mcqScore: 0, essay: null, total: 0, max: 0 };
 
         st.sections.forEach(function (s) {
             var r = {
@@ -1020,7 +967,6 @@
 
             R.total += r.score;
             R.max += r.max;
-            R.used += r.used;
             R.sections.push(r);
         });
 
@@ -1078,14 +1024,8 @@
 
         card.appendChild(h("p", "mr_meta", "Time: " + fmtDur(r.used) + " of " + r.minutes + " min"));
 
-        var a = h("a", "s_btn s_btn--dark mr_sec_btn");
+        var a = h("a", "s_btn s_btn--dark mr_sec_btn", r.type === "essay" ? "View your essay" : "Review answers");
         a.href = "#review-" + r.key;
-        if (r.type === "essay") {
-            a.textContent = "View your essay";
-        } else {
-            var bad = r.wrong + r.unanswered;
-            a.textContent = bad > 0 ? "Review mistakes (" + bad + ")" : "Review answers";
-        }
         card.appendChild(a);
 
         return card;
@@ -1106,16 +1046,6 @@
         if (R.essay) parts.push("your essay scored " + fmt(R.essay.score) + " out of " + ESSAY_MARKS);
         var text = parts.join(", and ") + ".";
         $("mrSummary").textContent = text.charAt(0).toUpperCase() + text.slice(1);
-
-        // Stat card gulo
-        var cardMcq = $("mrCardMcq"), cardEssay = $("mrCardEssay");
-        cardMcq.hidden = !R.mcqMax;
-        cardEssay.hidden = !R.essay;
-        $("mrStats").classList.toggle("is-two", !R.mcqMax || !R.essay);
-
-        $("mrMcq").textContent = fmt(R.mcqScore) + " / " + fmt(R.mcqMax);
-        if (R.essay) $("mrEssayScore").textContent = fmt(R.essay.score) + " / " + ESSAY_MARKS;
-        $("mrTimeUsed").textContent = fmtDur(R.used);
 
         // Section card
         var box = $("mrSections");
@@ -1153,20 +1083,45 @@
         }
     }
 
-    // ===== Review =====
-    var current = null;
-    var filter = "mistakes";
-
+    // ===== Review: shob question, explanation accordion bondho obosthay =====
     var rList = $("mrRList");
-    var rTools = $("mrTools");
-    var fMist = $("mrFMist");
-    var fAll = $("mrFAll");
-    var rSum = $("mrRSum");
     var essayBox = $("mrEssayBox");
 
     function statusLabel(st) { return st === "ok" ? "Correct" : (st === "bad" ? "Wrong" : "Not answered"); }
 
-    function questionItem(it) {
+    // Explanation accordion (smooth khola/bondho, CSS: .explain)
+    function explainBlock(html, uid) {
+        var sec = h("section", "explain is-collapsed");
+
+        var btn = h("button", "explain_head");
+        btn.type = "button";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-controls", uid);
+        btn.innerHTML = "<span>Explanation</span>" + ICON_CHEV;
+
+        var wrap = h("div", "explain_wrap");
+        var clip = h("div", "explain_clip");
+        var body = h("div", "explain_body");
+        body.id = uid;
+        var scroll = h("div", "explain_scroll");
+        scroll.innerHTML = html;
+
+        body.appendChild(scroll);
+        clip.appendChild(body);
+        wrap.appendChild(clip);
+        sec.appendChild(btn);
+        sec.appendChild(wrap);
+
+        btn.addEventListener("click", function () {
+            var open = sec.classList.contains("is-collapsed");
+            sec.classList.toggle("is-collapsed", !open);
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+
+        return sec;
+    }
+
+    function questionItem(it, key) {
         var li = h("li", "rc_q");
 
         var row = h("div", "q_row");
@@ -1217,56 +1172,17 @@
         li.appendChild(group);
 
         // Explanation (MCQ-te ache, Reading-e nai)
-        if (it.e) {
-            var ex = h("div", "mr_expl");
-            ex.appendChild(h("strong", "", "Explanation"));
-            var body = h("div");
-            body.innerHTML = it.e;
-            ex.appendChild(body);
-            li.appendChild(ex);
-        }
+        if (it.e) li.appendChild(explainBlock(it.e, "mrEx-" + key + "-" + it.n));
 
         return li;
     }
 
-    function renderList() {
-        var r = current;
-        rList.innerHTML = "";
-
-        var shown = 0;
-        r.items.forEach(function (it) {
-            if (filter === "mistakes" && it.status === "ok") return;
-            shown++;
-            rList.appendChild(questionItem(it));
-        });
-
-        if (!shown) {
-            rList.appendChild(h("li", "mr_none", "No mistakes in this section. Great job!"));
-        }
-
-        var bad = r.wrong + r.unanswered;
-        rSum.textContent = filter === "mistakes"
-            ? bad + (bad === 1 ? " question to review" : " questions to review")
-            : r.correct + " correct · " + r.wrong + " wrong · " + r.unanswered + " not answered";
-
-        mathRender(rList);
-    }
-
-    function setFilter(f) {
-        filter = f;
-        fMist.setAttribute("aria-pressed", f === "mistakes" ? "true" : "false");
-        fAll.setAttribute("aria-pressed", f === "all" ? "true" : "false");
-        renderList();
-    }
-
     function showReview(r) {
-        current = r;
         var idx = R.sections.indexOf(r);
         $("mrRLabel").textContent = "Review · Section " + (idx + 1) + " of " + R.sections.length;
         $("mrRName").textContent = r.name;
 
         if (r.type === "essay") {
-            rTools.hidden = true;
             rList.innerHTML = "";
             rList.hidden = true;
 
@@ -1277,22 +1193,22 @@
             essayBox.hidden = false;
         } else {
             essayBox.hidden = true;
-            rTools.hidden = false;
             rList.hidden = false;
-
-            fMist.textContent = "Mistakes (" + (r.wrong + r.unanswered) + ")";
-            fAll.textContent = "All questions (" + r.items.length + ")";
-            setFilter((r.wrong + r.unanswered) > 0 ? "mistakes" : "all");
+            rList.innerHTML = "";
+            r.items.forEach(function (it) { rList.appendChild(questionItem(it, r.key)); });
+            mathRender(rList);
         }
 
         overview.hidden = true;
         reviewEl.hidden = false;
+        backBtn.hidden = false;
         if (scroller) scroller.scrollTop = 0;
         $("mrRName").focus({ preventScroll: true });
     }
 
     function showOverview() {
         reviewEl.hidden = true;
+        backBtn.hidden = true;
         overview.hidden = false;
         if (scroller) scroller.scrollTop = 0;
     }
@@ -1304,10 +1220,7 @@
         if (r) showReview(r); else showOverview();
     }
 
-    fMist.addEventListener("click", function () { setFilter("mistakes"); });
-    fAll.addEventListener("click", function () { setFilter("all"); });
-
-    $("mrBack").addEventListener("click", function () {
+    backBtn.addEventListener("click", function () {
         history.pushState(null, "", location.pathname + location.search);
         route();
     });
@@ -1316,6 +1229,5 @@
     window.addEventListener("popstate", route);
 
     renderOverview();
-    overview.hidden = false;
     route();
 })();

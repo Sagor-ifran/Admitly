@@ -189,6 +189,15 @@
     <!-- Main content -->
     <main class="main_content content">
         <div class="content-scroll session_page">
+
+            <!-- Back arrow: shudhu review dekhar shomoy dekhay, top-left corner-e -->
+            <button type="button" class="session_back mr_back" id="mrBack" aria-label="Back to result" hidden>
+                <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m12 19-7-7 7-7" />
+                    <path d="M19 12H5" />
+                </svg>
+            </button>
+
             <div class="session mr_session">
 
                 <!-- Kono result na thakle -->
@@ -221,43 +230,6 @@
                         </div>
                     </section>
 
-                    <div class="result_stats mr_stats" id="mrStats">
-                        <div class="rs_card rs_card--points" id="mrCardMcq">
-                            <div class="rs_label">MCQ marks</div>
-                            <div class="rs_value">
-                                <svg class="s_icon rs_star" viewBox="0 0 24 24" aria-hidden="true">
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                                </svg>
-                                <span id="mrMcq">0</span>
-                            </div>
-                        </div>
-
-                        <div class="rs_card rs_card--accuracy" id="mrCardEssay">
-                            <div class="rs_label">Essay score</div>
-                            <div class="rs_value">
-                                <svg class="s_icon rs_check" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M12 20h9" />
-                                    <path
-                                        d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
-                                    <path d="m15 5 3 3" />
-                                </svg>
-                                <span id="mrEssayScore">0</span>
-                            </div>
-                        </div>
-
-                        <div class="rs_card rs_card--time">
-                            <div class="rs_label">Time used</div>
-                            <div class="rs_value">
-                                <svg class="s_icon rs_clock" viewBox="0 0 24 24" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <path d="M12 7v5l3 2" />
-                                </svg>
-                                <span id="mrTimeUsed">0</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <h2 class="mr_h">Section results</h2>
                     <div class="mr_sections" id="mrSections"></div>
 
@@ -267,28 +239,11 @@
                     </div>
                 </div>
 
-                <!-- Review (ekটা section-er) -->
+                <!-- Review (ekটা section-er shob question) -->
                 <div class="mr_page" id="mrReview" hidden>
-                    <div class="mr_rhead">
-                        <button type="button" class="mr_back" id="mrBack">
-                            <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="m12 19-7-7 7-7" />
-                                <path d="M19 12H5" />
-                            </svg>
-                            Back to result
-                        </button>
-                        <div class="mr_rtitle">
-                            <p class="mx_label" id="mrRLabel"></p>
-                            <h2 class="mx_h1 mx_h1--sm" id="mrRName" tabindex="-1"></h2>
-                        </div>
-                    </div>
-
-                    <div class="mr_tools" id="mrTools">
-                        <div class="mr_filter" role="group" aria-label="Show questions">
-                            <button type="button" id="mrFMist" aria-pressed="true">Mistakes</button>
-                            <button type="button" id="mrFAll" aria-pressed="false">All questions</button>
-                        </div>
-                        <p class="mr_rsum" id="mrRSum"></p>
+                    <div class="mr_rtitle">
+                        <p class="mx_label" id="mrRLabel"></p>
+                        <h2 class="mx_h1 mx_h1--sm" id="mrRName" tabindex="-1"></h2>
                     </div>
 
                     <ol class="rc_list mr_list" id="mrRList"></ol>
@@ -318,8 +273,6 @@
 
     <!--font-awesome js-->
     <script src="js/Font-Awesome.js"></script>
-    <!--font-awesome js-->
-    <script src="js/mock-exam.js"></script>
 
 
     <!--main js-->

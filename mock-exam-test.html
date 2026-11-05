@@ -25,7 +25,10 @@
                 <!-- Top: exit arrow + section steps -->
                 <div class="mx_top">
                     <button type="button" class="session_back" id="mxExit" aria-label="Exit mock test">
-                        <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+                        <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m12 19-7-7 7-7" />
+                            <path d="M19 12H5" />
+                        </svg>
                     </button>
                     <ol class="mx_steps" id="mxSteps" aria-label="Sections"></ol>
                 </div>
@@ -66,10 +69,12 @@
                         <!-- Essay: duto topic-er ekটা choose kore likhbe -->
                         <div class="mx_essay" id="mxEssay" hidden>
                             <p class="mx_ehint">Choose one topic, then write your essay.</p>
-                            <div class="opts mx_prompts" id="mxPrompts" role="radiogroup" aria-label="Essay topic"></div>
+                            <div class="opts mx_prompts" id="mxPrompts" role="radiogroup" aria-label="Essay topic">
+                            </div>
                             <label for="mxEArea" class="visually-hidden">Your essay</label>
-                            <textarea id="mxEArea" class="write_area" placeholder="Choose a topic above to start writing..."
-                                spellcheck="true" autocomplete="off" disabled></textarea>
+                            <textarea id="mxEArea" class="write_area"
+                                placeholder="Choose a topic above to start writing..." spellcheck="true"
+                                autocomplete="off" disabled></textarea>
                             <p class="mx_enote" id="mxENote" role="status"></p>
                         </div>
                     </section>
@@ -77,15 +82,14 @@
                     <!-- Sob section shesh -->
                     <section class="mx_card mx_done" id="mxDone" hidden aria-labelledby="mxDoneH">
                         <div class="mx_done_icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                         </div>
                         <h1 class="mx_h1 mx_h1--sm" id="mxDoneH" tabindex="-1">All sections submitted</h1>
-                        <p>Well done! Your mock test is complete. Here is a quick summary of what you submitted.</p>
-                        <ul class="mx_done_list" id="mxDoneList"></ul>
-                        <div class="mx_done_actions">
-                            <a href="mock-exam-result.html" class="s_btn s_btn--dark">View result</a>
-                            <a href="mock-exam.html" class="s_btn s_btn--line">Take another test</a>
-                        </div>
+                        <p>Well done! Your mock test is complete. Check your result to see how you did in each section.
+                        </p>
+                        <a href="mock-exam-result.html" class="s_btn s_btn--dark mx_done_btn">View result</a>
                     </section>
                 </div>
 
@@ -93,7 +97,10 @@
                 <div class="session_bar_wrap" id="mxBarWrap" hidden>
                     <div class="session_bar mx_bar">
                         <div class="mx_timer" id="mxTimer" role="timer" aria-label="Time left">
-                            <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 7v5l3 2" /></svg>
+                            <svg class="s_icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 7v5l3 2" />
+                            </svg>
                             <span class="mx_time" id="mxTime">00:00</span>
                         </div>
                         <button type="button" class="s_btn s_btn--dark mx_submit" id="mxSubmit">Submit</button>
@@ -122,7 +129,8 @@
     <!-- Exit confirm -->
     <dialog class="leave_dialog" id="exDialog" aria-labelledby="exTitle">
         <h2 id="exTitle">Leave the mock test?</h2>
-        <p>The timer will not pause while you are away. Your current section will be submitted automatically when time runs out.</p>
+        <p>The timer will not pause while you are away. Your current section will be submitted automatically when time
+            runs out.</p>
         <div class="leave_actions">
             <button type="button" class="s_btn s_btn--line" id="exStay">Stay</button>
             <a href="mock-exam.html" class="s_btn s_btn--dark" id="exLeave">Leave</a>
