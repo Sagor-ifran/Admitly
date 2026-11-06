@@ -5239,7 +5239,7 @@ button {
 }
 
 .qb_head {
-    margin: 6px 0 22px;
+    margin: 6px 0 50px;
     text-align: center;
 }
 
@@ -5259,46 +5259,81 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Rongin tile ---------- */
-.qb_grid {
-    /* Tile-er rong ekhane bodlan. Reference-er ujjol rong chaile niche snippet dekhun. */
-    --c1-bg: #dbe0e6; --c1-line: #aeb7c2;
-    --c2-bg: #ffd9bf; --c2-line: #f0a878;
-    --c3-bg: #cdeedb; --c3-line: #8fcfaa;
 
+
+
+/* ---------- Tile (NSU sketch card) ---------- */
+.qb_grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    max-width: 760px;
+    gap: 14px;
+    max-width: 900px;
     margin: 28px auto 0;
 }
 
-@media (min-width: 768px) {
+/* 576px-er upore ek row-e 4 ta */
+@media (min-width: 576px) {
     .qb_grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
     }
 }
 
-.qb_grid > li:nth-child(3n+1) { --bg: var(--c1-bg); --line: var(--c1-line); }
-.qb_grid > li:nth-child(3n+2) { --bg: var(--c2-bg); --line: var(--c2-line); }
-.qb_grid > li:nth-child(3n)   { --bg: var(--c3-bg); --line: var(--c3-line); }
+@media (min-width: 992px) {
+    .qb_grid {
+        gap: 20px;
+    }
+}
 
 .qb_tile {
+    position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 2px;
     width: 100%;
     aspect-ratio: 1 / 1;
-    padding: 12px;
-    text-align: center;
+    padding: 14px 14px 16px;
+    text-align: left;
     color: var(--black);
-    background: var(--bg);
-    border: 2px dashed var(--line);
-    border-radius: 28px;
+    background: #fff;
+    border: 2px dashed #c9c2bb;
+    border-radius: 24px;
+    overflow: hidden;
     transition: transform .25s ease, border-color .25s ease;
+}
+
+/* Sketch image (HTML-er <img>). Global img rule !important, tai ekhane-o !important lagche */
+.qb_tile .qb_img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+    mix-blend-mode: multiply;      /* jpg-er off-white background shada tile-e mishe jay */
+    transition: transform .6s ease;
+}
+
+/* Logo: majhkhane, chhoto, kete na jay (contain) */
+
+
+/* Nichey shada fade: sketch-er upor kalo text porar jonno */
+.qb_tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, .97) 0%,
+        rgba(255, 255, 255, .9) 26%,
+        rgba(255, 255, 255, .45) 46%,
+        rgba(255, 255, 255, 0) 66%
+    );
 }
 
 .qb_tile:focus-visible {
@@ -5311,23 +5346,49 @@ button {
         border-color: var(--black);
         transform: translateY(-4px);
     }
+
+    .qb_tile:hover .qb_img {
+        transform: scale(1.06);
+    }
 }
 
 .qb_k {
     display: block;
-    font-size: clamp(26px, 1.2rem + 1.2vw, 38px);
+    font-size: clamp(22px, .9rem + 1vw, 30px);
     font-weight: 800;
     line-height: 1.1;
     color: var(--black);
+    text-shadow: 0 0 10px rgba(255, 255, 255, .9);
 }
 
 .qb_v {
     display: block;
-    font-size: clamp(15px, .9rem + .4vw, 20px);
+    font-size: clamp(14px, .85rem + .3vw, 17px);
     font-weight: 700;
     line-height: 1.3;
     color: var(--black);
+    text-shadow: 0 0 10px rgba(255, 255, 255, .9);
 }
+
+@media (max-width: 575.98px) {
+    .qb_tile {
+        border-radius: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qb_tile,
+    .qb_tile .qb_img {
+        transition: none;
+    }
+
+    .qb_tile:hover,
+    .qb_tile:hover .qb_img {
+        transform: none;
+    }
+}
+
+
 
 /* ---------- Subject list (view page) ---------- */
 .qb_subjects {
