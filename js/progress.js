@@ -9,7 +9,6 @@
     var COUNT_DURATION = 1800;   // number 0 theke koto ms-e count-up hobe (boro korle aro slow)
     var BAR_DURATION = 1800;     // bar 0 theke koto ms-e bhorbe
     var BAR_STAGGER = 180;       // prottek subject-er majhe koto ms deri
-    var TOPICS_VISIBLE = 5;      // Topics to improve-e prothome koyta item dekhabe, tar por scroll
 
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var hasIO = "IntersectionObserver" in window;
@@ -104,45 +103,4 @@
             listCounts.forEach(countUp);
         });
     }
-
-    // ---------- Topics to improve: prothom 5 ta, baki scroll ----------
-    var topics = page.querySelector(".pg_topics");
-
-    function limitTopics() {
-        if (!topics) return;
-        var items = topics.children;
-
-        if (items.length <= TOPICS_VISIBLE) {
-            topics.classList.remove("is-scroll");
-            topics.style.maxHeight = "";
-            topics.removeAttribute("tabindex");
-            topics.removeAttribute("role");
-            topics.removeAttribute("aria-label");
-            return;
-        }
-
-        topics.classList.add("is-scroll");
-
-        // 2 bar: scrollbar ashle content ektu soru hoy, tai abar mepe nei
-        for (var k = 0; k < 2; k++) {
-            topics.style.maxHeight = "";
-            var last = items[TOPICS_VISIBLE - 1];
-            var h = last.offsetTop + last.offsetHeight - items[0].offsetTop;
-            topics.style.maxHeight = Math.max(0, h - 2) + "px";
-        }
-
-        topics.tabIndex = 0;     // keyboard diye scroll korar jonno
-        topics.setAttribute("role", "region");
-        topics.setAttribute("aria-label", "Topics to improve, scrollable list");
-    }
-
-    limitTopics();
-    window.addEventListener("load", limitTopics);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(limitTopics);
-
-    var rt = null;
-    window.addEventListener("resize", function () {
-        clearTimeout(rt);
-        rt = setTimeout(limitTopics, 150);
-    });
 })();
