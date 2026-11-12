@@ -6568,166 +6568,48 @@ button {
 }
 
 @media (min-width: 768px) {
-    .content-scroll.session_page.dh_scroll { padding: 28px 32px 36px; }
+    .content-scroll.session_page.dh_scroll {
+        padding: 28px 32px 36px;
+    }
 }
 
 @media (min-width: 1200px) {
-    .content-scroll.session_page.dh_scroll { padding: 44px; }
+    .content-scroll.session_page.dh_scroll {
+        padding: 44px;
+    }
 }
 
 .dh_page {
     width: 100%;
 }
 
-/* Sob icon-er common style (size alada kore deya ache) */
-.dh_page svg {
-    flex: 0 0 auto;
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
 
-/* ---------- Layout ---------- */
-.dh_top {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    align-items: stretch;
-}
 
-.dh_main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0;
-}
 
-.dh_side {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    align-content: start;
-    min-width: 0;
-}
+/* Quick links */
 
-.dh_pair {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.dh_bottom {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Boro screen: bam-e main, dan-e side */
-@media (min-width: 1500px) {
-    .dh_top {
-        grid-template-columns: minmax(0, 1fr) 380px;
-        gap: 24px;
-    }
-
-    .dh_side {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto 1fr;
-    }
-}
-
-@media (min-width: 768px) {
-    .dh_bottom {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .dh_promo {
-        grid-column: 1 / -1;
-    }
-}
-
-@media (min-width: 1400px) {
-    .dh_bottom {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .dh_promo {
-        grid-column: auto;
-    }
-}
-
-.dh_title {
-    margin: 0;
-    font-size: clamp(22px, 1.2rem + .8vw, 30px);
-    font-weight: 800;
-    line-height: 1.3;
-    color: var(--black);
-}
-
-/* ---------- Quick tiles ---------- */
 .dh_quick {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
 
-.dh_quick > .dh_tile:last-child {
+.dh_quick>.dh_tile:last-child {
     grid-column: 1 / -1;
 }
 
-@media (min-width: 576px) {
-    .dh_quick {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-
-    .dh_quick > .dh_tile {
-        grid-column: span 2;
-    }
-
-    .dh_quick > .dh_tile:nth-child(n+4) {
-        grid-column: span 3;
-    }
-}
-
-@media (min-width: 1200px) {
-    .dh_quick {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    .dh_quick > .dh_tile,
-    .dh_quick > .dh_tile:nth-child(n+4) {
-        grid-column: auto;
-    }
-}
-
 .dh_tile {
-    --ti: #dcecf7;
-    --tk: #144a6e;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 18px 10px;
+    padding: 20px 10px;
     text-align: center;
-    background: var(--primaryBg);
+    background: var(--white);
     border: 2px dashed #c9c2bb;
     border-radius: 20px;
-    transition: transform .25s ease, border-color .25s ease;
-}
-
-.dh_quick > .dh_tile:nth-child(2) { --ti: #fbecc8; --tk: #6b4400; }
-.dh_quick > .dh_tile:nth-child(3) { --ti: #d9f3e3; --tk: #14522c; }
-.dh_quick > .dh_tile:nth-child(4) { --ti: #e7e3f6; --tk: #3b2f7a; }
-.dh_quick > .dh_tile:nth-child(5) { --ti: #fcebe9; --tk: #7a1f17; }
-
-.dh_tile:focus-visible {
-    outline: 2px solid var(--black);
-    outline-offset: 3px;
+    transition: all linear .3s;
 }
 
 @media (hover: hover) {
@@ -6743,22 +6625,237 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--tk);
-    background: var(--ti);
-    border-radius: 50%;
 }
 
 .dh_tile_ico svg {
-    width: 24px;
-    height: 24px;
+    width: 48px !important;
+    height: 48px !important;
+    stroke: inherit !important;
 }
 
 .dh_tile_txt {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 22px;
+    margin-top: 10px;
     color: var(--black);
 }
+
+@media (max-width: 575.98px) {
+
+    .dh_tile_ico svg {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .dh_tile_txt {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) {
+    .dh_quick {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .dh_quick>.dh_tile {
+        grid-column: span 2;
+    }
+
+    .dh_quick>.dh_tile:nth-child(n+4) {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .dh_quick {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .dh_quick>.dh_tile,
+    .dh_quick>.dh_tile:nth-child(n+4) {
+        grid-column: auto;
+    }
+}
+
+
+
+
+/* Daily study goal */
+
+.dh_goal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 22px;
+    padding: 18px 22px;
+    background: ;
+    border: 2px dashed var(--black);
+    border-radius: 20px;
+}
+
+.dh_ring {
+    --p: 0;
+    position: relative;
+    flex: 0 0 auto;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(
+        from 0deg,
+        #E56B91 0%,
+        #F08A7A calc(var(--p) * 1%),
+        #ddd7d1 calc(var(--p) * 1%)
+    );
+    border-radius: 50%;
+}
+
+.dh_ring::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    background: var(--primaryBg);
+    border-radius: 50%;
+}
+
+.dh_ring_in {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+    line-height: 1;
+}
+
+.dh_ring_in strong {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.dh_ring_in span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--paracolor);
+}
+
+.dh_goal_txt {
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.dh_goal_p {
+    margin: 2px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+.dh_streak {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--white);
+    border-radius: 999px;
+}
+
+.dh_streak svg {
+    width: 22px;
+    height: 22px;
+    fill: #f2b01e;
+    stroke: #e0861a;
+}
+
+.dh_streak_t {
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--black);
+    white-space: nowrap;
+}
+
+.dh_streak_t strong {
+    font-weight: 800;
+}
+
+.dh_goal_btn {
+    padding: 12px 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Sob icon-er common style (size alada kore deya ache) */
+.dh_page svg {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+
+/* ---------- Layout ---------- */
+.dh_top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* Bam column */
+.dh_main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+/* Dan column: leaderboard, recent, premium. Mobile-e DOM order-e shobar niche ashe */
+.dh_side {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 20px;
+    align-content: start;
+    min-width: 0;
+}
+
+.dh_side .dh_promo {
+    grid-column: 1 / -1;
+}
+
+.dh_pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 20px;
+}
+
+/* Boro screen: bam-e main, dan-e 3 ta card */
+@media (min-width: 1400px) {
+    .dh_top {
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 24px;
+    }
+
+    .dh_side {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
 
 /* ---------- Card (common) ---------- */
 .dh_card {
@@ -6838,101 +6935,7 @@ button {
     color: var(--paracolor);
 }
 
-/* ---------- Daily study goal ---------- */
-.dh_goal {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 16px 22px;
-    padding: 18px 22px;
-    background: var(--primaryBg);
-    border: 2px dashed #c9c2bb;
-    border-radius: 20px;
-}
 
-.dh_ring {
-    --p: 0;
-    position: relative;
-    flex: 0 0 auto;
-    width: 76px;
-    height: 76px;
-    display: grid;
-    place-items: center;
-    background: conic-gradient(var(--black) calc(var(--p) * 1%), #ddd7d1 0);
-    border-radius: 50%;
-}
-
-.dh_ring::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    background: var(--primaryBg);
-    border-radius: 50%;
-}
-
-.dh_ring_in {
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    gap: 1px;
-    line-height: 1;
-}
-
-.dh_ring_in strong {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--black);
-}
-
-.dh_ring_in span {
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    color: var(--paracolor);
-}
-
-.dh_goal_txt {
-    flex: 1 1 220px;
-    min-width: 0;
-}
-
-.dh_goal_p {
-    margin: 2px 0 0;
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--paracolor);
-}
-
-.dh_streak {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: var(--white);
-    border-radius: 999px;
-}
-
-.dh_streak svg {
-    width: 22px;
-    height: 22px;
-    fill: #f2b01e;
-    stroke: #e0861a;
-}
-
-.dh_streak_t {
-    font-size: 15px;
-    line-height: 1.3;
-    color: var(--black);
-    white-space: nowrap;
-}
-
-.dh_streak_t strong {
-    font-weight: 800;
-}
-
-.dh_goal_btn {
-    padding: 12px 24px;
-}
 
 /* ---------- Weekly points chart (CSS only) ---------- */
 .dh_chart {
@@ -6996,11 +6999,9 @@ button {
     width: min(100%, 45px);
     height: var(--h);
     min-height: 4px;
-    background: linear-gradient(
-    180deg,
-    #F08A7A 0%,
-    #E56B91 100%
-    );
+    background: linear-gradient(180deg,
+            #F08A7A 0%,
+            #E56B91 100%);
     border-radius: 8px 8px 0 0;
 }
 
@@ -7051,11 +7052,16 @@ button {
 }
 
 @keyframes dhGrow {
-    from { height: 0; min-height: 0; }
+    from {
+        height: 0;
+        min-height: 0;
+    }
 }
 
 @keyframes dhFade {
-    from { opacity: 0; }
+    from {
+        opacity: 0;
+    }
 }
 
 /* ---------- Calendar ---------- */
@@ -7138,11 +7144,29 @@ button {
     font-variant-numeric: tabular-nums;
 }
 
-.dh_day.l1, .dh_sw.l1 { background: #d9f3e3; }
-.dh_day.l2, .dh_sw.l2 { background: #a8dfbf; }
-.dh_day.l3, .dh_sw.l3 { background: #5dbd86; }
-.dh_day.l4, .dh_sw.l4 { background: #1d6b3d; }
-.dh_day.l4 { color: #fff; }
+.dh_day.l1,
+.dh_sw.l1 {
+    background: #d9f3e3;
+}
+
+.dh_day.l2,
+.dh_sw.l2 {
+    background: #a8dfbf;
+}
+
+.dh_day.l3,
+.dh_sw.l3 {
+    background: #5dbd86;
+}
+
+.dh_day.l4,
+.dh_sw.l4 {
+    background: #1d6b3d;
+}
+
+.dh_day.l4 {
+    color: #fff;
+}
 
 .dh_day.is-future {
     color: #a29b94;
@@ -7186,8 +7210,14 @@ button {
     border-radius: 4px;
 }
 
-.dh_sw.l0 { background: #e4dfd9; }
-.dh_sw.is-today { background: var(--black); border-radius: 50%; }
+.dh_sw.l0 {
+    background: #e4dfd9;
+}
+
+.dh_sw.is-today {
+    background: var(--black);
+    border-radius: 50%;
+}
 
 /* ---------- Leaderboard preview ---------- */
 .dh_lb {
@@ -7526,6 +7556,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .dh_tile,
     .dh_go,
     .dh_nav,
@@ -7536,5 +7567,248 @@ button {
 
     .dh_tile:hover {
         transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Dashboard: prottek card-er alada background ---------- */
+/* Background bodlate shudhu oi card-er class-e --card-bg bodlan. Tile-e --ti (icon-er circle) ar --tk (icon) o ache. */
+.dh_card {
+    background: var(--card-bg, var(--primaryBg));
+}
+
+.dh_ring::before {
+    background: var(--card-bg, var(--primaryBg));
+}
+
+/* Card */
+.dh_c_goal {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_weekly {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_calendar {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_special {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_upcoming {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_leaderboard {
+    --card-bg: #f0ede9;
+}
+
+.dh_c_recent {
+    --card-bg: #f0ede9;
+}
+
+
+
+/* Premium card-er background gradient: .dh_promo rule-e (shesh-er dike) bodlan */
+
+/* ---------- Daily goal: Edit ---------- */
+.dh_goal_head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+}
+
+.dh_edit {
+    padding: 2px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--black);
+    background: transparent;
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.dh_edit:hover {
+    border-color: var(--black);
+}
+
+.dh_edit[aria-expanded="true"] {
+    color: #fff;
+    background: var(--black);
+    border-color: var(--black);
+}
+
+.dh_edit:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+/* Edit panel: puro width-e, card-er niche */
+.dh_goal_edit {
+    flex: 0 0 100%;
+}
+
+.dh_goal_form {
+    padding-top: 16px;
+    border-top: 2px dashed #c9c2bb;
+}
+
+.dh_goal_set {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.dh_goal_leg {
+    float: none;
+    width: auto;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--paracolor);
+}
+
+.dh_goal_opts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.dh_opt {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+/* Hidden radio label-er bhitore-i, tai click korle page jump korbe na */
+.dh_opt input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dh_opt_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 6px;
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    transition: all .25s;
+}
+
+.dh_opt_n {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--black);
+}
+
+.dh_opt_l {
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--paracolor);
+}
+
+.dh_opt:hover .dh_opt_box {
+    border-color: #8c857e;
+}
+
+.dh_opt input:checked+.dh_opt_box {
+    background: var(--black);
+    border: 2px solid var(--black);
+}
+
+.dh_opt input:checked+.dh_opt_box .dh_opt_n {
+    color: #fff;
+}
+
+.dh_opt input:checked+.dh_opt_box .dh_opt_l {
+    color: rgba(255, 255, 255, .75);
+}
+
+.dh_opt input:focus-visible+.dh_opt_box {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.dh_goal_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.dh_goal_actions .s_btn {
+    padding: 10px 24px;
+}
+
+@media (max-width: 479.98px) {
+    .dh_goal_opts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dh_goal_actions .s_btn {
+        flex: 1;
+    }
+}
+
+/* ---------- Calendar carousel ---------- */
+.dh_carousel .dh_sub {
+    margin: 0 0 12px;
+}
+
+/* <button> hishebe, tai reset */
+button.dh_nav {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Prev/next shesh-e disabled */
+.dh_nav:disabled {
+    opacity: .35;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* 6 row sob month-e, jate height na bodlay (5 row-er month-e shesh row faka) */
+.dh_day.is-pad {
+    visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dh_edit,
+    .dh_opt_box {
+        transition: none;
     }
 }
