@@ -276,7 +276,7 @@
 
                             <div class="dh_goal_txt">
                                 <div class="dh_goal_head">
-                                    <h2 class="dh_h" id="dhGoalH">Daily study goal</h2>
+                                    <h3 class="dh_h" id="dhGoalH">Daily study goal</h3>
                                     <button type="button" class="dh_edit" id="dhGoalEditBtn" data-bs-toggle="collapse"
                                         data-bs-target="#dhGoalEdit" aria-expanded="false"
                                         aria-controls="dhGoalEdit">Edit</button>
@@ -301,19 +301,38 @@
                                     <fieldset class="dh_goal_set">
                                         <legend class="dh_goal_leg">Questions per day</legend>
                                         <div class="dh_goal_opts">
-                                            <label class="dh_opt"><input type="radio" name="daily_goal" value="5"><span
-                                                    class="dh_opt_box"><span class="dh_opt_n">5</span><span
-                                                        class="dh_opt_l">questions</span></span></label>
-                                            <label class="dh_opt"><input type="radio" name="daily_goal" value="10"
-                                                    checked><span class="dh_opt_box"><span
-                                                        class="dh_opt_n">10</span><span
-                                                        class="dh_opt_l">questions</span></span></label>
-                                            <label class="dh_opt"><input type="radio" name="daily_goal" value="20"><span
-                                                    class="dh_opt_box"><span class="dh_opt_n">20</span><span
-                                                        class="dh_opt_l">questions</span></span></label>
-                                            <label class="dh_opt"><input type="radio" name="daily_goal" value="30"><span
-                                                    class="dh_opt_box"><span class="dh_opt_n">30</span><span
-                                                        class="dh_opt_l">questions</span></span></label>
+
+                                            <label class="dh_opt">
+                                                <input type="radio" name="daily_goal" value="10" checked>
+                                                <span class="dh_opt_box">
+                                                    <span class="dh_opt_n">10</span>
+                                                    <span class="dh_opt_l">questions</span>
+                                                </span>
+                                            </label>
+
+                                            <label class="dh_opt">
+                                                <input type="radio" name="daily_goal" value="20">
+                                                <span class="dh_opt_box">
+                                                    <span class="dh_opt_n">20</span>
+                                                    <span class="dh_opt_l">questions</span>
+                                                </span>
+                                            </label>
+
+                                            <label class="dh_opt">
+                                                <input type="radio" name="daily_goal" value="40">
+                                                <span class="dh_opt_box">
+                                                    <span class="dh_opt_n">40</span>
+                                                    <span class="dh_opt_l">questions</span>
+                                                </span>
+                                            </label>
+
+                                            <label class="dh_opt">
+                                                <input type="radio" name="daily_goal" value="50">
+                                                <span class="dh_opt_box">
+                                                    <span class="dh_opt_n">50</span>
+                                                    <span class="dh_opt_l">questions</span>
+                                                </span>
+                                            </label>
                                         </div>
                                     </fieldset>
                                     <div class="dh_goal_actions">
@@ -333,7 +352,7 @@
                             <section class="dh_card dh_c_weekly" aria-labelledby="dhWeekH">
                                 <div class="dh_card_head">
                                     <div>
-                                        <h2 class="dh_h" id="dhWeekH">Weekly points earned</h2>
+                                        <h3 class="dh_h" id="dhWeekH">Weekly points earned</h3>
                                         <p class="dh_sub">Last 7 days</p>
                                     </div>
                                     <span class="dh_chip">78 pts</span>
@@ -341,6 +360,7 @@
 
                                 <div class="dh_chart">
                                     <ul class="dh_yaxis" aria-hidden="true">
+                                        <li>40</li>
                                         <li>30</li>
                                         <li>20</li>
                                         <li>10</li>
@@ -348,27 +368,27 @@
                                     </ul>
                                     <div class="dh_plot">
                                         <ol class="dh_bars" aria-label="Points earned in the last 7 days">
-                                            <li class="dh_bar" style="--h:40%;--i:0"><span class="dh_bar_fill"
-                                                    data-v="12"></span><span class="visually-hidden">Fri: 12
+                                            <li class="dh_bar" style="--h:45%;--i:0"><span class="dh_bar_fill"
+                                                    data-v="18"></span><span class="visually-hidden">Fri: 18
                                                     points</span></li>
-                                            <li class="dh_bar" style="--h:0%;--i:1"><span class="dh_bar_fill"
-                                                    data-v="0"></span><span class="visually-hidden">Sat: 0 points</span>
+                                            <li class="dh_bar" style="--h:70%;--i:1"><span class="dh_bar_fill"
+                                                    data-v="28"></span><span class="visually-hidden">Sat: 28 points</span>
                                             </li>
-                                            <li class="dh_bar" style="--h:20%;--i:2"><span class="dh_bar_fill"
-                                                    data-v="6"></span><span class="visually-hidden">Sun: 6 points</span>
+                                            <li class="dh_bar" style="--h:95%;--i:2"><span class="dh_bar_fill"
+                                                    data-v="38"></span><span class="visually-hidden">Sun: 38 points</span>
                                             </li>
-                                            <li class="dh_bar" style="--h:60%;--i:3"><span class="dh_bar_fill"
-                                                    data-v="18"></span><span class="visually-hidden">Mon: 18
+                                            <li class="dh_bar" style="--h:70%;--i:3"><span class="dh_bar_fill"
+                                                    data-v="28"></span><span class="visually-hidden">Mon: 28
                                                     points</span></li>
-                                            <li class="dh_bar" style="--h:87%;--i:4"><span class="dh_bar_fill"
-                                                    data-v="26"></span><span class="visually-hidden">Tue: 26
+                                            <li class="dh_bar" style="--h:45%;--i:4"><span class="dh_bar_fill"
+                                                    data-v="18"></span><span class="visually-hidden">Tue: 18
                                                     points</span></li>
-                                            <li class="dh_bar" style="--h:37%;--i:5"><span class="dh_bar_fill"
+                                            <li class="dh_bar" style="--h:30%;--i:5"><span class="dh_bar_fill"
                                                     data-v="11"></span><span class="visually-hidden">Wed: 11
                                                     points</span></li>
-                                            <li class="dh_bar is-today" style="--h:17%;--i:6"><span class="dh_bar_fill"
-                                                    data-v="5"></span><span class="visually-hidden">Today: 5
-                                                    points</span></li>
+                                            <li class="dh_bar is-today" style="--h:20%;--i:6"><span
+                                                    class="dh_bar_fill" data-v="7"></span><span
+                                                    class="visually-hidden">Today: 7 points</span></li>
                                         </ol>
                                         <div class="dh_days" aria-hidden="true">
                                             <span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span
@@ -378,10 +398,10 @@
                                 </div>
                             </section>
 
-                            <!-- Calendar: Bootstrap carousel (Sep, Oct, Nov). Next arrow shesh month-e disabled -->
+
                             <section class="dh_card dh_c_calendar" aria-labelledby="dhCalH">
                                 <div class="dh_card_head">
-                                    <h2 class="dh_h" id="dhCalH">Daily study activity</h2>
+                                    <h3 class="dh_h" id="dhCalH">Daily study activity</h3>
                                 </div>
 
                                 <div id="dhCalCarousel" class="carousel slide carousel-fade dh_carousel"

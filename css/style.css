@@ -6575,7 +6575,7 @@ button {
 
 @media (min-width: 1200px) {
     .content-scroll.session_page.dh_scroll {
-        padding: 44px;
+        padding: 21px 27px 29px 27px;
     }
 }
 
@@ -6688,8 +6688,7 @@ button {
     flex-wrap: wrap;
     align-items: center;
     gap: 16px 22px;
-    padding: 18px 22px;
-    background: ;
+    padding: 16px 20px;
     border: 2px dashed var(--black);
     border-radius: 20px;
 }
@@ -6698,23 +6697,21 @@ button {
     --p: 0;
     position: relative;
     flex: 0 0 auto;
-    width: 76px;
-    height: 76px;
+    width: 120px;
+    height: 120px;
     display: grid;
     place-items: center;
-    background: conic-gradient(
-        from 0deg,
-        #E56B91 0%,
-        #F08A7A calc(var(--p) * 1%),
-        #ddd7d1 calc(var(--p) * 1%)
-    );
+    background: conic-gradient(from 0deg,
+            #E56B91 0%,
+            #F08A7A calc(var(--p) * 1%),
+            #ddd7d1 calc(var(--p) * 1%));
     border-radius: 50%;
 }
 
 .dh_ring::before {
     content: "";
     position: absolute;
-    inset: 8px;
+    inset: 15px;
     background: var(--primaryBg);
     border-radius: 50%;
 }
@@ -6746,8 +6743,8 @@ button {
 }
 
 .dh_goal_p {
-    margin: 2px 0 0;
-    font-size: 15px;
+    margin: 10px 0 0;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--paracolor);
 }
@@ -6762,14 +6759,14 @@ button {
 }
 
 .dh_streak svg {
-    width: 22px;
-    height: 22px;
-    fill: #f2b01e;
-    stroke: #e0861a;
+    width: 25px !important;
+    height: 25px !important;
+    fill: #f2b01e !important;
+    stroke: #e0861a !important;
 }
 
 .dh_streak_t {
-    font-size: 15px;
+    font-size: clamp(16px, 1.5vw, 20px);
     line-height: 1.3;
     color: var(--black);
     white-space: nowrap;
@@ -6782,6 +6779,196 @@ button {
 .dh_goal_btn {
     padding: 12px 24px;
 }
+
+.dh_goal_head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+}
+
+.dh_edit {
+    padding: 2px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--black);
+    background: transparent;
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.dh_edit:hover {
+    border-color: var(--black);
+}
+
+.dh_edit[aria-expanded="true"] {
+    color: #fff;
+    background: var(--black);
+    border-color: var(--black);
+}
+
+.dh_edit:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+
+
+
+/* Edit panel: puro width-e, card-er niche */
+.dh_goal_edit {
+    flex: 0 0 100%;
+}
+
+.dh_goal_form {
+    padding-top: 16px;
+    border-top: 2px dashed #c9c2bb;
+}
+
+.dh_goal_set {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.dh_goal_leg {
+    float: none;
+    width: auto;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--paracolor);
+}
+
+.dh_goal_opts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.dh_opt {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+/* Hidden radio label-er bhitore-i, tai click korle page jump korbe na */
+.dh_opt input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dh_opt_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 6px;
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    transition: all .25s;
+}
+
+.dh_opt_n {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--black);
+}
+
+.dh_opt_l {
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--paracolor);
+}
+
+.dh_opt:hover .dh_opt_box {
+    border-color: #8c857e;
+}
+
+.dh_opt input:checked+.dh_opt_box {
+    background: var(--black);
+    border: 2px solid var(--black);
+}
+
+.dh_opt input:checked+.dh_opt_box .dh_opt_n {
+    color: #fff;
+}
+
+.dh_opt input:checked+.dh_opt_box .dh_opt_l {
+    color: rgba(255, 255, 255, .75);
+}
+
+.dh_opt input:focus-visible+.dh_opt_box {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.dh_goal_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.dh_goal_actions .s_btn {
+    padding: 10px 24px;
+}
+
+@media (max-width: 479.98px) {
+    .dh_goal_opts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dh_goal_actions .s_btn {
+        flex: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dh_edit,
+    .dh_opt_box {
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6820,6 +7007,7 @@ button {
 .dh_main {
     display: flex;
     flex-direction: column;
+    container-type: inline-size;
     gap: 20px;
     min-width: 0;
 }
@@ -6837,10 +7025,17 @@ button {
     grid-column: 1 / -1;
 }
 
+
 .dh_pair {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
+}
+
+@container (min-width: 720px) {
+    .dh_pair {
+        grid-template-columns: minmax(0, 8fr) minmax(0, 6fr);
+    }
 }
 
 /* Boro screen: bam-e main, dan-e 3 ta card */
@@ -6872,12 +7067,11 @@ button {
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 16px;
 }
 
 .dh_h {
     margin: 0;
-    font-size: 18px;
+    font-size: clamp(18px, 1.5vw, 22px);
     font-weight: 700;
     line-height: 1.3;
     color: var(--black);
@@ -6938,13 +7132,18 @@ button {
 
 
 /* ---------- Weekly points chart (CSS only) ---------- */
+
+.dh_c_weekly {
+    background: var(--white) !important;
+}
+
 .dh_chart {
-    --ch: 200px;
+    --ch: 250px;
     display: grid;
     grid-template-columns: 30px minmax(0, 1fr);
     gap: 10px;
     margin: auto 0;
-    padding-top: 22px;
+    padding-top: 34px;
 }
 
 .dh_yaxis {
@@ -6981,10 +7180,10 @@ button {
     margin: 0;
     padding: 0;
     list-style: none;
-    background-image: var(--dash), var(--dash), var(--dash), var(--dash);
+    background-image: var(--dash), var(--dash), var(--dash), var(--dash), var(--dash);
     background-size: 100% 1px;
     background-repeat: no-repeat;
-    background-position: 0 0, 0 33.333%, 0 66.667%, 0 100%;
+    background-position: 0 0, 0 25%, 0 50%, 0 75%, 0 100%;
 }
 
 .dh_bar {
@@ -6996,13 +7195,13 @@ button {
 .dh_bar_fill {
     position: relative;
     display: block;
-    width: min(100%, 45px);
+    width: min(100%, 62px);
     height: var(--h);
     min-height: 4px;
     background: linear-gradient(180deg,
             #F08A7A 0%,
             #E56B91 100%);
-    border-radius: 8px 8px 0 0;
+    border-radius: 10px;
 }
 
 .dh_bar_fill::before {
@@ -7065,6 +7264,15 @@ button {
 }
 
 /* ---------- Calendar ---------- */
+.dh_c_calendar {
+    background: var(--white) !important;
+}
+
+
+.dh_carousel .dh_sub {
+    margin: 0 0 15px;
+}
+
 .dh_cal_nav {
     display: flex;
     align-items: center;
@@ -7114,29 +7322,29 @@ button {
 }
 
 .dh_wk span {
-    padding-bottom: 6px;
-    font-size: 12px;
+    padding-bottom: 10px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1;
     text-align: center;
     color: var(--paracolor);
 }
 
 .dh_cal {
-    gap: 6px 0;
+    gap: 10px 0;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .dh_day {
-    width: min(100%, 38px);
+    width: min(100%, 44px);
     aspect-ratio: 1;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1;
     color: var(--black);
@@ -7144,24 +7352,20 @@ button {
     font-variant-numeric: tabular-nums;
 }
 
-.dh_day.l1,
-.dh_sw.l1 {
-    background: #d9f3e3;
+.dh_day.l1, .dh_sw.l1 {
+    background: #D1E4E2;
 }
 
-.dh_day.l2,
-.dh_sw.l2 {
-    background: #a8dfbf;
+.dh_day.l2, .dh_sw.l2 {
+    background: #85bbb5;
 }
 
-.dh_day.l3,
-.dh_sw.l3 {
-    background: #5dbd86;
+.dh_day.l3, .dh_sw.l3 {
+    background: #5ab5ab;
 }
 
-.dh_day.l4,
-.dh_sw.l4 {
-    background: #1d6b3d;
+.dh_day.l4, .dh_sw.l4 {
+    background: #287a71;
 }
 
 .dh_day.l4 {
@@ -7583,26 +7787,10 @@ button {
 
 /* ---------- Dashboard: prottek card-er alada background ---------- */
 /* Background bodlate shudhu oi card-er class-e --card-bg bodlan. Tile-e --ti (icon-er circle) ar --tk (icon) o ache. */
-.dh_card {
-    background: var(--card-bg, var(--primaryBg));
-}
 
-.dh_ring::before {
-    background: var(--card-bg, var(--primaryBg));
-}
 
 /* Card */
-.dh_c_goal {
-    --card-bg: #f0ede9;
-}
 
-.dh_c_weekly {
-    --card-bg: #f0ede9;
-}
-
-.dh_c_calendar {
-    --card-bg: #f0ede9;
-}
 
 .dh_c_special {
     --card-bg: #f0ede9;
@@ -7624,167 +7812,13 @@ button {
 
 /* Premium card-er background gradient: .dh_promo rule-e (shesh-er dike) bodlan */
 
-/* ---------- Daily goal: Edit ---------- */
-.dh_goal_head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 12px;
-}
 
-.dh_edit {
-    padding: 2px 14px;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--black);
-    background: transparent;
-    border: 2px dashed #c9c2bb;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all .25s;
-}
 
-.dh_edit:hover {
-    border-color: var(--black);
-}
 
-.dh_edit[aria-expanded="true"] {
-    color: #fff;
-    background: var(--black);
-    border-color: var(--black);
-}
 
-.dh_edit:focus-visible {
-    outline: 2px solid var(--black);
-    outline-offset: 3px;
-}
-
-/* Edit panel: puro width-e, card-er niche */
-.dh_goal_edit {
-    flex: 0 0 100%;
-}
-
-.dh_goal_form {
-    padding-top: 16px;
-    border-top: 2px dashed #c9c2bb;
-}
-
-.dh_goal_set {
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.dh_goal_leg {
-    float: none;
-    width: auto;
-    margin: 0 0 10px;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--paracolor);
-}
-
-.dh_goal_opts {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-}
-
-.dh_opt {
-    position: relative;
-    display: block;
-    cursor: pointer;
-}
-
-/* Hidden radio label-er bhitore-i, tai click korle page jump korbe na */
-.dh_opt input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.dh_opt_box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    padding: 10px 6px;
-    background: var(--white);
-    border: 2px dashed #c9c2bb;
-    border-radius: 14px;
-    transition: all .25s;
-}
-
-.dh_opt_n {
-    font-size: 22px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--black);
-}
-
-.dh_opt_l {
-    font-size: 12px;
-    line-height: 1.3;
-    color: var(--paracolor);
-}
-
-.dh_opt:hover .dh_opt_box {
-    border-color: #8c857e;
-}
-
-.dh_opt input:checked+.dh_opt_box {
-    background: var(--black);
-    border: 2px solid var(--black);
-}
-
-.dh_opt input:checked+.dh_opt_box .dh_opt_n {
-    color: #fff;
-}
-
-.dh_opt input:checked+.dh_opt_box .dh_opt_l {
-    color: rgba(255, 255, 255, .75);
-}
-
-.dh_opt input:focus-visible+.dh_opt_box {
-    outline: 2px solid var(--black);
-    outline-offset: 3px;
-}
-
-.dh_goal_actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
-}
-
-.dh_goal_actions .s_btn {
-    padding: 10px 24px;
-}
-
-@media (max-width: 479.98px) {
-    .dh_goal_opts {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .dh_goal_actions .s_btn {
-        flex: 1;
-    }
-}
 
 /* ---------- Calendar carousel ---------- */
-.dh_carousel .dh_sub {
-    margin: 0 0 12px;
-}
+
 
 /* <button> hishebe, tai reset */
 button.dh_nav {
@@ -7803,12 +7837,4 @@ button.dh_nav {
 /* 6 row sob month-e, jate height na bodlay (5 row-er month-e shesh row faka) */
 .dh_day.is-pad {
     visibility: hidden;
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .dh_edit,
-    .dh_opt_box {
-        transition: none;
-    }
 }
