@@ -2582,8 +2582,14 @@ button {
         padding: 32px;
     }
 
+}
 
+@media (min-width: 576px) and (max-width: 1300px) {
 
+.content.lb_content:has(> .session_page) {
+    padding: 32px 32px 22px;
+}
+   
 
 
 }
@@ -5355,7 +5361,7 @@ button {
     max-width: 760px;
     margin: 0 auto;
     font-size: clamp(15px, .9rem + .2vw, 17px);
-    line-height: 1.6;
+    line-height: 22px;
     color: var(--paracolor);
 }
 
@@ -5716,9 +5722,9 @@ button {
 
 
 
-
-
-/* ---------- Progress ---------- */
+/*==========================
+    PROGRESS START
+============================*/
 .pg_page {
     width: 100%;
     max-width: 1100px;
@@ -5757,7 +5763,7 @@ button {
 
 .pg_label {
     margin: 0;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.4;
     color: var(--paracolor);
@@ -5789,12 +5795,8 @@ button {
 .pg_trend {
     margin: 0;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
-    color: var(--paracolor);
-}
-
-.pg_trend.is-up {
     color: #1d6b3d;
 }
 
@@ -5814,8 +5816,8 @@ button {
 
 .pg_panel {
     padding: 24px 26px;
-    background: var(--primaryBg);
-    border: 2px dashed #c9c2bb;
+    background: var(--white);
+    border: 2px dashed var(--black);
     border-radius: 20px;
 }
 
@@ -6057,6 +6059,9 @@ button {
     }
 }
 
+/*==========================
+    PROGRESS END
+============================*/
 
 
 
@@ -6071,12 +6076,10 @@ button {
 
 
 
+/*==========================
+    LEADER-BOARD START
+============================*/
 
-
-
-
-
-/* ---------- Leaderboard ---------- */
 .lb_page {
     flex: 1;
     width: 100%;
@@ -6091,6 +6094,10 @@ button {
     background: var(--primaryBg);
     border: 2px dashed #c9c2bb;
     border-radius: 20px;
+}
+
+.lb_panel_tp {
+    background: var(--white) !important;
 }
 
 .lb_h {
@@ -6221,7 +6228,7 @@ button {
     height: 64px;
     font-size: 24px;
     border: 3px solid var(--ring);
-    box-shadow: 0 0 0 3px var(--white);
+    box-shadow: 0 0 0 3px var(--primaryBg);
 }
 
 .lb_pod.is-1 .lb_av {
@@ -6240,7 +6247,7 @@ button {
     font-weight: 800;
     line-height: 16px;
     color: var(--black);
-    background: var(--white);
+    background: var(--primaryBg);
     border-radius: 999px;
 }
 
@@ -6579,8 +6586,9 @@ button {
     }
 }
 
-
-
+/*==========================
+    LEADER-BOARD END
+============================*/
 
 
 
