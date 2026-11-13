@@ -188,15 +188,14 @@
     <main class="main_content content">
         <div class="content-scroll session_page dh_scroll">
             <div class="dh_page">
-
                 <div class="dh_top">
 
                     <!-- Left column -->
                     <div class="dh_main">
 
-                        <h1 class="dh_title">Welcome back! Ready to make progress?</h1>
+                        <h2 class="dh_title">Welcome back! Ready to make progress?</h2>
 
-                        <!-- Quick links DONE-->
+                        <!-- Quick links-->
                         <nav class="dh_quick" aria-label="Quick links">
                             <a href="question-bank.html" class="dh_tile dh_t_qbank">
                                 <span class="dh_tile_ico" aria-hidden="true">
@@ -268,6 +267,7 @@
                         <!-- Daily study goal (With Edit Option) -->
                         <section class="dh_goal dh_c_goal" id="dhGoal" data-done="7" data-goal="10"
                             aria-labelledby="dhGoalH">
+
                             <div class="dh_ring" id="dhRing" style="--p:70" role="img"
                                 aria-label="7 of 10 questions done today">
                                 <span class="dh_ring_in"><strong id="dhRingNum">7</strong><span
@@ -285,61 +285,52 @@
                                     your goal!</p>
                             </div>
 
-                            <div class="dh_streak">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                                </svg>
-                                <span class="dh_streak_t"><strong>5-day</strong> streak</span>
+                            <div class="dh_goal_side">
+                                <div class="dh_streak">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                                    </svg>
+                                    <span class="dh_streak_t"><strong>5-day</strong> streak</span>
+                                </div>
+
+                                <a href="practice.html" class="s_btn s_btn--dark dh_goal_btn">Practice now</a>
                             </div>
 
-                            <a href="practice.html" class="s_btn s_btn--dark dh_goal_btn">Practice now</a>
-
-                            <!-- Edit panel: click korle khule -->
+                            <!--Goal Edit panel-->
                             <div class="collapse dh_goal_edit" id="dhGoalEdit">
                                 <form class="dh_goal_form" id="dhGoalForm" action="#" method="post">
                                     <fieldset class="dh_goal_set">
                                         <legend class="dh_goal_leg">Questions per day</legend>
-                                        <div class="dh_goal_opts">
 
-                                            <label class="dh_opt">
-                                                <input type="radio" name="daily_goal" value="10" checked>
-                                                <span class="dh_opt_box">
-                                                    <span class="dh_opt_n">10</span>
-                                                    <span class="dh_opt_l">questions</span>
-                                                </span>
-                                            </label>
+                                        <div class="dh_goal_row">
+                                            <div class="dh_goal_opts">
+                                                <label class="dh_opt">
+                                                    <input type="radio" name="daily_goal" value="10" checked>
+                                                    <span class="dh_opt_box"><span class="dh_opt_n">10</span>
+                                                </label>
+                                                <label class="dh_opt">
+                                                    <input type="radio" name="daily_goal" value="20">
+                                                    <span class="dh_opt_box"><span class="dh_opt_n">20</span>
+                                                </label>
+                                                <label class="dh_opt">
+                                                    <input type="radio" name="daily_goal" value="40">
+                                                    <span class="dh_opt_box"><span class="dh_opt_n">40</span>
+                                                </label>
+                                                <label class="dh_opt">
+                                                    <input type="radio" name="daily_goal" value="50">
+                                                    <span class="dh_opt_box"><span class="dh_opt_n">50</span>
+                                                </label>
+                                            </div>
 
-                                            <label class="dh_opt">
-                                                <input type="radio" name="daily_goal" value="20">
-                                                <span class="dh_opt_box">
-                                                    <span class="dh_opt_n">20</span>
-                                                    <span class="dh_opt_l">questions</span>
-                                                </span>
-                                            </label>
-
-                                            <label class="dh_opt">
-                                                <input type="radio" name="daily_goal" value="40">
-                                                <span class="dh_opt_box">
-                                                    <span class="dh_opt_n">40</span>
-                                                    <span class="dh_opt_l">questions</span>
-                                                </span>
-                                            </label>
-
-                                            <label class="dh_opt">
-                                                <input type="radio" name="daily_goal" value="50">
-                                                <span class="dh_opt_box">
-                                                    <span class="dh_opt_n">50</span>
-                                                    <span class="dh_opt_l">questions</span>
-                                                </span>
-                                            </label>
+                                            <div class="dh_goal_actions">
+                                                <button type="submit" class="s_btn s_btn--dark">Save goal</button>
+                                                <button type="button" class="s_btn s_btn--line"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#dhGoalEdit">Cancel</button>
+                                            </div>
                                         </div>
                                     </fieldset>
-                                    <div class="dh_goal_actions">
-                                        <button type="submit" class="s_btn s_btn--dark">Save goal</button>
-                                        <button type="button" class="s_btn s_btn--line" data-bs-toggle="collapse"
-                                            data-bs-target="#dhGoalEdit">Cancel</button>
-                                    </div>
                                 </form>
                             </div>
 
@@ -370,10 +361,12 @@
                                                     data-v="18"></span><span class="visually-hidden">Fri: 18
                                                     points</span></li>
                                             <li class="dh_bar" style="--h:70%;--i:1"><span class="dh_bar_fill"
-                                                    data-v="28"></span><span class="visually-hidden">Sat: 28 points</span>
+                                                    data-v="28"></span><span class="visually-hidden">Sat: 28
+                                                    points</span>
                                             </li>
                                             <li class="dh_bar" style="--h:95%;--i:2"><span class="dh_bar_fill"
-                                                    data-v="38"></span><span class="visually-hidden">Sun: 38 points</span>
+                                                    data-v="38"></span><span class="visually-hidden">Sun: 38
+                                                    points</span>
                                             </li>
                                             <li class="dh_bar" style="--h:70%;--i:3"><span class="dh_bar_fill"
                                                     data-v="28"></span><span class="visually-hidden">Mon: 28
@@ -384,9 +377,9 @@
                                             <li class="dh_bar" style="--h:30%;--i:5"><span class="dh_bar_fill"
                                                     data-v="11"></span><span class="visually-hidden">Wed: 11
                                                     points</span></li>
-                                            <li class="dh_bar is-today" style="--h:20%;--i:6"><span
-                                                    class="dh_bar_fill" data-v="7"></span><span
-                                                    class="visually-hidden">Today: 7 points</span></li>
+                                            <li class="dh_bar is-today" style="--h:20%;--i:6"><span class="dh_bar_fill"
+                                                    data-v="7"></span><span class="visually-hidden">Today: 7
+                                                    points</span></li>
                                         </ol>
                                         <div class="dh_days" aria-hidden="true">
                                             <span>Fri</span>
@@ -623,9 +616,8 @@
 
                         <!-- Special mock + Upcoming mock -->
                         <div class="dh_pair">
-
                             <section class="dh_card dh_c_special" aria-labelledby="dhSpecH">
-                                <h2 class="dh_h dh_h--mb" id="dhSpecH">Special mock test</h2>
+                                <h3 class="dh_h dh_h--mb" id="dhSpecH">Special mock test</h3>
 
                                 <ul class="dh_list">
                                     <li>
@@ -676,7 +668,7 @@
                             </section>
 
                             <section class="dh_card dh_c_upcoming" aria-labelledby="dhUpH">
-                                <h2 class="dh_h dh_h--mb" id="dhUpH">Upcoming mock test</h2>
+                                <h3 class="dh_h dh_h--mb" id="dhUpH">Upcoming mock test</h3>
 
                                 <article class="dh_up_card">
                                     <div class="dh_up_top">
@@ -699,16 +691,14 @@
                                     <a href="mock-exam.html" class="s_btn s_btn--dark dh_up_btn">Start Mock Test</a>
                                 </article>
                             </section>
-
                         </div>
                     </div>
 
                     <!-- Right column -->
                     <div class="dh_side">
-
                         <section class="dh_card dh_c_leaderboard" aria-labelledby="dhLbH">
                             <div class="dh_card_head">
-                                <h2 class="dh_h" id="dhLbH">Leaderboard</h2>
+                                <h3 class="dh_h" id="dhLbH">Leaderboard</h3>
                                 <a href="leaderboard.html" class="dh_go" aria-label="Open leaderboard"><svg
                                         viewBox="0 0 24 24">
                                         <path d="M5 12h14" />
@@ -741,7 +731,7 @@
                         </section>
 
                         <section class="dh_card dh_c_recent" aria-labelledby="dhRecH">
-                            <h2 class="dh_h dh_h--mb" id="dhRecH">Recent</h2>
+                            <h3 class="dh_h dh_h--mb" id="dhRecH">Recent</h3>
 
                             <ul class="dh_list">
                                 <li>
@@ -793,16 +783,15 @@
                                     <path d="M5 21h14" />
                                 </svg></span>
                             <div class="dh_promo_body">
-                                <h2 class="dh_promo_t">Buy Premium and get access to new courses</h2>
+                                <h3 class="dh_promo_t">Buy Premium and get access to new courses</h3>
                                 <p class="dh_promo_p">Unlock every question bank, unlimited mock tests and AI essay
                                     feedback.</p>
                             </div>
-                            <a href="pricing.html" class="dh_promo_btn">More details</a>
+                            <a href="pricing-plan.html" class="dh_promo_btn">More details</a>
                         </aside>
-
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </main>

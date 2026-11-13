@@ -15,7 +15,7 @@
         var textEl = document.getElementById("dhGoalText");
         var srEl = document.getElementById("dhGoalSr");
 
-        var OPTIONS = [5, 10, 20, 30];
+        var OPTIONS = [10, 20, 40, 50];
         var KEY = "admitly:dailyGoal";     // DEMO: Laravel-e eta users table-e save hobe
 
         var done = Number(goalEl.getAttribute("data-done")) || 0;
