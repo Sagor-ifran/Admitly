@@ -375,7 +375,6 @@ button {
     background: var(--secondaryBg);
     border-radius: 30px;
     margin: var(--gap);
-    padding: 1rem;
     display: flex;
     min-height: calc(100vh - 120px);
 }
@@ -502,6 +501,25 @@ button {
 .learn {
     margin-top: 20px;
 }
+
+@media (min-width: 1200px) {
+    .learn {
+        padding: 0px 12px;
+    }
+}
+
+
+.learn .container,
+.learn .container-fluid,
+.learn .container-lg,
+.learn .container-md,
+.learn .container-sm,
+.learn .container-xl,
+.learn .container-xxl {
+    --bs-gutter-x: 0 !important;
+}
+
+
 
 .learn_item_bg {
     height: 100%;
@@ -2548,15 +2566,33 @@ button {
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 575.99px) {
     .content:has(> .session_page) {
-        padding: 10px 12px;
+        padding: 14px;
     }
 
-    .content-scroll.session_page {
-        padding: 2px 0 0;
+    .content.lb_content:has(> .session_page) {
+        padding: 14px 14px 8px;
+    }
+}
+
+@media (min-width: 576px) {
+
+    .content:has(> .session_page) {
+        padding: 32px;
     }
 
+
+
+
+
+}
+
+
+
+
+
+@media (max-width: 767.98px) {
     .session_top {
         width: 100%;
         gap: 8px;
@@ -5687,7 +5723,6 @@ button {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding-bottom: 24px;
 }
 
 .pg_stats {
@@ -6563,21 +6598,13 @@ button {
 
 
 /* ---------- Dashboard ---------- */
-.content-scroll.session_page.dh_scroll {
-    
-}
-
-@media (min-width: 768px) {
-    .content-scroll.session_page.dh_scroll {
-        padding: 28px 32px 36px;
-    }
-}
 
 @media (min-width: 1200px) {
     .content-scroll.session_page.dh_scroll {
-        padding: 21px 27px 29px 27px;
-    }
+    padding: 12px;
 }
+}
+
 
 .dh_page {
     width: 100%;
@@ -7352,19 +7379,23 @@ button {
     font-variant-numeric: tabular-nums;
 }
 
-.dh_day.l1, .dh_sw.l1 {
+.dh_day.l1,
+.dh_sw.l1 {
     background: #D1E4E2;
 }
 
-.dh_day.l2, .dh_sw.l2 {
+.dh_day.l2,
+.dh_sw.l2 {
     background: #85bbb5;
 }
 
-.dh_day.l3, .dh_sw.l3 {
+.dh_day.l3,
+.dh_sw.l3 {
     background: #5ab5ab;
 }
 
-.dh_day.l4, .dh_sw.l4 {
+.dh_day.l4,
+.dh_sw.l4 {
     background: #287a71;
 }
 
