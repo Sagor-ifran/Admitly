@@ -54,7 +54,24 @@
                 <a href="#" class="logo" aria-label="Admitly home">
                     <img src="image/logo.png" alt="logo" class="im-fluid w-100">
                 </a>
-                <a href="pricing-plan.html" class="upgrade-btn">Upgrade</a>
+                <div class="searchbox_up">
+                    <button type="button" class="link search" data-bs-toggle="modal" data-bs-target="#searchModal"
+                        aria-label="Search" aria-haspopup="dialog">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M10.5 19c1.98 0 3.81-.69 5.25-1.83L20 21.42l1.41-1.41l-4.25-4.25a8.47 8.47 0 0 0 1.83-5.25c0-4.69-3.81-8.5-8.5-8.5S2 5.81 2 10.5S5.81 19 10.5 19m0-15c3.58 0 6.5 2.92 6.5 6.5S14.08 17 10.5 17S4 14.08 4 10.5S6.92 4 10.5 4" />
+                        </svg>
+                    </button>
+                    <a href="pricing-plan.html" class="link premium">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z">
+                            </path>
+                            <path d="M5 21h14"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             <nav aria-label="Primary">
@@ -320,7 +337,80 @@
         <a href="practice.html" class="s_btn s_btn--dark result_btn" id="rsContinue">Continue</a>
     </dialog>
 
+    <!-- Search modal -->
+    <div class="modal fade sr_modal" id="searchModal" tabindex="-1" aria-labelledby="srTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content sr_box">
 
+                <div class="sr_head">
+                    <input type="search" class="sr_input" placeholder="Search.........." autocomplete="off"
+                        aria-label="Search">
+                    <button type="button" class="sr_close" data-bs-dismiss="modal" aria-label="Close search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="sr_body">
+                    <h3 class="sr_label">Recent search:</h3>
+
+                    <ul class="sr_list">
+                        <li>
+                            <a href="question-bank.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Question Bank</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mock-exam.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">NSU Mock Test</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="practice.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Quadratic Equations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="essay-coach.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Essay Coach</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="leaderboard.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Leaderboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="progress.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">My Progress</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
