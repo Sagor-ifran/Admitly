@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <title>Admitly HTML Template</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="au_body">
+
+    <main class="au_wrap">
+
+        <section class="au_col">
+            <header class="au_top">
+                <a href="index.html" class="au_logo" aria-label="Admitly home"><img src="image/logo.png"
+                        alt="Admitly"></a>
+            </header>
+
+            <div class="au_card">
+                <h1 class="au_title">Create your account</h1>
+                <p class="au_sub">Start free. No card needed.</p>
+
+                <div class="au_social">
+                    <a href="#" class="au_soc" data-provider="google">
+                        <span class="au_soc_ico" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 128 128">
+                                <path d="M0 0h128v128H0z" fill="none" />
+                                <path fill="#fff"
+                                    d="M44.59 4.21a63.28 63.28 0 0 0 4.33 120.9a67.6 67.6 0 0 0 32.36.35a57.13 57.13 0 0 0 25.9-13.46a57.44 57.44 0 0 0 16-26.26a74.3 74.3 0 0 0 1.61-33.58H65.27v24.69h34.47a29.72 29.72 0 0 1-12.66 19.52a36.2 36.2 0 0 1-13.93 5.5a41.3 41.3 0 0 1-15.1 0A37.2 37.2 0 0 1 44 95.74a39.3 39.3 0 0 1-14.5-19.42a38.3 38.3 0 0 1 0-24.63a39.25 39.25 0 0 1 9.18-14.91A37.17 37.17 0 0 1 76.13 27a34.3 34.3 0 0 1 13.64 8q5.83-5.8 11.64-11.63c2-2.09 4.18-4.08 6.15-6.22A61.2 61.2 0 0 0 87.2 4.59a64 64 0 0 0-42.61-.38" />
+                                <path fill="#e33629"
+                                    d="M44.59 4.21a64 64 0 0 1 42.61.37a61.2 61.2 0 0 1 20.35 12.62c-2 2.14-4.11 4.14-6.15 6.22Q95.58 29.23 89.77 35a34.3 34.3 0 0 0-13.64-8a37.17 37.17 0 0 0-37.46 9.74a39.25 39.25 0 0 0-9.18 14.91L8.76 35.6A63.53 63.53 0 0 1 44.59 4.21" />
+                                <path fill="#f8bd00"
+                                    d="M3.26 51.5a63 63 0 0 1 5.5-15.9l20.73 16.09a38.3 38.3 0 0 0 0 24.63q-10.36 8-20.73 16.08a63.33 63.33 0 0 1-5.5-40.9" />
+                                <path fill="#587dbd"
+                                    d="M65.27 52.15h59.52a74.3 74.3 0 0 1-1.61 33.58a57.44 57.44 0 0 1-16 26.26c-6.69-5.22-13.41-10.4-20.1-15.62a29.72 29.72 0 0 0 12.66-19.54H65.27c-.01-8.22 0-16.45 0-24.68" />
+                                <path fill="#319f43"
+                                    d="M8.75 92.4q10.37-8 20.73-16.08A39.3 39.3 0 0 0 44 95.74a37.2 37.2 0 0 0 14.08 6.08a41.3 41.3 0 0 0 15.1 0a36.2 36.2 0 0 0 13.93-5.5c6.69 5.22 13.41 10.4 20.1 15.62a57.13 57.13 0 0 1-25.9 13.47a67.6 67.6 0 0 1-32.36-.35a63 63 0 0 1-23-11.59A63.7 63.7 0 0 1 8.75 92.4" />
+                            </svg>
+                        </span>
+                        <span class="au_soc_t">Continue with Google</span>
+                    </a>
+                </div>
+
+                <p class="au_or"><span>or use email</span></p>
+
+                <form class="au_form" action="#" method="post" data-auth-form data-loading="Creating account…"
+                    data-demo-next="index.html">
+                    <div class="au_field">
+                        <label for="regName">Full name</label>
+                        <input type="text" id="regName" name="name" required maxlength="80" autocomplete="name"
+                            placeholder="Your full name">
+                    </div>
+
+                    <div class="au_field">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" name="email" required maxlength="254" autocomplete="email"
+                            inputmode="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="au_field">
+                        <label for="regPhone">Mobile number</label>
+                        <input type="tel" id="regPhone" name="phone" required maxlength="14" autocomplete="tel"
+                            inputmode="tel" placeholder="01XXXXXXXXX" pattern="^(\+?88)?01[3-9][0-9]{8}$"
+                            title="Enter a valid Bangladesh mobile number, for example 01712345678"
+                            aria-describedby="regPhoneHint">
+                    </div>
+
+                    <div class="au_field">
+                        <label for="regPass">Password</label>
+                        <div class="au_pw">
+                            <input type="password" id="regPass" name="password" required minlength="8"
+                                autocomplete="new-password" placeholder="At least 8 characters"
+                                aria-describedby="regHint">
+                            <button type="button" class="au_eye" data-toggle-password="regPass"
+                                aria-label="Show password" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path class="au_slash" d="m3 3 18 18" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="au_hint" id="regHint">Use at least 8 characters.</p>
+                    </div>
+
+                    <button type="submit" class="s_btn s_btn--dark au_btn">Create account</button>
+
+                    <p class="au_legal">By continuing, you agree to our
+                        <a href="terms-condition.html" target="_blank" rel="noopener">Terms</a> and
+                        <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+                    </p>
+                </form>
+
+                <p class="au_alt">Already have an account? <a href="login.html" class="au_link">Log in</a></p>
+            </div>
+
+        </section>
+
+        <aside class="au_art" aria-hidden="true">
+            <div class="au_art_txt">
+                <strong>Every question bank takes you closer.</strong>
+                <span>Question banks, mock tests and AI essay feedback, all in one place.</span>
+            </div>
+        </aside>
+
+    </main>
+
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+
+
+    <!--main js-->
+    <script src="js/main.js"></script>
+    <!--learn slider-->
+    <script src="js/learn-slider.js"></script>
+    <!--learn slider-->
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

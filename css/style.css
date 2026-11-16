@@ -702,7 +702,7 @@ button {
 
 
 
-/* ---------- Learn Page ---------- */
+/* ---------- title ---------- */
 
 
 .admitly_title {
@@ -721,19 +721,17 @@ button {
 
 
 
-.learn {
-    margin-top: 20px;
-}
+
+
+/*=========================
+    LEARN PAGE START
+===========================*/
 
 @media (min-width: 1200px) {
     .learn {
         padding: 0px 12px;
     }
 }
-
-
-
-
 
 .learn_item_bg {
     height: 100%;
@@ -745,13 +743,12 @@ button {
     gap: 24px;
 }
 
-/* ---------- Card ---------- */
 .learn_item {
     position: relative;
     display: block;
     overflow: hidden;
     border-radius: 20px;
-    height: 270px;
+    height: 262px;
     color: #fff;
 }
 
@@ -765,7 +762,6 @@ button {
     transition: transform .5s ease;
 }
 
-/* Nichey halka kalo gradient, jate label porha jay */
 .learn_item::after {
     content: "";
     position: absolute;
@@ -774,7 +770,6 @@ button {
     pointer-events: none;
 }
 
-/* Left-bottom label */
 .learn_label {
     position: absolute;
     left: 20px;
@@ -805,7 +800,6 @@ button {
     min-height: 270px;
 }
 
-/* ---------- Slider ---------- */
 .learn_slider {
     position: relative;
     overflow-x: auto;
@@ -831,14 +825,12 @@ button {
     width: 100%;
 }
 
-/* Boro screen: 3 ta card ekshathe */
 .learn_track .learn_item {
     flex: 0 0 calc((100% - 48px) / 3);
 }
 
-/* ---------- Responsive ---------- */
+/*--- Responsive ---*/
 
-/* Tablet ar chhoto laptop (768px - 1199px): 2 ta card ekshathe */
 @media (max-width: 1199.98px) {
     .learn_item {
         height: 240px;
@@ -854,7 +846,6 @@ button {
     }
 }
 
-/* Mobile (768px-er niche): slider nai, card ekটার niche ekটা */
 @media (max-width: 767.98px) {
     .learn_item_bg {
         padding: 16px;
@@ -880,6 +871,9 @@ button {
     }
 }
 
+/*=========================
+    LEARN PAGE END
+===========================*/
 
 
 
@@ -893,9 +887,7 @@ button {
 
 
 
-
-
-
+/* --- copy right --- */
 
 
 .admitly_copy_rights {
@@ -1840,7 +1832,6 @@ button {
 /*=========================
     FAQ PAGE SATART
 ===========================*/
-
 .faq_page {
     width: 100%;
     max-width: 1300px;
@@ -1848,20 +1839,20 @@ button {
 }
 
 .faq_page .admitly_title {
-    max-width: 800px;          /* title ta beshi chora hobe na */
+    max-width: 800px;
     margin: 0 auto 40px;
 }
 
 .faq_grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);   /* mobile/tablet: 1 column */
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
     align-items: start;
 }
 
 @media (min-width: 1200px) {
     .faq_grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));   /* desktop: 2 column */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1943,9 +1934,22 @@ button {
     }
 }
 
+.admitly_copy_rights_faq {
+    margin-top: 80px;
+}
+
+@media (max-width: 1600px) {
+    .admitly_copy_rights_faq {
+        margin-top: 40px;
+    }
+}
+
 /*=========================
     FAQ PAGE END
 ===========================*/
+
+
+
 
 
 /* --- Terms and Privacy page --- */
@@ -8155,3 +8159,539 @@ button.dh_nav {
 /*=========================
     DASHBOARD/INDEX END
 ===========================*/
+
+
+
+
+
+
+
+/*=========================
+    LOG/REG/FORG START
+===========================*/
+
+
+
+/* ---------- Auth pages (login, register, forgot, reset) ---------- */
+.au_body {
+    min-height: 100vh;
+    background: var(--primaryBg);
+}
+
+.au_wrap {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+@media (min-width: 992px) {
+    .au_wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Bam: form */
+.au_col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px 20px 20px;
+    background: var(--secondaryBg);
+    border-radius: 30px;
+    border: 2px dashed var(--paracolor);
+}
+
+@media (min-width: 576px) {
+    .au_col {
+        padding: 32px 40px 24px;
+    }
+}
+
+/* Global img !important rule-ke override */
+.au_logo {
+    display: inline-block;
+}
+
+.au_logo img {
+    display: block;
+    width: auto !important;
+    height: 40px !important;
+    object-fit: contain !important;
+}
+
+/* margin: auto: logo ar footer-er majhkhane vertically majhkhane boshe */
+.au_card {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    padding: 28px 0;
+}
+
+.au_title {
+    margin: 0 0 6px;
+    font-size: clamp(26px, 1.4rem + 1vw, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--black);
+}
+
+.au_sub {
+    margin: 0 0 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+.au_alert {
+    margin: 0 0 18px;
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #7a1f17;
+    background: #fcebe9;
+    border: 2px solid #efb2ab;
+    border-radius: 14px;
+}
+
+.au_alert[hidden] {
+    display: none;
+}
+
+/* ---------- Form ---------- */
+.au_form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.au_field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.au_row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.au_row label {
+    margin: 0;
+}
+
+.au_field input {
+    width: 100%;
+    padding: 13px 16px;
+    font: inherit;
+    font-size: 16px;
+    /* iPhone-e 16px-er niche hole zoom hoy */
+    line-height: 1.4;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    transition: border-color .25s;
+}
+
+.au_field input::placeholder {
+    color: #9a938c;
+}
+
+.au_field input:hover {
+    border-color: #8c857e;
+}
+
+.au_field input:focus {
+    outline: none;
+    border: 2px solid var(--black);
+}
+
+/* Vul: lal border (server-e class dile ba submit-er por browser) */
+.au_field input.is-invalid,
+.au_field input:user-invalid {
+    border: 2px solid #d9483b;
+}
+
+.au_hint {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+.au_msg {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #b3261e;
+}
+
+/* Password show/hide */
+.au_pw {
+    position: relative;
+}
+
+.au_pw input {
+    padding-right: 52px;
+}
+
+.au_eye {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--paracolor);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.au_eye:hover {
+    color: var(--black);
+    background: var(--primaryBg);
+}
+
+.au_eye:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.au_eye svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.au_eye .au_slash {
+    display: none;
+}
+
+.au_eye[aria-pressed="true"] .au_slash {
+    display: block;
+}
+
+/* Checkbox (.co_check checkout-er CSS reuse hocche) */
+.au_check {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.au_check>span:last-child {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--black);
+}
+
+/* Button */
+.au_btn {
+    display: flex;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 17px;
+}
+
+.au_btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.au_btn:disabled:hover {
+    color: #fff;
+    background: var(--black);
+}
+
+/* Link */
+.au_link {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.au_link:focus-visible,
+.au_back:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.au_alt {
+    margin: 20px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--paracolor);
+}
+
+.au_back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.au_back svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Status (check your inbox) ---------- */
+.au_status {
+    text-align: center;
+}
+
+.au_icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d6b3d;
+    background: #d9f3e3;
+    border-radius: 50%;
+}
+
+.au_icon svg {
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.au_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.au_resend {
+    padding: 4px 0;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.au_resend:disabled {
+    color: var(--paracolor);
+    text-decoration: none;
+    cursor: default;
+}
+
+.au_resend:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+
+
+/* ---------- Dan: sketch (shudhu boro screen-e) ---------- */
+.au_art {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .au_art {
+        position: sticky;
+        top: var(--gap);
+        align-self: start;
+        height: calc(100vh - 2 * var(--gap));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px;
+        overflow: hidden;
+        background: #fff url("../image/login-bg.jpg") center top / cover no-repeat;
+        border-radius: 30px;
+    }
+
+    /* Nichey shada fade: text porar jonno */
+    .au_art::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgb(255 255 255) 0%, rgb(255 255 255 / 76%) 22%, rgb(255 255 255 / 25%) 42%, rgb(255 255 255 / 0%) 62%);
+    }
+}
+
+.au_art_txt {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+}
+
+.au_art_txt strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(24px, 1rem + 1vw, 32px);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--black);
+}
+
+.au_art_txt span {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+@media (max-width: 575.98px) {
+    .au_col {
+        border-radius: 24px;
+    }
+
+    .au_title {
+        font-size: 26px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .au_field input,
+    .au_eye {
+        transition: none;
+    }
+}
+
+
+
+
+/*=========================
+    LOG/REG/FORG END
+===========================*/
+
+
+.au_soc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    background: #D1E4E2;
+    border: 2px dashed transparent;
+    border-radius: 14px;
+    transition: all linear .3s;
+}
+
+.au_soc:hover{
+    border-color: #5ab5ab;
+}
+
+.au_soc_ico {
+    flex: 0 0 22px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.au_soc_ico svg {
+    width: 24px;
+    height: 24px;
+}
+
+.au_soc_t{
+    font-weight: 600;
+    color: var(--black);
+}
+
+.au_or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: .04em;
+    text-transform: capitalize;
+    color: var(--paracolor);
+}
+
+.au_or::before,
+.au_or::after {
+    content: "";
+    flex: 1;
+    border-top: 2px dashed #ddd7d1;
+}
+
+.au_or span {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+
+
+
+/* Button-er niche Terms line */
+.au_legal {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--paracolor);
+}
+
+.au_legal a {
+    font-size: inherit;
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Logo: mobile ar tablet-e majhkhane (dan-er image nai, tai) */
+@media (max-width: 991.98px) {
+    .au_top {
+        display: flex;
+        justify-content: center;
+    }
+}
+
