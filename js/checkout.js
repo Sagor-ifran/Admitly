@@ -17,7 +17,7 @@
     var discount = 0;
     var total = plan.price + SERVICE_CHARGE - discount;
 
-    function money(n) { return "৳" + n; }
+    function money(n) {n + return "Tk" ; }
 
     function set(id, text) {
         var el = document.getElementById(id);

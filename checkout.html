@@ -202,169 +202,128 @@
     </aside>
 
     <!-- Main content -->
-    <main class="main_content">
-        <div class="content-scroll">
+    <main class="main_content content">
+        <div class="content-scroll session_page">
+            <div class="checkout_page">
+                <!-- Order summary -->
+                <aside class="order_summary" aria-label="Order summary">
+                    <h3>Order summary</h3>
 
-            <div class="faq_page">
-                <div class="container-fluid">
+                    <div class="os_plan">
+                        <div>
+                            <strong id="sumPlan">Complete Admission Pack</strong>
+                            <span id="sumValidity">Access until the admission preparation package
+                                expires</span>
+                        </div>
+                        <a href="pricing-plan.html" class="os_change">Change plan</a>
+                    </div>
 
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10 col-xxl-7">
-                            <div class="admitly_title">
-                                <h2>Complete Your Purchase</h2>
-                                <p>You're one step closer to smarter admission preparation.</p>
+                    <dl class="os_rows">
+                        <div>
+                            <dt>Price</dt>
+                            <dd id="sumPrice">499 TK</dd>
+                        </div>
+                        <div>
+                            <dt>Service charge</dt>
+                            <dd id="sumService">10 TK</dd>
+                        </div>
+                        <div>
+                            <dt>Discount</dt>
+                            <dd>0 TK</dd>
+                        </div>
+                    </dl>
+
+                    <div class="os_total">
+                        <span>Total</span>
+                        <strong id="sumTotal">509 TK</strong>
+                    </div>
+
+                    <p class="os_note">Your access starts as soon as the payment is confirmed.</p>
+                </aside>
+                <!-- Checkout form -->
+                <form class="checkout_form" id="checkoutForm" novalidate>
+                    <!-- 1. Account -->
+                    <div class="co_block">
+                        <h3><span class="co_step">1</span> Your account</h3>
+                        <div class="co_account">
+                            <div class="user_img">
+                                <img src="image/user.jpg" alt="">
+                            </div>
+                            <div>
+                                <strong>Sagor Ifran</strong>
+                                <span>Ac: 01608579970 </span>
                             </div>
                         </div>
+                        <p class="co_hint">Your plan will be added to this account.</p>
                     </div>
 
-                    <div class="row g-4 justify-content-center">
-                        <!-- Order summary -->
-                        <div class="col-xl-4 order-1 order-xl-2">
-                            <aside class="order_summary" aria-label="Order summary">
-                                <h2>Order summary</h2>
+                    <!-- 2. Payment method -->
+                    <div class="co_block">
+                        <h3><span class="co_step">2</span> Payment method</h3>
 
-                                <div class="os_plan">
-                                    <div>
-                                        <strong id="sumPlan">Complete Admission Pack</strong>
-                                        <span id="sumValidity">Access until the admission preparation package
-                                            expires</span>
-                                    </div>
-                                    <a href="pricing.html" class="os_change">Change plan</a>
-                                </div>
+                        <div class="pay_methods" role="radiogroup" aria-label="Payment method">
+                            <label class="pay_method">
+                                <input type="radio" name="method" value="bkash" checked>
+                                <span class="pay_method_box">
+                                    <span class="pay_logo">
+                                        <img src="image/bKash.png" alt="bkash" class="im-fluid w-100">
+                                    </span>
+                                    <span class="pay_name">bKash</span>
+                                    <span class="pay_tick" aria-hidden="true"></span>
+                                </span>
+                            </label>
 
-                                <dl class="os_rows">
-                                    <div>
-                                        <dt>Price</dt>
-                                        <dd id="sumPrice">৳499</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Service charge</dt>
-                                        <dd id="sumService">৳10</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Discount</dt>
-                                        <dd>৳0</dd>
-                                    </div>
-                                </dl>
-
-                                <div class="os_total">
-                                    <span>Total</span>
-                                    <strong id="sumTotal">৳509</strong>
-                                </div>
-
-                                <p class="os_note">Your access starts as soon as the payment is confirmed.</p>
-                            </aside>
+                            <label class="pay_method">
+                                <input type="radio" name="method" value="nagad">
+                                <span class="pay_method_box">
+                                    <span class="pay_logo">
+                                        <img src="image/nagad.png" alt="bkash" class="im-fluid w-100">
+                                    </span>
+                                    <span class="pay_name">Nagad</span>
+                                    <span class="pay_tick" aria-hidden="true"></span>
+                                </span>
+                            </label>
                         </div>
 
-                        <!-- Form -->
-                        <div class="col-xl-6 order-2 order-xl-1">
-                            <form class="checkout_form" id="checkoutForm" novalidate>
-                                <!-- 1. Account -->
-                                <div class="co_block">
-                                    <h2><span class="co_step">1</span> Your account</h2>
-                                    <div class="co_account">
-                                        <div class="user_img">
-                                            <img src="image/user.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <strong>Sagor Ifran</strong>
-                                            <span>No: 01608579970 </span>
-                                        </div>
-                                    </div>
-                                    <p class="co_hint">Your plan will be added to this account.</p>
-                                </div>
-
-                                <!-- 2. Payment method -->
-                                <div class="co_block">
-                                    <h2><span class="co_step">2</span> Payment method</h2>
-
-                                    <div class="pay_methods" role="radiogroup" aria-label="Payment method">
-                                        <label class="pay_method">
-                                            <input type="radio" name="method" value="bkash" checked>
-                                            <span class="pay_method_box">
-                                                <span class="pay_logo">
-                                                    <img src="image/bKash.png" alt="bkash" class="im-fluid w-100">
-                                                </span>
-                                                <span class="pay_name">bKash</span>
-                                                <span class="pay_tick" aria-hidden="true"></span>
-                                            </span>
-                                        </label>
-
-                                        <label class="pay_method">
-                                            <input type="radio" name="method" value="nagad">
-                                            <span class="pay_method_box">
-                                                <span class="pay_logo">
-                                                    <img src="image/nagad.png" alt="bkash" class="im-fluid w-100">
-                                                </span>
-                                                <span class="pay_name">Nagad</span>
-                                                <span class="pay_tick" aria-hidden="true"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <p class="co_hint" id="methodNote">
-                                        You will be redirected to bKash to complete your payment.
-                                    </p>
-                                </div>
-
-                                <!-- 3. Confirm -->
-                                <div class="co_block">
-                                    <h2><span class="co_step">3</span> Confirm</h2>
-
-                                    <label class="co_check">
-                                        <input type="checkbox" id="agree">
-                                        <span class="co_check_box" aria-hidden="true"></span>
-                                        <span>I agree to the
-                                            <a href="terms-condition.html" target="_blank" rel="noopener">Terms</a> and
-                                            <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy
-                                                Policy</a>.
-                                        </span>
-                                    </label>
-                                    <p class="co_error" id="agreeError" hidden>Please accept the Terms and Privacy
-                                        Policy to continue.</p>
-
-                                    <button type="submit" class="co_pay_btn" id="payBtn">
-                                        Pay <span id="payBtnPrice">৳509</span>
-                                    </button>
-
-                                    <p class="co_secure">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                                            <rect x="5" y="11" width="14" height="9" rx="2" />
-                                            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                                        </svg>
-                                        Secure payment. We never see your bKash or Nagad PIN.
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
+                        <p class="co_hint" id="methodNote">
+                            You will be redirected to bKash to complete your payment.
+                        </p>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="admitly_copy_rights">
-                                <p>© 2026 Admitly LLC | All rights reserved</p>
-                                <ul>
-                                    <li>
-                                        <a href="about.html">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="terms-condition.html">Terms</a>
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy.html">Privacy Policy</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- 3. Confirm -->
+                    <div class="co_block">
+                        <h3><span class="co_step">3</span> Confirm</h3>
 
-                </div>
+                        <label class="co_check">
+                            <input type="checkbox" id="agree">
+                            <span class="co_check_box" aria-hidden="true"></span>
+                            <span>I agree to the
+                                <a href="terms-condition.html" target="_blank" rel="noopener">Terms</a> and
+                                <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy
+                                    Policy</a>.
+                            </span>
+                        </label>
+                        <p class="co_error" id="agreeError" hidden>Please accept the Terms and Privacy
+                            Policy to continue.</p>
+
+                        <button type="submit" class="co_pay_btn" id="payBtn">
+                            Pay <span id="payBtnPrice">509 TK</span>
+                        </button>
+
+                        <p class="co_secure">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="5" y="11" width="14" height="9" rx="2" />
+                                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                            </svg>
+                            Secure payment. We never see your bKash or Nagad PIN.
+                        </p>
+                    </div>
+                </form>
             </div>
-
         </div>
     </main>
 
-    
+
     <!-- Search modal -->
     <div class="modal fade sr_modal" id="searchModal" tabindex="-1" aria-labelledby="srTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

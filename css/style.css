@@ -16,6 +16,8 @@
     --gap: 10px;
 }
 
+
+
 body {
     color: var(--black);
     scroll-behavior: smooth;
@@ -69,6 +71,20 @@ h6 {
     padding: 0;
     color: var(--black);
 }
+
+.content .container,
+.content .container-fluid,
+.content .container-lg,
+.content .container-md,
+.content .container-sm,
+.content .container-xl,
+.content .container-xxl {
+    --bs-gutter-x: 0 !important;
+}
+
+
+
+
 
 
 input,
@@ -233,7 +249,7 @@ button {
 }
 
 
-.searchbox_up{
+.searchbox_up {
     gap: 6px;
     display: flex;
     flex-wrap: nowrap;
@@ -257,11 +273,11 @@ button {
     stroke: none;
 }
 
-.searchbox_up .premium{
+.searchbox_up .premium {
     background: var(--white);
 }
 
-.searchbox_up .premium svg{
+.searchbox_up .premium svg {
     fill: none !important;
     stroke: #f2b01e !important;
     stroke-width: 2;
@@ -269,12 +285,12 @@ button {
     stroke-linejoin: round;
 }
 
-.searchbox_up .search:hover{
+.searchbox_up .search:hover {
     background: var(--white);
 }
 
 .searchbox_up .premium.active,
-.searchbox_up .premium:hover{
+.searchbox_up .premium:hover {
     background: var(--black);
 }
 
@@ -437,6 +453,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .sr_close,
     .sr_item {
         transition: none;
@@ -715,15 +732,6 @@ button {
 }
 
 
-.learn .container,
-.learn .container-fluid,
-.learn .container-lg,
-.learn .container-md,
-.learn .container-sm,
-.learn .container-xl,
-.learn .container-xxl {
-    --bs-gutter-x: 0 !important;
-}
 
 
 
@@ -1105,8 +1113,9 @@ button {
 }
 
 
-
-/* --- pricing plan --- */
+/*=========================
+    PRICING PLAN START
+===========================*/
 
 .current_plan_banner {
     padding: 24px 28px;
@@ -1399,8 +1408,43 @@ button {
 }
 
 
-
 /* --- checkout page --- */
+
+.checkout_page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "summary"
+        "form";
+    gap: 24px;
+    align-items: start;
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.order_summary {
+    grid-area: summary;
+}
+
+.checkout_form {
+    grid-area: form;
+}
+
+@media (min-width: 1200px) {
+    .checkout_page {
+        grid-template-columns: minmax(0, 850px) minmax(0, 550px);
+        grid-template-areas: "form summary";
+        justify-content: center;
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1700px) {
+    .checkout_page {
+        margin-top: 55px;
+    }
+}
 
 .checkout_form {
     display: flex;
@@ -1414,7 +1458,7 @@ button {
     border-radius: 20px;
 }
 
-.co_block h2 {
+.co_block h3 {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1422,6 +1466,7 @@ button {
     font-size: clamp(18px, 1rem + .4vw, 22px);
     font-weight: 700;
     line-height: 1.3;
+    text-transform: capitalize;
 }
 
 .co_step {
@@ -1434,7 +1479,7 @@ button {
     font-size: 15px;
     font-weight: 700;
     color: var(--white);
-    background: var(--black);
+    background: #5ab5ab;
     border-radius: 50%;
 }
 
@@ -1511,7 +1556,7 @@ button {
     padding: 16px 18px;
     border: 2px dashed #c9c2bb;
     border-radius: 16px;
-    transition: border-color .3s, background .3s;
+    transition: all linear .3s;
 }
 
 .pay_method:hover .pay_method_box {
@@ -1570,9 +1615,7 @@ button {
     position: relative;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
-    line-height: 1.5;
+    gap: 6px;
     cursor: pointer;
 }
 
@@ -1587,11 +1630,15 @@ button {
     pointer-events: none;
 }
 
+.co_check span {
+    font-size: 16px;
+    line-height: 20px;
+}
+
 .co_check_box {
     flex: 0 0 auto;
-    width: 22px;
-    height: 22px;
-    margin-top: 1px;
+    width: 20px;
+    height: 20px;
     border: 2px solid #8c857e;
     border-radius: 6px;
     transition: all .3s;
@@ -1615,6 +1662,7 @@ button {
 .co_error {
     margin: 10px 0 0;
     font-size: 14px;
+    line-height: 20px;
     color: #b3261e;
 }
 
@@ -1652,7 +1700,7 @@ button {
     gap: 8px;
     margin: 14px 0 0;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 17px;
     color: #6b6b6b;
     text-align: center;
 }
@@ -1674,10 +1722,11 @@ button {
     border-radius: 20px;
 }
 
-.order_summary h2 {
+.order_summary h3 {
     margin: 0 0 18px;
-    font-size: clamp(18px, 1rem + .4vw, 22px);
+    font-size: 22px;
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 .os_plan {
@@ -1742,12 +1791,12 @@ button {
 }
 
 .os_total strong {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 1;
 }
 
 .os_note {
-    margin: 16px 0 0;
+    margin: 25px 0 0;
     font-size: 14px;
     line-height: 18px;
     color: #6b6b6b;
@@ -1770,19 +1819,50 @@ button {
     .pay_methods {
         grid-template-columns: 1fr;
     }
+
+    .co_secure {
+        display: block;
+    }
+
+    .co_secure svg {
+        margin-top: -3px;
+    }
 }
 
+/*=========================
+    PRICING PLAN END
+===========================*/
 
 
 
-/* --- faq page --- */
+
+
+/*=========================
+    FAQ PAGE SATART
+===========================*/
 
 .faq_page {
-    margin-top: 30px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 30px auto 0;
 }
 
 .faq_page .admitly_title {
-    margin-bottom: 70px;
+    max-width: 800px;          /* title ta beshi chora hobe na */
+    margin: 0 auto 40px;
+}
+
+.faq_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);   /* mobile/tablet: 1 column */
+    gap: 20px;
+    align-items: start;
+}
+
+@media (min-width: 1200px) {
+    .faq_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));   /* desktop: 2 column */
+    }
 }
 
 .faq_accordion {
@@ -1863,8 +1943,9 @@ button {
     }
 }
 
-
-
+/*=========================
+    FAQ PAGE END
+===========================*/
 
 
 /* --- Terms and Privacy page --- */
