@@ -8172,6 +8172,7 @@ button.dh_nav {
 
 
 
+
 /* ---------- Auth pages (login, register, forgot, reset) ---------- */
 .au_body {
     min-height: 100vh;
@@ -8231,7 +8232,7 @@ button.dh_nav {
 
 .au_title {
     margin: 0 0 6px;
-    font-size: clamp(26px, 1.4rem + 1vw, 34px);
+    font-size: clamp(20px, 1.4rem + 1vw, 34px);
     font-weight: 800;
     line-height: 1.2;
     color: var(--black);
@@ -8239,7 +8240,7 @@ button.dh_nav {
 
 .au_sub {
     margin: 0 0 22px;
-    font-size: 16px;
+    font-size: clamp(14px, 0.85rem + 0.2vw, 16px);
     line-height: 1.6;
     color: var(--paracolor);
 }
@@ -8263,12 +8264,12 @@ button.dh_nav {
 .au_form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
 }
 
 .au_field label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
@@ -8289,10 +8290,9 @@ button.dh_nav {
 
 .au_field input {
     width: 100%;
-    padding: 13px 16px;
+    padding: 10px 15px;
     font: inherit;
     font-size: 16px;
-    /* iPhone-e 16px-er niche hole zoom hoy */
     line-height: 1.4;
     color: var(--black);
     background: var(--white);
@@ -8311,7 +8311,7 @@ button.dh_nav {
 
 .au_field input:focus {
     outline: none;
-    border: 2px solid var(--black);
+    border: 2px dashed var(--black);
 }
 
 /* Vul: lal border (server-e class dile ba submit-er por browser) */
@@ -8583,10 +8583,6 @@ button.dh_nav {
     .au_col {
         border-radius: 24px;
     }
-
-    .au_title {
-        font-size: 26px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8695,3 +8691,25 @@ button.dh_nav {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Auth: mobile ---------- */
+@media (max-width: 575.98px) {
+    
+}
