@@ -8170,10 +8170,6 @@ button.dh_nav {
     LOG/REG/FORG START
 ===========================*/
 
-
-
-
-/* ---------- Auth pages (login, register, forgot, reset) ---------- */
 .au_body {
     min-height: 100vh;
     background: var(--primaryBg);
@@ -8193,7 +8189,6 @@ button.dh_nav {
     }
 }
 
-/* Bam: form */
 .au_col {
     display: flex;
     flex-direction: column;
@@ -8210,7 +8205,6 @@ button.dh_nav {
     }
 }
 
-/* Global img !important rule-ke override */
 .au_logo {
     display: inline-block;
 }
@@ -8222,7 +8216,6 @@ button.dh_nav {
     object-fit: contain !important;
 }
 
-/* margin: auto: logo ar footer-er majhkhane vertically majhkhane boshe */
 .au_card {
     width: 100%;
     max-width: 440px;
@@ -8259,347 +8252,6 @@ button.dh_nav {
 .au_alert[hidden] {
     display: none;
 }
-
-/* ---------- Form ---------- */
-.au_form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.au_field label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--black);
-}
-
-.au_row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 8px;
-}
-
-.au_row label {
-    margin: 0;
-}
-
-.au_field input {
-    width: 100%;
-    padding: 10px 15px;
-    font: inherit;
-    font-size: 16px;
-    line-height: 1.4;
-    color: var(--black);
-    background: var(--white);
-    border: 2px dashed #c9c2bb;
-    border-radius: 14px;
-    transition: border-color .25s;
-}
-
-.au_field input::placeholder {
-    color: #9a938c;
-}
-
-.au_field input:hover {
-    border-color: #8c857e;
-}
-
-.au_field input:focus {
-    outline: none;
-    border: 2px dashed var(--black);
-}
-
-/* Vul: lal border (server-e class dile ba submit-er por browser) */
-.au_field input.is-invalid,
-.au_field input:user-invalid {
-    border: 2px solid #d9483b;
-}
-
-.au_hint {
-    margin: 6px 0 0;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--paracolor);
-}
-
-.au_msg {
-    margin: 6px 0 0;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #b3261e;
-}
-
-/* Password show/hide */
-.au_pw {
-    position: relative;
-}
-
-.au_pw input {
-    padding-right: 52px;
-}
-
-.au_eye {
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    color: var(--paracolor);
-    background: transparent;
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background .2s, color .2s;
-}
-
-.au_eye:hover {
-    color: var(--black);
-    background: var(--primaryBg);
-}
-
-.au_eye:focus-visible {
-    outline: 2px solid var(--black);
-    outline-offset: 2px;
-}
-
-.au_eye svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.au_eye .au_slash {
-    display: none;
-}
-
-.au_eye[aria-pressed="true"] .au_slash {
-    display: block;
-}
-
-/* Checkbox (.co_check checkout-er CSS reuse hocche) */
-.au_check {
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.au_check>span:last-child {
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--black);
-}
-
-/* Button */
-.au_btn {
-    display: flex;
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 17px;
-}
-
-.au_btn:disabled {
-    opacity: .6;
-    cursor: wait;
-}
-
-.au_btn:disabled:hover {
-    color: #fff;
-    background: var(--black);
-}
-
-/* Link */
-.au_link {
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--black);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.au_link:focus-visible,
-.au_back:focus-visible {
-    outline: 2px solid var(--black);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-.au_alt {
-    margin: 20px 0 0;
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: center;
-    color: var(--paracolor);
-}
-
-.au_back {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--black);
-}
-
-.au_back svg {
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* ---------- Status (check your inbox) ---------- */
-.au_status {
-    text-align: center;
-}
-
-.au_icon {
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1d6b3d;
-    background: #d9f3e3;
-    border-radius: 50%;
-}
-
-.au_icon svg {
-    width: 34px;
-    height: 34px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.au_actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    margin-top: 22px;
-}
-
-.au_resend {
-    padding: 4px 0;
-    font: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--black);
-    background: none;
-    border: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
-}
-
-.au_resend:disabled {
-    color: var(--paracolor);
-    text-decoration: none;
-    cursor: default;
-}
-
-.au_resend:focus-visible {
-    outline: 2px solid var(--black);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-
-
-/* ---------- Dan: sketch (shudhu boro screen-e) ---------- */
-.au_art {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .au_art {
-        position: sticky;
-        top: var(--gap);
-        align-self: start;
-        height: calc(100vh - 2 * var(--gap));
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 40px;
-        overflow: hidden;
-        background: #fff url("../image/login-bg.jpg") center top / cover no-repeat;
-        border-radius: 30px;
-    }
-
-    /* Nichey shada fade: text porar jonno */
-    .au_art::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgb(255 255 255) 0%, rgb(255 255 255 / 76%) 22%, rgb(255 255 255 / 25%) 42%, rgb(255 255 255 / 0%) 62%);
-    }
-}
-
-.au_art_txt {
-    position: relative;
-    z-index: 1;
-    max-width: 460px;
-}
-
-.au_art_txt strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: clamp(24px, 1rem + 1vw, 32px);
-    font-weight: 800;
-    line-height: 1.25;
-    color: var(--black);
-}
-
-.au_art_txt span {
-    display: block;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--paracolor);
-}
-
-@media (max-width: 575.98px) {
-    .au_col {
-        border-radius: 24px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .au_field input,
-    .au_eye {
-        transition: none;
-    }
-}
-
-
-
-
-/*=========================
-    LOG/REG/FORG END
-===========================*/
-
 
 .au_soc {
     display: flex;
@@ -8665,9 +8317,201 @@ button.dh_nav {
 }
 
 
+.au_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.au_field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.au_row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.au_row label {
+    margin: 0;
+}
+
+.au_field input {
+    width: 100%;
+    padding: 11px 16px;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    transition: border-color .25s;
+}
+
+.au_field input::placeholder {
+    color: #9a938c;
+}
+
+.au_field input:hover {
+    border-color: #8c857e;
+}
+
+.au_field input:focus {
+    outline: none;
+    border: 2px dashed var(--black);
+}
+
+.au_field input.is-invalid,
+.au_field input:user-invalid {
+    border: 2px dashed #d9483b;
+}
+
+.au_hint {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+/* Password show/hide */
+.au_pw {
+    position: relative;
+}
+
+.au_pw input {
+    padding-right: 52px;
+}
+
+.au_eye {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--paracolor);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.au_eye:hover {
+    color: var(--black);
+    background: var(--primaryBg);
+}
+
+.au_eye:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.au_eye svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.au_eye .au_slash {
+    display: none;
+}
+
+.au_eye[aria-pressed="true"] .au_slash {
+    display: block;
+}
+
+/* Checkbox */
+.au_check {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.au_check>span:last-child {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--black);
+}
 
 
-/* Button-er niche Terms line */
+.au_btn {
+    display: flex;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 17px;
+}
+
+.au_btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.au_btn:disabled:hover {
+    color: #fff;
+    background: var(--black);
+}
+
+.au_link {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.au_link:focus-visible,
+.au_back:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.au_alt {
+    margin: 20px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--paracolor);
+}
+
+.au_back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.au_back svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .au_legal {
     margin: 0;
     font-size: 12.5px;
@@ -8683,11 +8527,232 @@ button.dh_nav {
     text-underline-offset: 2px;
 }
 
-/* Logo: mobile ar tablet-e majhkhane (dan-er image nai, tai) */
+/* --Status (check your inbox)-- */
+.au_status {
+    text-align: center;
+}
+
+.au_icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d6b3d;
+    background: #d9f3e3;
+    border-radius: 50%;
+}
+
+.au_icon svg {
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.au_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.au_resend {
+    padding: 4px 0;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.au_resend:disabled {
+    color: var(--paracolor);
+    text-decoration: none;
+    cursor: default;
+}
+
+.au_resend:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+
+
+/* --- Right: sketch --- */
+.au_art {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .au_art {
+        position: sticky;
+        top: var(--gap);
+        align-self: start;
+        height: calc(100vh - 2 * var(--gap));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px;
+        overflow: hidden;
+        background: #fff url("../image/login-bg.jpg") center top / cover no-repeat;
+        border-radius: 30px;
+    }
+
+    .au_art::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgb(255 255 255) 0%, rgb(255 255 255 / 76%) 22%, rgb(255 255 255 / 25%) 42%, rgb(255 255 255 / 0%) 62%);
+    }
+}
+
+.au_art_txt {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+}
+
+.au_art_txt strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(24px, 1rem + 1vw, 32px);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--black);
+}
+
+.au_art_txt span {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+@media (max-width: 575.98px) {
+    .au_col {
+        border-radius: 24px;
+    }
+}
+
 @media (max-width: 991.98px) {
     .au_top {
         display: flex;
         justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .au_field input,
+    .au_eye {
+        transition: none;
+    }
+}
+
+/*=========================
+    LOG/REG/FORG END
+===========================*/
+
+/* ---------- Complete profile ---------- */
+.au_who {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+    padding: 14px 16px;
+    background: var(--primaryBg);
+    border-radius: 16px;
+}
+
+.au_av {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #dbe0e6;
+    border-radius: 50%;
+}
+
+/* Global img !important rule-ke override */
+.au_av img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.au_who_txt {
+    min-width: 0;
+}
+
+.au_who_name {
+    display: block;
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--black);
+}
+
+.au_who_via {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--paracolor);
+}
+
+/* Readonly email (provider theke ashche) */
+.au_field input[readonly] {
+    color: var(--paracolor);
+    background: #D1E4E2;
+    border: 2px dashed #5ab5ab;
+    cursor: default;
+}
+
+.au_field input[readonly]:hover,
+.au_field input[readonly]:focus {
+    border: 2px dashed #5ab5ab;
+}
+
+.au_ok {
+    padding: 1px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    white-space: nowrap;
+    color: #1d6b3d;
+    background: #e8f6ee;
+    border-radius: 999px;
+}
+
+@media (max-width: 575.98px) {
+    .au_who {
+        gap: 12px;
+        margin-bottom: 16px;
+        padding: 12px 14px;
+    }
+
+    .au_av {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
     }
 }
 
@@ -8709,7 +8774,75 @@ button.dh_nav {
 
 
 
-/* ---------- Auth: mobile ---------- */
-@media (max-width: 575.98px) {
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Auth: pura screen-e border, scroll shudhu bhitore ---------- */
+
+/* Body-er scroll bondho (sidebar page-er body lock-er sathe mile) */
+body.au_body {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.au_wrap {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+}
+
+/* Card (border-wala box) shob shomoy pura height-e, nijer bhitore scroll */
+.au_col {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #bdb5ad transparent;
+}
+
+.au_col::-webkit-scrollbar {
+    width: 6px;
+}
+
+.au_col::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.au_col::-webkit-scrollbar-thumb {
+    background: #bdb5ad;
+    border-radius: 999px;
+}
+
+/* Content kom hole form majhkhane, beshi hole upor theke shuru kore scroll */
+.au_card {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Logo shob shomoy upore, scroll korle-o sthir. Sticky hole logo-r pichone content jay, tai card-er bg dilam */
+.au_top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    flex: 0 0 auto;
+    padding-bottom: 6px;
+    background: var(--secondaryBg);
 }
