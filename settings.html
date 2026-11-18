@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <title>Admitly HTML Template</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Mobile top bar -->
+    <header class="mobilebar d-lg-none">
+        <button class="icon-btn menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+            aria-controls="sidebar" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" aria-hidden="true">
+                <line class="l1" x1="5" y1="7" x2="19" y2="7" />
+                <line class="l2" x1="5" y1="12" x2="19" y2="12" />
+                <line class="l3" x1="5" y1="17" x2="19" y2="17" />
+            </svg>
+        </button>
+        <a href="#" class="logo" aria-label="Admitly home">
+            <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+        </a>
+        <a href="login.html" class="profile" aria-label="Profile">
+            <div class="user_img">
+                <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+            </div>
+        </a>
+    </header>
+
+    <!-- Sidebar: static on desktop, slide-in menu on mobile -->
+    <aside class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-label="Main menu">
+        <div class="offcanvas-header d-lg-none justify-content-end pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-body">
+            <div class="sidebar-top">
+                <a href="#" class="logo" aria-label="Admitly home">
+                    <img src="image/logo.png" alt="logo" class="im-fluid w-100">
+                </a>
+                <div class="searchbox_up">
+                    <button type="button" class="link search" data-bs-toggle="modal" data-bs-target="#searchModal"
+                        aria-label="Search" aria-haspopup="dialog">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M10.5 19c1.98 0 3.81-.69 5.25-1.83L20 21.42l1.41-1.41l-4.25-4.25a8.47 8.47 0 0 0 1.83-5.25c0-4.69-3.81-8.5-8.5-8.5S2 5.81 2 10.5S5.81 19 10.5 19m0-15c3.58 0 6.5 2.92 6.5 6.5S14.08 17 10.5 17S4 14.08 4 10.5S6.92 4 10.5 4" />
+                        </svg>
+                    </button>
+                    <a href="pricing-plan.html" class="link premium">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z">
+                            </path>
+                            <path d="M5 21h14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <nav aria-label="Primary">
+                <ul class="menu list-unstyled" id="menu">
+                    <li>
+                        <a href="index.html" class="active" aria-current="page">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="learn.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 7v14" />
+                                <path
+                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                            </svg>
+                            Learn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="question-bank.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <path d="M12 17h.01" />
+                            </svg>
+                            Question Bank
+                        </a>
+                    </li>
+                    <li>
+                        <a href="practice.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 20h9" />
+                                <path
+                                    d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" />
+                                <path d="m15 5 3 3" />
+                            </svg>
+                            Practice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mock-exam.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                <path d="M10 9H8" />
+                                <path d="M16 13H8" />
+                                <path d="M16 17H8" />
+                            </svg>
+                            Mock Exam
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progress.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                            Progress
+                        </a>
+                    </li>
+                    <li>
+                        <a href="leaderboard.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                            Leaderboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="essay-coach.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                <path d="M13 8H7" />
+                                <path d="M17 12H7" />
+                            </svg>
+                            Essay Coach
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M12 7v5l4 2" />
+                            </svg>
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pricing-plan.html">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
+                                <path d="M5 21h14" />
+                            </svg>
+                            Admitly Premium
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user">
+                <a href="login.html" class="user-link">
+                    <div class="user_img">
+                        <img src="image/user.jpg" alt="user" class="im-fluid w-100">
+                    </div>
+                    <span>Sagor Ifran</span>
+                </a>
+                <a href="settings.html" class="settings icon-btn" aria-label="Settings" aria-current="page">
+                    <svg class="icon-fill" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M27 16.76v-1.53l1.92-1.68A2 2 0 0 0 29.3 11l-2.36-4a2 2 0 0 0-1.73-1a2 2 0 0 0-.64.1l-2.43.82a11 11 0 0 0-1.31-.75l-.51-2.52a2 2 0 0 0-2-1.61h-4.68a2 2 0 0 0-2 1.61l-.51 2.52a11.5 11.5 0 0 0-1.32.75l-2.38-.86A2 2 0 0 0 6.79 6a2 2 0 0 0-1.73 1L2.7 11a2 2 0 0 0 .41 2.51L5 15.24v1.53l-1.89 1.68A2 2 0 0 0 2.7 21l2.36 4a2 2 0 0 0 1.73 1a2 2 0 0 0 .64-.1l2.43-.82a11 11 0 0 0 1.31.75l.51 2.52a2 2 0 0 0 2 1.61h4.72a2 2 0 0 0 2-1.61l.51-2.52a11.5 11.5 0 0 0 1.32-.75l2.42.82a2 2 0 0 0 .64.1a2 2 0 0 0 1.73-1l2.28-4a2 2 0 0 0-.41-2.51ZM25.21 24l-3.43-1.16a8.9 8.9 0 0 1-2.71 1.57L18.36 28h-4.72l-.71-3.55a9.4 9.4 0 0 1-2.7-1.57L6.79 24l-2.36-4l2.72-2.4a8.9 8.9 0 0 1 0-3.13L4.43 12l2.36-4l3.43 1.16a8.9 8.9 0 0 1 2.71-1.57L13.64 4h4.72l.71 3.55a9.4 9.4 0 0 1 2.7 1.57L25.21 8l2.36 4l-2.72 2.4a8.9 8.9 0 0 1 0 3.13L27.57 20Z" />
+                        <path
+                            d="M16 22a6 6 0 1 1 6-6a5.94 5.94 0 0 1-6 6m0-10a3.91 3.91 0 0 0-4 4a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main_content content">
+        <div class="content-scroll session_page st_scroll">
+            <div class="st_page">
+
+                <!-- Top: back, tabs, log out -->
+                <header class="st_top">
+                    <a href="index.html" class="st_back">
+                        <span class="st_back_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                <path d="m12 19-7-7 7-7" />
+                                <path d="M19 12H5" />
+                            </svg></span>
+                        <span class="st_back_t">Back to dashboard</span>
+                    </a>
+
+                    <nav class="st_nav" aria-label="Settings sections">
+                        <ul class="nav st_tabs" role="tablist">
+                            <li role="presentation"><button class="nav-link active" id="tabProfile" data-st="profile"
+                                    data-bs-toggle="pill" data-bs-target="#paneProfile" type="button" role="tab"
+                                    aria-controls="paneProfile" aria-selected="true">Profile</button></li>
+                            <li role="presentation"><button class="nav-link" id="tabAbout" data-st="about"
+                                    data-bs-toggle="pill" data-bs-target="#paneAbout" type="button" role="tab"
+                                    aria-controls="paneAbout" aria-selected="false">About us</button></li>
+                            <li role="presentation"><button class="nav-link" id="tabNotify" data-st="notifications"
+                                    data-bs-toggle="pill" data-bs-target="#paneNotify" type="button" role="tab"
+                                    aria-controls="paneNotify" aria-selected="false">Notifications</button></li>
+                            <li role="presentation"><button class="nav-link" id="tabSub" data-st="subscription"
+                                    data-bs-toggle="pill" data-bs-target="#paneSub" type="button" role="tab"
+                                    aria-controls="paneSub" aria-selected="false">Subscription</button></li>
+                            <li role="presentation"><button class="nav-link" id="tabSupport" data-st="support"
+                                    data-bs-toggle="pill" data-bs-target="#paneSupport" type="button" role="tab"
+                                    aria-controls="paneSupport" aria-selected="false">Support</button></li>
+                            <li role="presentation"><button class="nav-link" id="tabPrivacy" data-st="privacy"
+                                    data-bs-toggle="pill" data-bs-target="#panePrivacy" type="button" role="tab"
+                                    aria-controls="panePrivacy" aria-selected="false">Privacy &amp; data</button></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Laravel-e eta POST form hobe: @csrf + action="{{ route('logout') }}" method="post" -->
+                    <form class="st_logout" action="login.html" method="get">
+                        <button type="submit" class="st_logout_btn">Log out</button>
+                    </form>
+                </header>
+
+                <div class="tab-content st_content">
+
+                    <!-- ================= Profile ================= -->
+                    <div class="tab-pane fade show active st_panel" id="paneProfile" role="tabpanel"
+                        aria-labelledby="tabProfile" tabindex="0">
+
+                        <section class="st_card" aria-labelledby="stProfH">
+                            <h2 class="st_h" id="stProfH">Profile</h2>
+                            <p class="st_p">This is how you appear on Admitly.</p>
+
+                            <div class="st_prof">
+                                <span class="st_av"><img src="image/user.jpg" alt=""></span>
+                                <div class="st_prof_txt">
+                                    <strong class="st_prof_name">Sagor Ifran</strong>
+                                    <label class="st_file">
+                                        <input type="file" class="visually-hidden"
+                                            accept="image/png,image/jpeg,image/webp"
+                                            aria-label="Upload a new profile photo">
+                                        <span>Change photo</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <form class="st_form" action="#" method="post" data-st-demo>
+                                <div class="st_grid">
+                                    <div class="au_field st_full">
+                                        <label for="stName">Full name</label>
+                                        <input type="text" id="stName" name="name" value="Sagor Ifran" required
+                                            maxlength="80" autocomplete="name">
+                                    </div>
+                                    <div class="au_field">
+                                        <label for="stEmail">Email</label>
+                                        <input type="email" id="stEmail" name="email" value="sagor@example.com" required
+                                            maxlength="254" autocomplete="email" aria-describedby="stEmailHint">
+                                        <p class="au_hint" id="stEmailHint">If you change it, we will ask you to confirm
+                                            the new email.</p>
+                                    </div>
+                                    <div class="au_field">
+                                        <label for="stPhone">Mobile number</label>
+                                        <input type="tel" id="stPhone" name="phone" value="01712345678" required
+                                            maxlength="14" autocomplete="tel" inputmode="tel"
+                                            pattern="^(\+?88)?01[3-9][0-9]{8}$"
+                                            title="Enter a valid Bangladesh mobile number, for example 01712345678">
+                                    </div>
+                                </div>
+                                <div class="st_actions">
+                                    <button type="submit" class="s_btn s_btn--dark">Save changes</button>
+                                    <span class="st_status" role="status"></span>
+                                </div>
+                            </form>
+                        </section>
+
+                        <!-- Google/Facebook diye login korle password nai, tai ei card jeno na dekhay -->
+                        <section class="st_card" aria-labelledby="stPassH">
+                            <h2 class="st_h" id="stPassH">Password</h2>
+                            <p class="st_p">Use at least 8 characters.</p>
+
+                            <form class="st_form" action="#" method="post" data-st-demo data-st-msg="Password updated.">
+                                <div class="st_grid">
+                                    <div class="au_field">
+                                        <label for="stPassOld">Current password</label>
+                                        <div class="au_pw">
+                                            <input type="password" id="stPassOld" name="current_password" required
+                                                autocomplete="current-password">
+                                            <button type="button" class="au_eye" data-toggle-password="stPassOld"
+                                                aria-label="Show password" aria-pressed="false">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                    <path class="au_slash" d="m3 3 18 18" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="au_field">
+                                        <label for="stPassNew">New password</label>
+                                        <div class="au_pw">
+                                            <input type="password" id="stPassNew" name="password" required minlength="8"
+                                                autocomplete="new-password">
+                                            <button type="button" class="au_eye" data-toggle-password="stPassNew"
+                                                aria-label="Show password" aria-pressed="false">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                    <path class="au_slash" d="m3 3 18 18" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="st_actions">
+                                    <button type="submit" class="s_btn s_btn--line">Update password</button>
+                                    <span class="st_status" role="status"></span>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- ================= About us ================= -->
+                    <div class="tab-pane fade st_panel" id="paneAbout" role="tabpanel" aria-labelledby="tabAbout"
+                        tabindex="0">
+                        <section class="st_card" aria-labelledby="stAboutH">
+                            <h2 class="st_h" id="stAboutH">About Admitly</h2>
+                            <p class="st_p st_p--dark">Admitly is a university admission preparation platform that helps
+                                students prepare with confidence through structured lessons, targeted practice,
+                                realistic mock exams and AI-assisted essay feedback.</p>
+
+                            <ul class="st_links">
+                                <li><a href="about.html"><span>About us</span><svg viewBox="0 0 24 24"
+                                            aria-hidden="true">
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </svg></a></li>
+                                <li><a href="faq.html"><span>Frequently asked questions</span><svg viewBox="0 0 24 24"
+                                            aria-hidden="true">
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </svg></a></li>
+                                <li><a href="terms-condition.html"><span>Terms and Conditions</span><svg
+                                            viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </svg></a></li>
+                                <li><a href="privacy-policy.html"><span>Privacy Policy</span><svg viewBox="0 0 24 24"
+                                            aria-hidden="true">
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </svg></a></li>
+                            </ul>
+
+                            <p class="st_fine">Version 1.0.0 · © 2026 Admitly LLC<br>Admitly is not affiliated with
+                                North South University.</p>
+                        </section>
+                    </div>
+
+                    <!-- ================= Notifications ================= -->
+                    <div class="tab-pane fade st_panel" id="paneNotify" role="tabpanel" aria-labelledby="tabNotify"
+                        tabindex="0">
+                        <section class="st_card" aria-labelledby="stNotifyH">
+                            <h2 class="st_h" id="stNotifyH">Notifications</h2>
+                            <p class="st_p">Choose what we send you. We never send more than we need to.</p>
+
+                            <form class="st_form" action="#" method="post" data-st-demo
+                                data-st-msg="Preferences saved.">
+                                <ul class="st_sw_list">
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Daily study reminder</strong><span>A nudge
+                                                    if you have not hit your daily goal.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch" name="n_daily"
+                                                    checked><span class="st_track" aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Mock test reminders</strong><span>Before a
+                                                    special or upcoming mock test starts.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch" name="n_mock"
+                                                    checked><span class="st_track" aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Leaderboard updates</strong><span>When your
+                                                    rank changes a lot.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch"
+                                                    name="n_rank"><span class="st_track"
+                                                    aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Tips and product news</strong><span>New
+                                                    question banks, features and offers.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch"
+                                                    name="n_news"><span class="st_track"
+                                                    aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="st_actions">
+                                    <button type="submit" class="s_btn s_btn--dark">Save preferences</button>
+                                    <span class="st_status" role="status"></span>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- ================= Subscription ================= -->
+                    <div class="tab-pane fade st_panel" id="paneSub" role="tabpanel" aria-labelledby="tabSub"
+                        tabindex="0">
+                        <section class="st_card" aria-labelledby="stSubH">
+                            <div class="st_plan_head">
+                                <div>
+                                    <h2 class="st_h" id="stSubH">Current plan</h2>
+                                    <p class="st_p">Active until 12 December 2026. It will not renew automatically.</p>
+                                </div>
+                                <span class="st_pill st_pill--ok">Active</span>
+                            </div>
+
+                            <div class="st_plan">
+                                <strong class="st_plan_name">Monthly Plan</strong>
+                                <span class="st_plan_price">৳249 <small>/ 30 days</small></span>
+                            </div>
+
+                            <ul class="st_feat">
+                                <li>Full access to all question banks</li>
+                                <li>Unlimited mock tests</li>
+                                <li>AI Essay Evaluation</li>
+                            </ul>
+
+                            <div class="st_actions">
+                                <a href="pricing-plan.html" class="s_btn s_btn--dark">Change plan</a>
+                            </div>
+                        </section>
+
+                        <section class="st_card" aria-labelledby="stHistH">
+                            <h2 class="st_h" id="stHistH">Payment history</h2>
+
+                            <ul class="st_hist">
+                                <li>
+                                    <span class="st_hist_txt"><strong>Monthly Plan</strong><span>12 Nov 2026 ·
+                                            bKash</span></span>
+                                    <span class="st_hist_r"><strong>৳259</strong><span
+                                            class="st_pill st_pill--ok">Paid</span></span>
+                                </li>
+                                <li>
+                                    <span class="st_hist_txt"><strong>Weekly Plan</strong><span>3 Nov 2026 ·
+                                            Nagad</span></span>
+                                    <span class="st_hist_r"><strong>৳109</strong><span
+                                            class="st_pill st_pill--ok">Paid</span></span>
+                                </li>
+                            </ul>
+                            <!-- Kono payment na thakle upore-r list-er jaygay: <p class="st_empty">No payments yet.</p> -->
+                        </section>
+                    </div>
+
+                    <!-- ================= Support ================= -->
+                    <div class="tab-pane fade st_panel" id="paneSupport" role="tabpanel" aria-labelledby="tabSupport"
+                        tabindex="0">
+
+                        <div class="st_two">
+                            <a href="mailto:hello@admitly.com" class="st_contact">
+                                <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg></span>
+                                <span class="st_contact_txt"><strong>Email
+                                        us</strong><span>hello@admitly.com</span></span>
+                            </a>
+                            <a href="faq.html" class="st_contact">
+                                <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                        <path d="M12 17h.01" />
+                                    </svg></span>
+                                <span class="st_contact_txt"><strong>Read the FAQ</strong><span>Quick answers to common
+                                        questions</span></span>
+                            </a>
+                        </div>
+
+                        <section class="st_card" aria-labelledby="stReportH">
+                            <h2 class="st_h" id="stReportH">Report a problem</h2>
+                            <p class="st_p">Tell us what went wrong and we will get back to you.</p>
+
+                            <form class="st_form" action="#" method="post" data-st-demo
+                                data-st-msg="Message sent. We will reply soon.">
+                                <div class="au_field">
+                                    <label for="stSubject">Subject</label>
+                                    <input type="text" id="stSubject" name="subject" required maxlength="120"
+                                        placeholder="For example: Payment not showing">
+                                </div>
+                                <div class="au_field">
+                                    <label for="stMsg">Message</label>
+                                    <textarea id="stMsg" name="message" class="st_area" required maxlength="1000"
+                                        rows="5" placeholder="Describe the problem"></textarea>
+                                </div>
+                                <div class="st_actions">
+                                    <button type="submit" class="s_btn s_btn--dark">Send message</button>
+                                    <span class="st_status" role="status"></span>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- ================= Privacy & data ================= -->
+                    <div class="tab-pane fade st_panel" id="panePrivacy" role="tabpanel" aria-labelledby="tabPrivacy"
+                        tabindex="0">
+
+                        <section class="st_card" aria-labelledby="stPrivH">
+                            <h2 class="st_h" id="stPrivH">Leaderboard privacy</h2>
+                            <p class="st_p">Control what other students can see.</p>
+
+                            <form class="st_form" action="#" method="post" data-st-demo
+                                data-st-msg="Privacy settings saved.">
+                                <ul class="st_sw_list">
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Show my name on the
+                                                    leaderboard</strong><span>Turn off to appear as “Anonymous
+                                                    student”.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch"
+                                                    name="show_name" checked><span class="st_track"
+                                                    aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="st_sw_row">
+                                            <span class="st_sw_txt"><strong>Show my photo on the
+                                                    leaderboard</strong><span>Other students will see your initial
+                                                    instead.</span></span>
+                                            <span class="st_switch"><input type="checkbox" role="switch"
+                                                    name="show_photo" checked><span class="st_track"
+                                                    aria-hidden="true"></span></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="st_actions">
+                                    <button type="submit" class="s_btn s_btn--dark">Save</button>
+                                    <span class="st_status" role="status"></span>
+                                </div>
+                            </form>
+                        </section>
+
+                        <section class="st_card" aria-labelledby="stDataH">
+                            <h2 class="st_h" id="stDataH">Your data</h2>
+                            <p class="st_p">Get a copy of your profile, answers, bookmarks and essays. We email you a
+                                download link within 24 hours.</p>
+                            <div class="st_actions">
+                                <a href="#" class="s_btn s_btn--line">Request data export</a>
+                            </div>
+                        </section>
+
+                        <section class="st_card st_card--danger" aria-labelledby="stDelH">
+                            <h2 class="st_h st_h--danger" id="stDelH">Delete account</h2>
+                            <p class="st_p">This permanently removes your account, progress, bookmarks and essays. It
+                                cannot be undone. An active plan will not be refunded.</p>
+                            <div class="st_actions">
+                                <button type="button" class="st_danger" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal">Delete my account</button>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Delete confirm modal (aside-er baire, <main>-er pore) -->
+    <div class="modal fade st_modal" id="deleteModal" tabindex="-1" aria-labelledby="delTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content st_box">
+                <h2 class="st_box_h" id="delTitle">Delete your account?</h2>
+                <p class="st_box_p">This will permanently delete your account and all your data. To confirm, type
+                    <strong>DELETE</strong> below.</p>
+
+                <form action="#" method="post" data-st-demo data-st-msg="Demo only: nothing was deleted.">
+                    <div class="au_field">
+                        <label for="delConfirm">Type DELETE to confirm</label>
+                        <input type="text" id="delConfirm" name="confirm" required pattern="DELETE" autocomplete="off"
+                            title="Type DELETE in capital letters" placeholder="DELETE">
+                    </div>
+                    <div class="st_box_actions">
+                        <button type="button" class="s_btn s_btn--line" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="st_danger st_danger--solid">Delete account</button>
+                    </div>
+                    <span class="st_status" role="status"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search modal -->
+    <div class="modal fade sr_modal" id="searchModal" tabindex="-1" aria-labelledby="srTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content sr_box">
+
+                <div class="sr_head">
+                    <input type="search" class="sr_input" placeholder="Search.........." autocomplete="off"
+                        aria-label="Search">
+                    <button type="button" class="sr_close" data-bs-dismiss="modal" aria-label="Close search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="sr_body">
+                    <h3 class="sr_label">Recent search:</h3>
+
+                    <ul class="sr_list">
+                        <li>
+                            <a href="question-bank.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Question Bank</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mock-exam.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">NSU Mock Test</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="practice.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Quadratic Equations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="essay-coach.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Essay Coach</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="leaderboard.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">Leaderboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="progress.html" class="sr_item">
+                                <svg class="sr_spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <path d="M100 10 Q120 80 190 100 Q120 120 100 190 Q80 120 10 100 Q80 80 100 10 Z" />
+                                </svg>
+                                <span class="sr_t">My Progress</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+
+
+    <!--main js-->
+    <script src="js/main.js"></script>
+    <!--learn slider-->
+    <script src="js/learn-slider.js"></script>
+</body>
+
+</html>
