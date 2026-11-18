@@ -8165,10 +8165,9 @@ button.dh_nav {
 
 
 
-
-/*=========================
-    LOG/REG/FORG START
-===========================*/
+/*==========================
+    LOG/REG/FRG/CMP START
+============================*/
 
 .au_body {
     min-height: 100vh;
@@ -8197,12 +8196,31 @@ button.dh_nav {
     background: var(--secondaryBg);
     border-radius: 30px;
     border: 2px dashed var(--paracolor);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+     overscroll-behavior: contain;
+}
+
+.au_col::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 @media (min-width: 576px) {
     .au_col {
         padding: 32px 40px 24px;
     }
+}
+
+.au_top {
+    position: static;
+    padding-bottom: 0;
+    background: transparent;
 }
 
 .au_logo {
@@ -8224,7 +8242,6 @@ button.dh_nav {
 }
 
 .au_title {
-    margin: 0 0 6px;
     font-size: clamp(20px, 1.4rem + 1vw, 34px);
     font-weight: 800;
     line-height: 1.2;
@@ -8232,7 +8249,7 @@ button.dh_nav {
 }
 
 .au_sub {
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     font-size: clamp(14px, 0.85rem + 0.2vw, 16px);
     line-height: 1.6;
     color: var(--paracolor);
@@ -8295,7 +8312,7 @@ button.dh_nav {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 16px 0;
+    margin: 12px 0 14px;
     font-size: 13px;
     line-height: 1.4;
     letter-spacing: .04em;
@@ -8454,8 +8471,8 @@ button.dh_nav {
 .au_btn {
     display: flex;
     width: 100%;
-    padding: 14px 24px;
-    font-size: 17px;
+    padding: 13px 24px;
+    font-size: 16px;
 }
 
 .au_btn:disabled {
@@ -8661,11 +8678,8 @@ button.dh_nav {
     }
 }
 
-/*=========================
-    LOG/REG/FORG END
-===========================*/
 
-/* ---------- Complete profile ---------- */
+/*---Complete profile---*/
 .au_who {
     display: flex;
     align-items: center;
@@ -8688,7 +8702,6 @@ button.dh_nav {
     border-radius: 50%;
 }
 
-/* Global img !important rule-ke override */
 .au_av img {
     display: block;
     width: 100% !important;
@@ -8718,7 +8731,6 @@ button.dh_nav {
     color: var(--paracolor);
 }
 
-/* Readonly email (provider theke ashche) */
 .au_field input[readonly] {
     color: var(--paracolor);
     background: #D1E4E2;
@@ -8756,6 +8768,9 @@ button.dh_nav {
     }
 }
 
+/*=========================
+    LOG/REG/FRG/CMP END
+===========================*/
 
 
 
@@ -8792,57 +8807,23 @@ button.dh_nav {
 
 
 
-/* ---------- Auth: pura screen-e border, scroll shudhu bhitore ---------- */
 
-/* Body-er scroll bondho (sidebar page-er body lock-er sathe mile) */
-body.au_body {
-    height: 100vh;
-    height: 100dvh;
-    min-height: 0;
-    overflow: hidden;
-}
 
-.au_wrap {
-    height: 100vh;
-    height: 100dvh;
-    min-height: 0;
-}
 
-/* Card (border-wala box) shob shomoy pura height-e, nijer bhitore scroll */
-.au_col {
-    height: 100%;
-    min-height: 0;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
-    scrollbar-color: #bdb5ad transparent;
-}
 
-.au_col::-webkit-scrollbar {
-    width: 6px;
-}
 
-.au_col::-webkit-scrollbar-track {
-    background: transparent;
-}
 
-.au_col::-webkit-scrollbar-thumb {
-    background: #bdb5ad;
-    border-radius: 999px;
-}
 
-/* Content kom hole form majhkhane, beshi hole upor theke shuru kore scroll */
-.au_card {
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
-/* Logo shob shomoy upore, scroll korle-o sthir. Sticky hole logo-r pichone content jay, tai card-er bg dilam */
-.au_top {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    flex: 0 0 auto;
-    padding-bottom: 6px;
-    background: var(--secondaryBg);
-}
+
+
+
+
+
+
+
+
+
+
+
+
