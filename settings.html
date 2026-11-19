@@ -206,104 +206,185 @@
         <div class="content-scroll session_page st_scroll">
             <div class="st_page">
 
-                <!-- Top: back, tabs, log out -->
+                <!-- ===== TOP BAR: back | tab ba dropdown | log out ======= -->
                 <header class="st_top">
+
+                    <!-- Back: 1400px-er niche shudhu icon, text screen reader-er jonno -->
                     <a href="index.html" class="st_back">
-                        <span class="st_back_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                        <span class="st_back_ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
                                 <path d="m12 19-7-7 7-7" />
                                 <path d="M19 12H5" />
-                            </svg></span>
+                            </svg>
+                        </span>
                         <span class="st_back_t">Back to dashboard</span>
                     </a>
 
-                    <nav class="st_nav" aria-label="Settings sections">
-                        <ul class="nav st_tabs" role="tablist">
-                            <li role="presentation"><button class="nav-link active" id="tabProfile" data-st="profile"
-                                    data-bs-toggle="pill" data-bs-target="#paneProfile" type="button" role="tab"
-                                    aria-controls="paneProfile" aria-selected="true">Profile</button></li>
-                            <li role="presentation"><button class="nav-link" id="tabAbout" data-st="about"
-                                    data-bs-toggle="pill" data-bs-target="#paneAbout" type="button" role="tab"
-                                    aria-controls="paneAbout" aria-selected="false">About us</button></li>
-                            <li role="presentation"><button class="nav-link" id="tabNotify" data-st="notifications"
-                                    data-bs-toggle="pill" data-bs-target="#paneNotify" type="button" role="tab"
-                                    aria-controls="paneNotify" aria-selected="false">Notifications</button></li>
-                            <li role="presentation"><button class="nav-link" id="tabSub" data-st="subscription"
-                                    data-bs-toggle="pill" data-bs-target="#paneSub" type="button" role="tab"
-                                    aria-controls="paneSub" aria-selected="false">Subscription</button></li>
-                            <li role="presentation"><button class="nav-link" id="tabSupport" data-st="support"
-                                    data-bs-toggle="pill" data-bs-target="#paneSupport" type="button" role="tab"
-                                    aria-controls="paneSupport" aria-selected="false">Support</button></li>
-                            <li role="presentation"><button class="nav-link" id="tabPrivacy" data-st="privacy"
-                                    data-bs-toggle="pill" data-bs-target="#panePrivacy" type="button" role="tab"
-                                    aria-controls="panePrivacy" aria-selected="false">Privacy &amp; data</button></li>
-                        </ul>
-                    </nav>
+                    <div class="st_nav">
 
-                    <!-- Laravel-e eta POST form hobe: @csrf + action="{{ route('logout') }}" method="post" -->
+                        <!-- Dropdown: 1199px porjonto dekhay -->
+                        <div class="st_dd" id="stDd">
+                            <button type="button" class="st_dd_btn" id="stDdBtn" aria-expanded="false"
+                                aria-controls="stDdMenu">
+                                <span class="st_dd_label" id="stDdLabel">Profile</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <ul class="st_dd_menu" id="stDdMenu" hidden>
+                                <li><button type="button" class="st_dd_item is-active" data-st="profile"
+                                        aria-current="true">Profile</button></li>
+                                <li><button type="button" class="st_dd_item" data-st="about">About us</button></li>
+                                <li><button type="button" class="st_dd_item"
+                                        data-st="notifications">Notifications</button></li>
+                                <li><button type="button" class="st_dd_item"
+                                        data-st="subscription">Subscription</button></li>
+                                <li><button type="button" class="st_dd_item" data-st="support">Support</button></li>
+                                <li><button type="button" class="st_dd_item" data-st="privacy">Privacy &amp;
+                                        data</button></li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab: 1200px theke dekhay -->
+                        <div class="st_tabs" role="tablist" aria-label="Settings sections">
+                            <button type="button" class="st_tab is-active" role="tab" id="tabProfile" data-st="profile"
+                                aria-controls="paneProfile" aria-selected="true">Profile</button>
+                            <button type="button" class="st_tab" role="tab" id="tabAbout" data-st="about"
+                                aria-controls="paneAbout" aria-selected="false" tabindex="-1">About us</button>
+                            <button type="button" class="st_tab" role="tab" id="tabNotify" data-st="notifications"
+                                aria-controls="paneNotify" aria-selected="false" tabindex="-1">Notifications</button>
+                            <button type="button" class="st_tab" role="tab" id="tabSub" data-st="subscription"
+                                aria-controls="paneSub" aria-selected="false" tabindex="-1">Subscription</button>
+                            <button type="button" class="st_tab" role="tab" id="tabSupport" data-st="support"
+                                aria-controls="paneSupport" aria-selected="false" tabindex="-1">Support</button>
+                            <button type="button" class="st_tab" role="tab" id="tabPrivacy" data-st="privacy"
+                                aria-controls="panePrivacy" aria-selected="false" tabindex="-1">Privacy &amp;
+                                data</button>
+                        </div>
+                    </div>
+
+                    <!-- Log out. Laravel-e eta POST form hobe: @csrf + action="{{ route('logout') }}" method="post" -->
                     <form class="st_logout" action="login.html" method="get">
-                        <button type="submit" class="st_logout_btn">Log out</button>
+                        <button type="submit" class="st_logout_btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                <polyline points="16 17 21 12 16 7" />
+                                <line x1="21" x2="9" y1="12" y2="12" />
+                            </svg>
+                            <span>Log out</span>
+                        </button>
                     </form>
                 </header>
 
-                <div class="tab-content st_content">
+                <div class="st_content">
 
-                    <!-- ================= Profile ================= -->
-                    <div class="tab-pane fade show active st_panel" id="paneProfile" role="tabpanel"
+                    <!-- ====== PROFILE (1200px, 2 card pashapashi) ======= -->
+                    <div class="st_panel st_panel--wide" id="paneProfile" data-pane="profile" role="tabpanel"
                         aria-labelledby="tabProfile" tabindex="0">
+                        <div class="st_cols st_cols--profile">
 
-                        <section class="st_card" aria-labelledby="stProfH">
-                            <h2 class="st_h" id="stProfH">Profile</h2>
-                            <p class="st_p">This is how you appear on Admitly.</p>
+                            <!-- Bam: Profile -->
+                            <section class="st_card" aria-labelledby="stProfH">
+                                <h2 class="st_h" id="stProfH">Profile</h2>
+                                <p class="st_p">This is how you appear on Admitly.</p>
 
-                            <div class="st_prof">
-                                <span class="st_av"><img src="image/user.jpg" alt=""></span>
-                                <div class="st_prof_txt">
-                                    <strong class="st_prof_name">Sagor Ifran</strong>
-                                    <label class="st_file">
-                                        <input type="file" class="visually-hidden"
-                                            accept="image/png,image/jpeg,image/webp"
-                                            aria-label="Upload a new profile photo">
-                                        <span>Change photo</span>
-                                    </label>
-                                </div>
-                            </div>
+                                <form class="st_form" id="stProfForm" action="#" method="post"
+                                    enctype="multipart/form-data" data-st-demo>
 
-                            <form class="st_form" action="#" method="post" data-st-demo>
-                                <div class="st_grid">
-                                    <div class="au_field st_full">
-                                        <label for="stName">Full name</label>
-                                        <input type="text" id="stName" name="name" value="Sagor Ifran" required
-                                            maxlength="80" autocomplete="name">
+                                    <!-- Photo + Change photo + Add avatar -->
+                                    <div class="st_photo_row">
+                                        <span class="st_av st_av--lg" id="stPhoto">
+                                            <img id="stPhotoImg" src="image/user.jpg" alt="Your profile picture">
+                                            <svg class="st_av_svg" id="stPhotoSvg" viewBox="0 0 80 80" role="img"
+                                                aria-label="Your avatar" hidden>
+                                                <use href="#avMale" />
+                                            </svg>
+                                        </span>
+
+                                        <div class="st_photo_side">
+                                            <strong class="st_photo_name">Sagor Ifran</strong>
+                                            <div class="st_btn_row">
+                                                <label class="st_file">
+                                                    <input type="file" id="stPhotoInput" name="photo"
+                                                        class="visually-hidden"
+                                                        accept="image/png,image/jpeg,image/webp">
+                                                    <span class="st_chip">Change photo</span>
+                                                </label>
+                                                <button type="button" class="st_chip" data-bs-toggle="modal"
+                                                    data-bs-target="#avatarModal">Add avatar</button>
+                                            </div>
+                                            <p class="st_photo_msg" id="stPhotoMsg" role="status">Choose a photo under 2 MB or add avater</p>
+                                        </div>
                                     </div>
-                                    <div class="au_field">
-                                        <label for="stEmail">Email</label>
-                                        <input type="email" id="stEmail" name="email" value="sagor@example.com" required
-                                            maxlength="254" autocomplete="email" aria-describedby="stEmailHint">
-                                        <p class="au_hint" id="stEmailHint">If you change it, we will ask you to confirm
-                                            the new email.</p>
-                                    </div>
-                                    <div class="au_field">
-                                        <label for="stPhone">Mobile number</label>
-                                        <input type="tel" id="stPhone" name="phone" value="01712345678" required
-                                            maxlength="14" autocomplete="tel" inputmode="tel"
-                                            pattern="^(\+?88)?01[3-9][0-9]{8}$"
-                                            title="Enter a valid Bangladesh mobile number, for example 01712345678">
-                                    </div>
-                                </div>
-                                <div class="st_actions">
-                                    <button type="submit" class="s_btn s_btn--dark">Save changes</button>
-                                    <span class="st_status" role="status"></span>
-                                </div>
-                            </form>
-                        </section>
 
-                        <!-- Google/Facebook diye login korle password nai, tai ei card jeno na dekhay -->
-                        <section class="st_card" aria-labelledby="stPassH">
-                            <h2 class="st_h" id="stPassH">Password</h2>
-                            <p class="st_p">Use at least 8 characters.</p>
+                                    <!-- Avatar choose korle ekhane male/female boshe (Laravel-e eta users.avatar-e save hobe) -->
+                                    <input type="hidden" name="avatar" id="stAvatarVal" value="">
 
-                            <form class="st_form" action="#" method="post" data-st-demo data-st-msg="Password updated.">
-                                <div class="st_grid">
+                                    <div class="st_grid">
+                                        <div class="au_field ">
+                                            <label for="stName">Full name</label>
+                                            <input type="text" id="stName" name="name" value="Sagor Ifran" required
+                                                maxlength="80" autocomplete="name">
+                                        </div>
+                                        
+                                        <div class="au_field ">
+                                            <label for="stEmail">Email</label>
+                                            <input type="email" id="stEmail" name="email" value="sagor@example.com"
+                                                required maxlength="254" autocomplete="email"
+                                                aria-describedby="stEmailHint">
+                                        </div>
+
+                                        <div class="au_field">
+                                            <label for="stPhone">Mobile number</label>
+                                            <input type="tel" id="stPhone" name="phone" value="01712345678" required
+                                                maxlength="14" autocomplete="tel" inputmode="tel"
+                                                pattern="^(\+?88)?01[3-9][0-9]{8}$"
+                                                title="Enter a valid Bangladesh mobile number, for example 01712345678">
+                                        </div>
+
+                                        <div class="au_field">
+                                            <label for="stGender">Gender</label>
+                                            <div class="st_sel">
+                                                <select id="stGender" name="gender" required>
+                                                    <option value="" disabled>Select gender</option>
+                                                    <option value="male" selected>Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="none">Prefer not to say</option>
+                                                </select>
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="m6 9 6 6 6-6" />
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="au_field">
+                                            <label for="stCollege">College</label>
+                                            <input type="text" id="stCollege" name="college" value="Notre Dame College"
+                                                maxlength="120" autocomplete="organization"
+                                                placeholder="Your college name">
+                                        </div>
+
+                                        <div class="au_field">
+                                            <label for="stAddress">Address</label>
+                                            <input type="text" id="stAddress" name="address" value="" maxlength="200"
+                                                autocomplete="street-address" placeholder="Area, city">
+                                        </div>
+                                    </div>
+
+                                    <div class="st_actions">
+                                        <button type="submit" class="s_btn s_btn--dark">Save changes</button>
+                                        <span class="st_status" role="status"></span>
+                                    </div>
+                                </form>
+                            </section>
+
+                            <!-- Dan: Password. Google/Facebook diye login korle password nai, tai ei card jeno na dekhay -->
+                            <section class="st_card" aria-labelledby="stPassH">
+                                <h2 class="st_h" id="stPassH">Password</h2>
+                                <p class="st_p">Use at least 8 characters.</p>
+
+                                <form class="st_form" action="#" method="post" data-st-demo
+                                    data-st-msg="Password updated.">
                                     <div class="au_field">
                                         <label for="stPassOld">Current password</label>
                                         <div class="au_pw">
@@ -334,18 +415,19 @@
                                             </button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="st_actions">
-                                    <button type="submit" class="s_btn s_btn--line">Update password</button>
-                                    <span class="st_status" role="status"></span>
-                                </div>
-                            </form>
-                        </section>
+                                    <div class="st_actions">
+                                        <button type="submit" class="s_btn s_btn--line">Update password</button>
+                                        <span class="st_status" role="status"></span>
+                                    </div>
+                                </form>
+                            </section>
+
+                        </div>
                     </div>
 
-                    <!-- ================= About us ================= -->
-                    <div class="tab-pane fade st_panel" id="paneAbout" role="tabpanel" aria-labelledby="tabAbout"
-                        tabindex="0">
+                    <!-- ====== ABOUT US (ekটা card, tai 780px) ======= -->
+                    <div class="st_panel st_panel--narrow" id="paneAbout" data-pane="about" role="tabpanel"
+                        aria-labelledby="tabAbout" tabindex="0" hidden>
                         <section class="st_card" aria-labelledby="stAboutH">
                             <h2 class="st_h" id="stAboutH">About Admitly</h2>
                             <p class="st_p st_p--dark">Admitly is a university admission preparation platform that helps
@@ -380,9 +462,9 @@
                         </section>
                     </div>
 
-                    <!-- ================= Notifications ================= -->
-                    <div class="tab-pane fade st_panel" id="paneNotify" role="tabpanel" aria-labelledby="tabNotify"
-                        tabindex="0">
+                    <!-- ===== NOTIFICATIONS (ekটা card, tai 780px) ====== -->
+                    <div class="st_panel st_panel--narrow" id="paneNotify" data-pane="notifications" role="tabpanel"
+                        aria-labelledby="tabNotify" tabindex="0" hidden>
                         <section class="st_card" aria-labelledby="stNotifyH">
                             <h2 class="st_h" id="stNotifyH">Notifications</h2>
                             <p class="st_p">Choose what we send you. We never send more than we need to.</p>
@@ -433,168 +515,260 @@
                         </section>
                     </div>
 
-                    <!-- ================= Subscription ================= -->
-                    <div class="tab-pane fade st_panel" id="paneSub" role="tabpanel" aria-labelledby="tabSub"
-                        tabindex="0">
-                        <section class="st_card" aria-labelledby="stSubH">
-                            <div class="st_plan_head">
-                                <div>
-                                    <h2 class="st_h" id="stSubH">Current plan</h2>
-                                    <p class="st_p">Active until 12 December 2026. It will not renew automatically.</p>
+                    <!-- ===== SUBSCRIPTION (1200px, 2 card pashapashi) ======= -->
+                    <div class="st_panel st_panel--wide" id="paneSub" data-pane="subscription" role="tabpanel"
+                        aria-labelledby="tabSub" tabindex="0" hidden>
+                        <div class="st_cols">
+
+                            <section class="st_card" aria-labelledby="stSubH">
+                                <div class="st_plan_head">
+                                    <div>
+                                        <h2 class="st_h" id="stSubH">Current plan</h2>
+                                        <p class="st_p">Active until 12 December 2026. It will not renew automatically.
+                                        </p>
+                                    </div>
+                                    <span class="st_pill st_pill--ok">Active</span>
                                 </div>
-                                <span class="st_pill st_pill--ok">Active</span>
-                            </div>
 
-                            <div class="st_plan">
-                                <strong class="st_plan_name">Monthly Plan</strong>
-                                <span class="st_plan_price">৳249 <small>/ 30 days</small></span>
-                            </div>
-
-                            <ul class="st_feat">
-                                <li>Full access to all question banks</li>
-                                <li>Unlimited mock tests</li>
-                                <li>AI Essay Evaluation</li>
-                            </ul>
-
-                            <div class="st_actions">
-                                <a href="pricing-plan.html" class="s_btn s_btn--dark">Change plan</a>
-                            </div>
-                        </section>
-
-                        <section class="st_card" aria-labelledby="stHistH">
-                            <h2 class="st_h" id="stHistH">Payment history</h2>
-
-                            <ul class="st_hist">
-                                <li>
-                                    <span class="st_hist_txt"><strong>Monthly Plan</strong><span>12 Nov 2026 ·
-                                            bKash</span></span>
-                                    <span class="st_hist_r"><strong>৳259</strong><span
-                                            class="st_pill st_pill--ok">Paid</span></span>
-                                </li>
-                                <li>
-                                    <span class="st_hist_txt"><strong>Weekly Plan</strong><span>3 Nov 2026 ·
-                                            Nagad</span></span>
-                                    <span class="st_hist_r"><strong>৳109</strong><span
-                                            class="st_pill st_pill--ok">Paid</span></span>
-                                </li>
-                            </ul>
-                            <!-- Kono payment na thakle upore-r list-er jaygay: <p class="st_empty">No payments yet.</p> -->
-                        </section>
-                    </div>
-
-                    <!-- ================= Support ================= -->
-                    <div class="tab-pane fade st_panel" id="paneSupport" role="tabpanel" aria-labelledby="tabSupport"
-                        tabindex="0">
-
-                        <div class="st_two">
-                            <a href="mailto:hello@admitly.com" class="st_contact">
-                                <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                    </svg></span>
-                                <span class="st_contact_txt"><strong>Email
-                                        us</strong><span>hello@admitly.com</span></span>
-                            </a>
-                            <a href="faq.html" class="st_contact">
-                                <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                                        <path d="M12 17h.01" />
-                                    </svg></span>
-                                <span class="st_contact_txt"><strong>Read the FAQ</strong><span>Quick answers to common
-                                        questions</span></span>
-                            </a>
-                        </div>
-
-                        <section class="st_card" aria-labelledby="stReportH">
-                            <h2 class="st_h" id="stReportH">Report a problem</h2>
-                            <p class="st_p">Tell us what went wrong and we will get back to you.</p>
-
-                            <form class="st_form" action="#" method="post" data-st-demo
-                                data-st-msg="Message sent. We will reply soon.">
-                                <div class="au_field">
-                                    <label for="stSubject">Subject</label>
-                                    <input type="text" id="stSubject" name="subject" required maxlength="120"
-                                        placeholder="For example: Payment not showing">
+                                <div class="st_plan">
+                                    <strong class="st_plan_name">Monthly Plan</strong>
+                                    <span class="st_plan_price">৳249 <small>/ 30 days</small></span>
                                 </div>
-                                <div class="au_field">
-                                    <label for="stMsg">Message</label>
-                                    <textarea id="stMsg" name="message" class="st_area" required maxlength="1000"
-                                        rows="5" placeholder="Describe the problem"></textarea>
-                                </div>
+
+                                <ul class="st_feat">
+                                    <li>Full access to all question banks</li>
+                                    <li>Unlimited mock tests</li>
+                                    <li>AI Essay Evaluation</li>
+                                </ul>
+
                                 <div class="st_actions">
-                                    <button type="submit" class="s_btn s_btn--dark">Send message</button>
-                                    <span class="st_status" role="status"></span>
+                                    <a href="pricing-plan.html" class="s_btn s_btn--dark">Change plan</a>
                                 </div>
-                            </form>
-                        </section>
-                    </div>
+                            </section>
 
-                    <!-- ================= Privacy & data ================= -->
-                    <div class="tab-pane fade st_panel" id="panePrivacy" role="tabpanel" aria-labelledby="tabPrivacy"
-                        tabindex="0">
+                            <section class="st_card" aria-labelledby="stHistH">
+                                <h2 class="st_h" id="stHistH">Payment history</h2>
 
-                        <section class="st_card" aria-labelledby="stPrivH">
-                            <h2 class="st_h" id="stPrivH">Leaderboard privacy</h2>
-                            <p class="st_p">Control what other students can see.</p>
-
-                            <form class="st_form" action="#" method="post" data-st-demo
-                                data-st-msg="Privacy settings saved.">
-                                <ul class="st_sw_list">
+                                <ul class="st_hist">
                                     <li>
-                                        <label class="st_sw_row">
-                                            <span class="st_sw_txt"><strong>Show my name on the
-                                                    leaderboard</strong><span>Turn off to appear as “Anonymous
-                                                    student”.</span></span>
-                                            <span class="st_switch"><input type="checkbox" role="switch"
-                                                    name="show_name" checked><span class="st_track"
-                                                    aria-hidden="true"></span></span>
-                                        </label>
+                                        <span class="st_hist_txt"><strong>Monthly Plan</strong><span>12 Nov 2026 ·
+                                                bKash</span></span>
+                                        <span class="st_hist_r"><strong>৳259</strong><span
+                                                class="st_pill st_pill--ok">Paid</span></span>
                                     </li>
                                     <li>
-                                        <label class="st_sw_row">
-                                            <span class="st_sw_txt"><strong>Show my photo on the
-                                                    leaderboard</strong><span>Other students will see your initial
-                                                    instead.</span></span>
-                                            <span class="st_switch"><input type="checkbox" role="switch"
-                                                    name="show_photo" checked><span class="st_track"
-                                                    aria-hidden="true"></span></span>
-                                        </label>
+                                        <span class="st_hist_txt"><strong>Weekly Plan</strong><span>3 Nov 2026 ·
+                                                Nagad</span></span>
+                                        <span class="st_hist_r"><strong>৳109</strong><span
+                                                class="st_pill st_pill--ok">Paid</span></span>
                                     </li>
                                 </ul>
-                                <div class="st_actions">
-                                    <button type="submit" class="s_btn s_btn--dark">Save</button>
-                                    <span class="st_status" role="status"></span>
-                                </div>
-                            </form>
-                        </section>
+                                <!-- Kono payment na thakle upore-r list-er jaygay: <p class="st_empty">No payments yet.</p> -->
+                            </section>
 
-                        <section class="st_card" aria-labelledby="stDataH">
-                            <h2 class="st_h" id="stDataH">Your data</h2>
-                            <p class="st_p">Get a copy of your profile, answers, bookmarks and essays. We email you a
-                                download link within 24 hours.</p>
-                            <div class="st_actions">
-                                <a href="#" class="s_btn s_btn--line">Request data export</a>
-                            </div>
-                        </section>
+                        </div>
+                    </div>
 
-                        <section class="st_card st_card--danger" aria-labelledby="stDelH">
-                            <h2 class="st_h st_h--danger" id="stDelH">Delete account</h2>
-                            <p class="st_p">This permanently removes your account, progress, bookmarks and essays. It
-                                cannot be undone. An active plan will not be refunded.</p>
-                            <div class="st_actions">
-                                <button type="button" class="st_danger" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal">Delete my account</button>
+                    <!-- ===== SUPPORT (1200px, 2 column) ===== -->
+                    <div class="st_panel st_panel--wide" id="paneSupport" data-pane="support" role="tabpanel"
+                        aria-labelledby="tabSupport" tabindex="0" hidden>
+                        <div class="st_cols">
+
+                            <!-- Bam: duto contact card ekটার niche ekটা -->
+                            <div class="st_stack">
+                                <a href="mailto:hello@admitly.com" class="st_contact">
+                                    <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                        </svg></span>
+                                    <span class="st_contact_txt"><strong>Email
+                                            us</strong><span>hello@admitly.com</span></span>
+                                </a>
+                                <a href="faq.html" class="st_contact">
+                                    <span class="st_contact_ico" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                            <path d="M12 17h.01" />
+                                        </svg></span>
+                                    <span class="st_contact_txt"><strong>Read the FAQ</strong><span>Quick answers to
+                                            common questions</span></span>
+                                </a>
                             </div>
-                        </section>
+
+                            <!-- Dan: report form -->
+                            <section class="st_card" aria-labelledby="stReportH">
+                                <h2 class="st_h" id="stReportH">Report a problem</h2>
+                                <p class="st_p">Tell us what went wrong and we will get back to you.</p>
+
+                                <form class="st_form" action="#" method="post" data-st-demo
+                                    data-st-msg="Message sent. We will reply soon.">
+                                    <div class="au_field">
+                                        <label for="stSubject">Subject</label>
+                                        <input type="text" id="stSubject" name="subject" required maxlength="120"
+                                            placeholder="For example: Payment not showing">
+                                    </div>
+                                    <div class="au_field">
+                                        <label for="stMsg">Message</label>
+                                        <textarea id="stMsg" name="message" class="st_area" required maxlength="1000"
+                                            rows="5" placeholder="Describe the problem"></textarea>
+                                    </div>
+                                    <div class="st_actions">
+                                        <button type="submit" class="s_btn s_btn--dark">Send message</button>
+                                        <span class="st_status" role="status"></span>
+                                    </div>
+                                </form>
+                            </section>
+
+                        </div>
+                    </div>
+
+                    <!-- ==== PRIVACY & DATA (1200px, 2 column) ======== -->
+                    <div class="st_panel st_panel--wide" id="panePrivacy" data-pane="privacy" role="tabpanel"
+                        aria-labelledby="tabPrivacy" tabindex="0" hidden>
+                        <div class="st_cols">
+
+                            <!-- Bam: Leaderboard privacy -->
+                            <section class="st_card" aria-labelledby="stPrivH">
+                                <h2 class="st_h" id="stPrivH">Leaderboard privacy</h2>
+                                <p class="st_p">Control what other students can see.</p>
+
+                                <form class="st_form" action="#" method="post" data-st-demo
+                                    data-st-msg="Privacy settings saved.">
+                                    <ul class="st_sw_list">
+                                        <li>
+                                            <label class="st_sw_row">
+                                                <span class="st_sw_txt"><strong>Show my name on the
+                                                        leaderboard</strong><span>Turn off to appear as “Anonymous
+                                                        student”.</span></span>
+                                                <span class="st_switch"><input type="checkbox" role="switch"
+                                                        name="show_name" checked><span class="st_track"
+                                                        aria-hidden="true"></span></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="st_sw_row">
+                                                <span class="st_sw_txt"><strong>Show my photo or avatar on the
+                                                        leaderboard</strong><span>Other students will see your initial
+                                                        instead.</span></span>
+                                                <span class="st_switch"><input type="checkbox" role="switch"
+                                                        name="show_photo" checked><span class="st_track"
+                                                        aria-hidden="true"></span></span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="st_actions">
+                                        <button type="submit" class="s_btn s_btn--dark">Save</button>
+                                        <span class="st_status" role="status"></span>
+                                    </div>
+                                </form>
+                            </section>
+
+                            <!-- Dan: Your data + Delete account -->
+                            <div class="st_stack">
+                                <section class="st_card" aria-labelledby="stDataH">
+                                    <h2 class="st_h" id="stDataH">Your data</h2>
+                                    <p class="st_p">Get a copy of your profile, answers, bookmarks and essays. We email
+                                        you a download link within 24 hours.</p>
+                                    <div class="st_actions">
+                                        <a href="#" class="s_btn s_btn--line">Request data export</a>
+                                    </div>
+                                </section>
+
+                                <section class="st_card st_card--danger" aria-labelledby="stDelH">
+                                    <h2 class="st_h st_h--danger" id="stDelH">Delete account</h2>
+                                    <p class="st_p">This permanently removes your account, progress, bookmarks and
+                                        essays. It cannot be undone. An active plan will not be refunded.</p>
+                                    <div class="st_actions">
+                                        <button type="button" class="st_danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal">Delete my account</button>
+                                    </div>
+                                </section>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
+
+                <!-- Copyright bar: content kom hole ekdom bottom-e, beshi hole content-er niche -->
+                <div class="admitly_copy_rights st_copy">
+                    <p>© 2026 Admitly bd | All rights reserved</p>
+                    <ul>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="terms-condition.html">Terms</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <!-- Delete confirm modal (aside-er baire, <main>-er pore) -->
+    <!-- Avatar illustration (hidden sprite). Nijer image thakle <use>-er jaygay <img> dien -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="avMale" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="40" fill="#dcecf7" />
+                <path d="M12 80c2-15 14-23 28-23s26 8 28 23z" fill="#3b4350" />
+                <rect x="34" y="50" width="12" height="10" rx="5" fill="#e9b894" />
+                <ellipse cx="40" cy="36" rx="14" ry="16" fill="#f1c7a4" />
+                <path d="M25 33c0-11 7-17 15-17s15 6 15 17c-3-5-8-8-15-8s-12 3-15 8z" fill="#2b2b2b" />
+                <circle cx="34.5" cy="38" r="1.7" fill="#2b2b2b" />
+                <circle cx="45.5" cy="38" r="1.7" fill="#2b2b2b" />
+                <path d="M35 45c2 2 8 2 10 0" fill="none" stroke="#b5654a" stroke-width="1.8" stroke-linecap="round" />
+            </symbol>
+            <symbol id="avFemale" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="40" fill="#fbecc8" />
+                <path d="M22 34c0-13 8-20 18-20s18 7 18 20v20c0 4-3 7-7 7H29c-4 0-7-3-7-7z" fill="#3a2418" />
+                <path d="M12 80c2-15 14-23 28-23s26 8 28 23z" fill="#c25b78" />
+                <rect x="34" y="50" width="12" height="10" rx="5" fill="#e9b894" />
+                <ellipse cx="40" cy="38" rx="13" ry="15" fill="#f1c7a4" />
+                <path d="M27 33c2-8 8-12 13-12s11 4 13 12c-4-3-8-5-13-5s-9 2-13 5z" fill="#3a2418" />
+                <circle cx="34.5" cy="40" r="1.7" fill="#2b2b2b" />
+                <circle cx="45.5" cy="40" r="1.7" fill="#2b2b2b" />
+                <path d="M35.5 46c1.8 1.8 7.2 1.8 9 0" fill="none" stroke="#b5654a" stroke-width="1.8"
+                    stroke-linecap="round" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Avatar modal: Add avatar button click korle khule -->
+    <div class="modal fade st_modal" id="avatarModal" tabindex="-1" aria-labelledby="avTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content st_box">
+                <h2 class="st_box_h" id="avTitle">Choose an avatar</h2>
+                <p class="st_box_p">Pick one. You can change it any time.</p>
+
+                <div class="st_av_pick" role="radiogroup" aria-label="Avatar">
+                    <label class="st_av_opt">
+                        <input type="radio" name="avatar_choice" value="male" checked>
+                        <span class="st_av_card">
+                            <span class="st_av st_av--md"><svg class="st_av_svg" viewBox="0 0 80 80" aria-hidden="true">
+                                    <use href="#avMale" />
+                                </svg></span>
+                            <span class="st_av_name">Male</span>
+                        </span>
+                    </label>
+                    <label class="st_av_opt">
+                        <input type="radio" name="avatar_choice" value="female">
+                        <span class="st_av_card">
+                            <span class="st_av st_av--md"><svg class="st_av_svg" viewBox="0 0 80 80" aria-hidden="true">
+                                    <use href="#avFemale" />
+                                </svg></span>
+                            <span class="st_av_name">Female</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="st_box_actions">
+                    <button type="button" class="s_btn s_btn--line" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="s_btn s_btn--dark" id="stAvUse">Use avatar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete confirm modal -->
     <div class="modal fade st_modal" id="deleteModal" tabindex="-1" aria-labelledby="delTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content st_box">
@@ -617,6 +791,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Search modal -->
     <div class="modal fade sr_modal" id="searchModal" tabindex="-1" aria-labelledby="srTitle" aria-hidden="true">
@@ -708,6 +884,8 @@
     <script src="js/main.js"></script>
     <!--learn slider-->
     <script src="js/learn-slider.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/settings.js"></script>
 </body>
 
 </html>

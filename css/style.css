@@ -8202,7 +8202,7 @@ button.dh_nav {
     height: 100%;
     min-height: 0;
     overflow-y: auto;
-     overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .au_col::-webkit-scrollbar {
@@ -8285,7 +8285,7 @@ button.dh_nav {
     transition: all linear .3s;
 }
 
-.au_soc:hover{
+.au_soc:hover {
     border-color: #5ab5ab;
 }
 
@@ -8303,7 +8303,7 @@ button.dh_nav {
     height: 24px;
 }
 
-.au_soc_t{
+.au_soc_t {
     font-weight: 600;
     color: var(--black);
 }
@@ -8392,12 +8392,6 @@ button.dh_nav {
     border: 2px dashed #d9483b;
 }
 
-.au_hint {
-    margin: 6px 0 0;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--paracolor);
-}
 
 /* Password show/hide */
 .au_pw {
@@ -8779,19 +8773,53 @@ button.dh_nav {
 
 
 
-/* ---------- Settings ---------- */
-.content-scroll.session_page.st_scroll { padding: 16px; }
+/* =========================================================
+   SETTINGS PAGE (settings.html)
+   ---------------------------------------------------------
+   SEGMENT LIST
+    1. Page wrapper (padding + copyright niche rakhar flex)
+    2. Top bar (back | tab ba dropdown | log out)
+    3. Back button (1400px-er niche shudhu icon)
+    4. Tabs (1200px-er upore)
+    5. Dropdown menu (1199px porjonto)
+    6. Log out button
+    7. Panels + column layout (1200px, card pashapashi)
+    8. Card (shob card-er common style)
+    9. Profile: photo, Change photo, Add avatar
+   10. Form: input grid, gender dropdown, textarea
+   11. Modal: Avatar + Delete account
+   12. Switch (Notifications ar Privacy)
+   13. About us: link list
+   14. Subscription
+   15. Support: contact card
+   16. Privacy: danger card
+   17. Copyright bar position
+   18. Mobile tweaks
+   19. Reduced motion
+   ========================================================= */
 
-@media (min-width: 768px) {
-    .content-scroll.session_page.st_scroll { padding: 28px 32px 36px; }
+
+/* ---------------------------------------------------------
+   1. PAGE WRAPPER
+   padding bodlate chaile ekhane (mobile theke boro screen porjonto)
+   --------------------------------------------------------- */
+.content-scroll.session_page.st_scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
-@media (min-width: 1200px) {
-    .content-scroll.session_page.st_scroll { padding: 36px 44px 44px; }
+
+.st_page {
+    flex: 1 0 auto;
+    /* content kom hole puro height nibe, tai copyright bottom-e jabe */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.st_page { width: 100%; }
-
+/* Page-er shob line icon-er common style */
 .st_page svg {
     flex: 0 0 auto;
     fill: none;
@@ -8801,24 +8829,41 @@ button.dh_nav {
     stroke-linejoin: round;
 }
 
-/* ---------- Top bar ---------- */
+
+/* ---------------------------------------------------------
+   2. TOP BAR
+   --------------------------------------------------------- */
 .st_top {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "back out" "nav nav";
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "back nav out";
     align-items: center;
-    gap: 14px 16px;
+    gap: 12px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .st_top {
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        grid-template-areas: "back nav out";
+        gap: 12px 16px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .st_top {
         gap: 12px 24px;
     }
 }
 
+.st_nav {
+    grid-area: nav;
+    min-width: 0;
+}
+
+
+/* ---------------------------------------------------------
+   3. BACK BUTTON
+   --------------------------------------------------------- */
 .st_back {
+    position: relative;
     grid-area: back;
     display: inline-flex;
     align-items: center;
@@ -8838,39 +8883,77 @@ button.dh_nav {
     transition: background .25s, color .25s;
 }
 
-.st_back_ico svg { width: 22px; height: 22px; stroke-width: 2.4; }
+.st_back_ico svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.4;
+}
 
-.st_back:hover .st_back_ico { color: #fff; background: var(--black); }
+.st_back:hover .st_back_ico {
+    color: #fff;
+    background: var(--black);
+}
 
-.st_back:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; border-radius: 999px; }
+.st_back:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+    border-radius: 999px;
+}
 
 .st_back_t {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.3;
     color: var(--black);
 }
 
-.st_nav { grid-area: nav; min-width: 0; }
+/* 1400px-er niche: text lukano (screen reader-e thakbe) */
+@media (max-width: 1399.98px) {
+    .st_back_t {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+}
 
+
+/* ---------------------------------------------------------
+   4. TABS (1200px-er upore dekhay)
+   --------------------------------------------------------- */
 .st_tabs {
-    display: flex;
+    position: relative;
+    display: none;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: 2px;
     width: fit-content;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0;
-    list-style: none;
     overflow-x: auto;
+    /* jaiga na hole side-e scroll (scrollbar lukano) */
     scrollbar-width: none;
 }
 
-.st_tabs::-webkit-scrollbar { display: none; }
+.st_tabs::-webkit-scrollbar {
+    display: none;
+}
 
-.st_tabs .nav-link {
-    padding: 9px 16px;
-    font-size: 15px;
+@media (min-width: 1200px) {
+    .st_tabs {
+        display: flex;
+    }
+
+    .st_dd {
+        display: none;
+    }
+}
+
+.st_tab {
+    padding: 8px 11px;
+    font: inherit;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
     white-space: nowrap;
@@ -8882,18 +8965,157 @@ button.dh_nav {
     transition: color .25s, background .25s, border-color .25s;
 }
 
-.st_tabs .nav-link:hover { color: var(--black); border-color: #c9c2bb; }
+.st_tab:hover {
+    color: var(--black);
+    border-color: #c9c2bb;
+}
 
-.st_tabs .nav-link.active { color: #fff; background: var(--black); border-color: var(--black); }
+.st_tab.is-active {
+    color: #fff;
+    background: var(--black);
+    border-color: var(--black);
+}
 
-.st_tabs .nav-link:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+.st_tab:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
 
-.st_logout { grid-area: out; justify-self: end; margin: 0; }
+@media (min-width: 1400px) {
+    .st_tab {
+        padding: 9px 13px;
+    }
+}
 
-.st_logout_btn {
-    padding: 10px 24px;
+@media (min-width: 1600px) {
+    .st_tab {
+        padding: 9px 16px;
+        font-size: 15px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   5. DROPDOWN MENU (1199px porjonto dekhay)
+   --------------------------------------------------------- */
+.st_dd {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.st_dd_btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 14px 9px 18px;
     font: inherit;
     font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .25s;
+}
+
+.st_dd_btn:hover,
+.st_dd_btn[aria-expanded="true"] {
+    border-color: var(--black);
+}
+
+.st_dd_btn:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.st_dd_btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform .25s;
+}
+
+.st_dd_btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+.st_dd_label {
+    overflow: hidden;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.st_dd_menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    background: var(--secondaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 18px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .14);
+}
+
+.st_dd_menu[hidden] {
+    display: none;
+}
+
+.st_dd_item {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: left;
+    color: var(--black);
+    background: transparent;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.st_dd_item:hover,
+.st_dd_item:focus-visible {
+    background: var(--white);
+    outline: none;
+}
+
+.st_dd_item.is-active {
+    color: #fff;
+    background: var(--black);
+}
+
+
+/* ---------------------------------------------------------
+   6. LOG OUT BUTTON
+   --------------------------------------------------------- */
+.st_logout {
+    grid-area: out;
+    justify-self: end;
+    margin: 0;
+}
+
+.st_logout_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    font: inherit;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.3;
     color: var(--black);
@@ -8904,25 +9126,121 @@ button.dh_nav {
     transition: all linear .3s;
 }
 
-.st_logout_btn:hover { color: #fff; background: var(--black); border-color: var(--black); }
+.st_logout_btn:hover {
+    color: #fff;
+    background: var(--black);
+    border-color: var(--black);
+}
 
-.st_logout_btn:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
+.st_logout_btn:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
 
-/* ---------- Content ---------- */
-.st_content { margin-top: 28px; }
+.st_logout_btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.st_logout_btn span {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+@media (min-width: 1400px) {
+    .st_logout_btn {
+        padding: 10px 24px;
+        font-size: 15px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   7. PANELS + COLUMN LAYOUT
+   wide   = 1200px (Profile, Subscription, Support, Privacy)
+   narrow = 780px  (About us, Notifications: ekটা-i card)
+   --------------------------------------------------------- */
+.st_content {
+    margin-top: 28px;
+}
 
 .st_panel {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 780px;
+    width: 100%;
     margin: 0 auto;
+    animation: stIn .3s ease both;
+    margin-top: 30px;
 }
 
-/* .tab-pane display: none ke override na kore, shudhu active-e flex */
-.st_panel:not(.active) { display: none; }
+.st_panel[hidden] {
+    display: none !important;
+}
 
+.st_panel:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+.st_panel--wide {
+    max-width: 1200px;
+}
+
+.st_panel--narrow {
+    max-width: 780px;
+}
+
+@keyframes stIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Card gulo: 1200px-er niche ekটার niche ekটা, 1200px theke pashapashi */
+.st_cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+@media (min-width: 1200px) {
+    .st_cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .st_cols--profile {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    }
+}
+
+/* Ekই column-er bhitore card ekটার niche ekটা */
+.st_stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+
+/* ---------------------------------------------------------
+   8. CARD (common)
+   --------------------------------------------------------- */
 .st_card {
+    container: stcard / inline-size;
+    /* card-er nijer width dhore bhitorer grid bodlay */
+    min-width: 0;
     padding: 24px 26px;
     background: var(--primaryBg);
     border: 2px dashed #c9c2bb;
@@ -8944,7 +9262,9 @@ button.dh_nav {
     color: var(--paracolor);
 }
 
-.st_p--dark { color: var(--black); }
+.st_p--dark {
+    color: var(--black);
+}
 
 .st_fine {
     margin: 18px 0 0;
@@ -8953,22 +9273,42 @@ button.dh_nav {
     color: var(--paracolor);
 }
 
-/* ---------- Profile ---------- */
-.st_prof {
+
+/* ---------------------------------------------------------
+   9. PROFILE: photo + Change photo + Add avatar
+   --------------------------------------------------------- */
+.st_photo_row {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 4px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #c9c2bb;
 }
 
+/* Gol photo/avatar frame (shob jaygay ekই) */
 .st_av {
-    flex: 0 0 72px;
+    position: relative;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 72px;
     height: 72px;
     overflow: hidden;
     background: #dbe0e6;
     border: 3px solid var(--white);
     border-radius: 50%;
+}
+
+.st_av--lg {
+    width: 120px;
+    height: 120px;
+}
+
+.st_av--md {
+    width: 80px;
+    height: 80px;
 }
 
 /* Global img !important rule override */
@@ -8979,45 +9319,163 @@ button.dh_nav {
     object-fit: cover !important;
 }
 
-.st_prof_txt { min-width: 0; }
-
-.st_prof_name {
+/* Avatar svg: line-icon rule theke stroke asha atkano */
+.st_page .st_av_svg,
+.st_av_svg {
     display: block;
-    margin-bottom: 6px;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: none;
+}
+
+.st_av [hidden] {
+    display: none !important;
+}
+
+.st_photo_side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.st_photo_name {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.3;
     color: var(--black);
 }
 
-.st_file { display: inline-block; cursor: pointer; }
-
-.st_file span {
-    display: inline-block;
-    padding: 4px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--black);
-    border: 2px dashed #c9c2bb;
-    border-radius: 999px;
-    transition: border-color .25s;
+.st_btn_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.st_file:hover span { border-color: var(--black); }
+.st_file {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
 
-.st_file input:focus-visible + span { outline: 2px solid var(--black); outline-offset: 3px; }
+/* "Change photo" ar "Add avatar", duto-ei ekই style */
+.st_chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--black);
+    background: transparent;
+    border: 2px dashed #c9c2bb;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color .25s, background .25s;
+}
 
-/* ---------- Form (.au_field, .au_hint, .au_pw, .au_eye auth CSS theke) ---------- */
-.st_form { display: flex; flex-direction: column; gap: 16px; }
+.st_chip:hover {
+    background: var(--white);
+    border-color: var(--black);
+}
 
-.st_grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.st_chip:focus-visible,
+.st_file input:focus-visible+.st_chip {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.st_photo_msg {
+    min-height: 20px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #1d6b3d;
+}
+
+.st_photo_msg.is-error {
+    color: #b3261e;
+}
+
+
+/* ---------------------------------------------------------
+   10. FORM (.au_field, .au_pw, .au_eye auth CSS theke ashe)
+   --------------------------------------------------------- */
+.st_form {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 
-.st_full { grid-column: 1 / -1; }
+/* Card soru hole 1 column, 560px-er beshi hole 2 column */
+.st_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    padding-top: 16px;
+}
+
+@container stcard (min-width: 560px) {
+    .st_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* Gender dropdown: input-er moto dekhte, bhitore chevron */
+.st_sel {
+    position: relative;
+}
+
+.st_sel select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 13px 46px 13px 16px;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--black);
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color .25s;
+}
+
+.st_sel select:hover {
+    border-color: #8c857e;
+}
+
+.st_sel select:focus {
+    outline: none;
+    border: 2px dashed var(--black);
+}
+
+.st_sel select:invalid {
+    color: #9a938c;
+}
+
+/* "Select gender" placeholder-er moto fade */
+.st_sel select option {
+    color: var(--black);
+}
+
+.st_sel svg {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 18px;
+    height: 18px;
+    color: var(--paracolor);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
 
 .st_area {
     display: block;
@@ -9034,9 +9492,18 @@ button.dh_nav {
     transition: border-color .25s;
 }
 
-.st_area::placeholder { color: #9a938c; }
-.st_area:hover { border-color: #8c857e; }
-.st_area:focus { outline: none; border: 2px dashed var(--black); }
+.st_area::placeholder {
+    color: #9a938c;
+}
+
+.st_area:hover {
+    border-color: #8c857e;
+}
+
+.st_area:focus {
+    outline: none;
+    border: 2px dashed var(--black);
+}
 
 .st_actions {
     display: flex;
@@ -9046,7 +9513,9 @@ button.dh_nav {
     margin-top: 4px;
 }
 
-.st_actions .s_btn { padding: 11px 26px; }
+.st_actions .s_btn {
+    padding: 11px 26px;
+}
 
 .st_status {
     font-size: 14px;
@@ -9055,10 +9524,135 @@ button.dh_nav {
     color: #1d6b3d;
 }
 
-/* ---------- Switch ---------- */
-.st_sw_list { margin: 0; padding: 0; list-style: none; }
 
-.st_sw_list li + li { border-top: 2px dashed #c9c2bb; }
+/* ---------------------------------------------------------
+   11. MODAL: Avatar + Delete account
+   --------------------------------------------------------- */
+.st_modal .modal-dialog {
+    max-width: 480px;
+}
+
+.st_box {
+    padding: 26px;
+    color: var(--black);
+    background: var(--secondaryBg);
+    border: 2px dashed #c9c2bb;
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .2);
+}
+
+.st_box_h {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--black);
+}
+
+.st_box_p {
+    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+.st_box_p strong {
+    color: var(--black);
+}
+
+.st_box_actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.st_box_actions .s_btn,
+.st_box_actions .st_danger {
+    padding: 10px 22px;
+    font-size: 15px;
+}
+
+.st_box .st_status {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Avatar choose: 2 ta card, select korle kalo border + tick */
+.st_av_pick {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.st_av_opt {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.st_av_opt input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.st_av_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 10px;
+    background: var(--white);
+    border: 2px dashed #c9c2bb;
+    border-radius: 16px;
+    transition: border-color .25s;
+}
+
+.st_av_opt:hover .st_av_card {
+    border-color: #8c857e;
+}
+
+.st_av_opt input:checked+.st_av_card {
+    border: 2px solid var(--black);
+}
+
+.st_av_opt input:focus-visible+.st_av_card {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+.st_av_name {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--black);
+}
+
+.st_av_opt input:checked+.st_av_card .st_av_name::after {
+    content: " \2713";
+}
+
+
+/* ---------------------------------------------------------
+   12. SWITCH (Notifications ar Privacy)
+   --------------------------------------------------------- */
+.st_sw_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.st_sw_list li+li {
+    border-top: 2px dashed #c9c2bb;
+}
 
 .st_sw_row {
     display: flex;
@@ -9069,7 +9663,12 @@ button.dh_nav {
     cursor: pointer;
 }
 
-.st_sw_txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.st_sw_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
 
 .st_sw_txt strong {
     font-size: 16px;
@@ -9091,7 +9690,6 @@ button.dh_nav {
     height: 28px;
 }
 
-/* Hidden input switch-er bhitore-i, tai click korle page jump korbe na */
 .st_switch input {
     position: absolute;
     top: 0;
@@ -9125,14 +9723,32 @@ button.dh_nav {
     transition: transform .25s;
 }
 
-.st_switch input:checked + .st_track { background: var(--black); }
-.st_switch input:checked + .st_track::after { transform: translateX(20px); }
-.st_switch input:focus-visible + .st_track { outline: 2px solid var(--black); outline-offset: 3px; }
+.st_switch input:checked+.st_track {
+    background: var(--black);
+}
 
-/* ---------- About: links ---------- */
-.st_links { margin: 0; padding: 0; list-style: none; }
+.st_switch input:checked+.st_track::after {
+    transform: translateX(20px);
+}
 
-.st_links li + li { border-top: 2px dashed #c9c2bb; }
+.st_switch input:focus-visible+.st_track {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   13. ABOUT US: link list
+   --------------------------------------------------------- */
+.st_links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.st_links li+li {
+    border-top: 2px dashed #c9c2bb;
+}
 
 .st_links a {
     display: flex;
@@ -9150,11 +9766,26 @@ button.dh_nav {
     color: inherit;
 }
 
-.st_links a svg { width: 20px; height: 20px; }
-.st_links a:hover { background: var(--white); border-radius: 12px; }
-.st_links a:focus-visible { outline: 2px solid var(--black); outline-offset: -2px; border-radius: 12px; }
+.st_links a svg {
+    width: 20px;
+    height: 20px;
+}
 
-/* ---------- Subscription ---------- */
+.st_links a:hover {
+    background: var(--white);
+    border-radius: 12px;
+}
+
+.st_links a:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: -2px;
+    border-radius: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   14. SUBSCRIPTION
+   --------------------------------------------------------- */
 .st_plan_head {
     display: flex;
     align-items: flex-start;
@@ -9172,7 +9803,10 @@ button.dh_nav {
     border-radius: 999px;
 }
 
-.st_pill--ok { color: #1d6b3d; background: #e8f6ee; }
+.st_pill--ok {
+    color: #1d6b3d;
+    background: #e8f6ee;
+}
 
 .st_plan {
     display: flex;
@@ -9185,13 +9819,25 @@ button.dh_nav {
     border-radius: 14px;
 }
 
-.st_plan_name { font-size: 20px; font-weight: 800; line-height: 1.3; color: var(--black); }
+.st_plan_name,
+.st_plan_price {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--black);
+}
 
-.st_plan_price { font-size: 20px; font-weight: 800; line-height: 1.3; color: var(--black); }
+.st_plan_price small {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paracolor);
+}
 
-.st_plan_price small { font-size: 14px; font-weight: 500; color: var(--paracolor); }
-
-.st_feat { margin: 16px 0 18px; padding: 0; list-style: none; }
+.st_feat {
+    margin: 16px 0 18px;
+    padding: 0;
+    list-style: none;
+}
 
 .st_feat li {
     position: relative;
@@ -9201,7 +9847,9 @@ button.dh_nav {
     color: var(--black);
 }
 
-.st_feat li + li { margin-top: 8px; }
+.st_feat li+li {
+    margin-top: 8px;
+}
 
 .st_feat li::before {
     content: "";
@@ -9214,7 +9862,11 @@ button.dh_nav {
     border-radius: 50%;
 }
 
-.st_hist { margin: 14px 0 0; padding: 0; list-style: none; }
+.st_hist {
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
 
 .st_hist li {
     display: flex;
@@ -9224,27 +9876,54 @@ button.dh_nav {
     padding: 14px 0;
 }
 
-.st_hist li + li { border-top: 2px dashed #c9c2bb; }
-
-.st_hist_txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-
-.st_hist_txt strong { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--black); }
-
-.st_hist_txt span { font-size: 13px; line-height: 1.5; color: var(--paracolor); }
-
-.st_hist_r { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
-
-.st_hist_r strong { font-size: 16px; font-weight: 800; color: var(--black); }
-
-.st_empty { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--paracolor); }
-
-/* ---------- Support ---------- */
-.st_two {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+.st_hist li+li {
+    border-top: 2px dashed #c9c2bb;
 }
 
+.st_hist_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.st_hist_txt strong {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+.st_hist_txt span {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--paracolor);
+}
+
+.st_hist_r {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.st_hist_r strong {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.st_empty {
+    margin: 14px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--paracolor);
+}
+
+
+/* ---------------------------------------------------------
+   15. SUPPORT: contact card
+   --------------------------------------------------------- */
 .st_contact {
     display: flex;
     align-items: center;
@@ -9257,8 +9936,14 @@ button.dh_nav {
     transition: border-color .25s;
 }
 
-.st_contact:hover { border-color: var(--black); }
-.st_contact:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
+.st_contact:hover {
+    border-color: var(--black);
+}
+
+.st_contact:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
 
 .st_contact_ico {
     flex: 0 0 44px;
@@ -9272,18 +9957,43 @@ button.dh_nav {
     border-radius: 50%;
 }
 
-.st_contact_ico svg { width: 22px; height: 22px; }
+.st_contact_ico svg {
+    width: 22px;
+    height: 22px;
+}
 
-.st_contact_txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.st_contact_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
 
-.st_contact_txt strong { font-size: 16px; font-weight: 700; line-height: 1.4; color: var(--black); }
+.st_contact_txt strong {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--black);
+}
 
-.st_contact_txt span { font-size: 14px; line-height: 1.4; color: var(--paracolor); overflow-wrap: anywhere; }
+.st_contact_txt span {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--paracolor);
+    overflow-wrap: anywhere;
+}
 
-/* ---------- Privacy: danger ---------- */
-.st_card--danger { border-color: #efb2ab; }
 
-.st_h--danger { color: #b3261e; }
+/* ---------------------------------------------------------
+   16. PRIVACY: danger card (Delete account)
+   --------------------------------------------------------- */
+.st_card--danger {
+    border-color: #efb2ab;
+}
+
+.st_h--danger {
+    color: #b3261e;
+}
 
 .st_danger {
     padding: 11px 26px;
@@ -9300,75 +10010,125 @@ button.dh_nav {
 }
 
 .st_danger:hover,
-.st_danger--solid { color: #fff; background: #b3261e; }
-
-.st_danger--solid:hover { color: #b3261e; background: transparent; }
-
-.st_danger:focus-visible { outline: 2px solid var(--black); outline-offset: 3px; }
-
-/* ---------- Delete modal ---------- */
-.st_modal .modal-dialog { max-width: 480px; }
-
-.st_box {
-    padding: 26px;
-    color: var(--black);
-    background: var(--secondaryBg);
-    border: 2px dashed #c9c2bb;
-    border-radius: 22px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, .2);
+.st_danger--solid {
+    color: #fff;
+    background: #b3261e;
 }
 
-.st_box_h { margin: 0 0 8px; font-size: 22px; font-weight: 800; line-height: 1.3; color: var(--black); }
+.st_danger--solid:hover {
+    color: #b3261e;
+    background: transparent;
+}
 
-.st_box_p { margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--paracolor); }
+.st_danger:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+}
 
-.st_box_p strong { color: var(--black); }
 
-.st_box_actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+/* ---------------------------------------------------------
+   17. COPYRIGHT BAR POSITION
+   Content kom hole ekdom bottom-e, beshi hole content-er niche.
+   (.admitly_copy_rights-er nijer design ager CSS-ei ache, ekhane shudhu position)
+   --------------------------------------------------------- */
+.st_copy {
+    margin-top: auto;
+    padding-top: 40px;
+}
 
-.st_box_actions .s_btn,
-.st_box_actions .st_danger { padding: 10px 22px; font-size: 15px; }
 
-.st_box .st_status { display: block; margin-top: 10px; text-align: right; }
-
-/* ---------- Sidebar: Settings gear active ---------- */
-.sidebar-user .settings[aria-current="page"] { background: var(--secondaryBg); }
-
-/* ---------- Mobile ---------- */
+/* ---------------------------------------------------------
+   18. MOBILE TWEAKS (575px-er niche)
+   --------------------------------------------------------- */
 @media (max-width: 575.98px) {
-    .st_back_t { font-size: 16px; }
+    .st_content {
+        margin-top: 20px;
+    }
 
-    .st_tabs { margin: 0; }
+    .st_card {
+        padding: 18px;
+    }
 
-    .st_tabs .nav-link { padding: 8px 14px; font-size: 14px; }
+    .st_photo_row {
+        gap: 14px;
+    }
 
-    .st_logout_btn { padding: 8px 18px; font-size: 14px; }
+    .st_av--lg {
+        width: 80px;
+        height: 80px;
+    }
 
-    .st_content { margin-top: 20px; }
+    .st_photo_name {
+        font-size: 17px;
+    }
 
-    .st_card { padding: 18px; }
+    .st_chip {
+        padding: 5px 14px;
+        font-size: 13px;
+    }
 
-    .st_grid,
-    .st_two { grid-template-columns: minmax(0, 1fr); }
+    .st_logout_btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
 
-    .st_actions .s_btn { flex: 1 1 100%; text-align: center; justify-content: center; }
+    .st_dd_btn {
+        padding: 8px 12px 8px 16px;
+        font-size: 14px;
+    }
 
-    .st_box { padding: 20px 18px; }
+    .st_actions .s_btn {
+        flex: 1 1 100%;
+        justify-content: center;
+        text-align: center;
+    }
 
-    .st_box_actions > * { flex: 1; }
+    .st_box {
+        padding: 20px 18px;
+    }
 
-    .st_hist li { align-items: flex-start; }
+    .st_box_actions>* {
+        flex: 1;
+    }
 
-    .st_hist_r { flex-direction: column; align-items: flex-end; gap: 4px; }
+    .st_hist li {
+        align-items: flex-start;
+    }
+
+    .st_hist_r {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+    }
+
+    .st_contact {
+        padding: 16px;
+    }
 }
 
+
+/* ---------------------------------------------------------
+   19. REDUCED MOTION (jara animation bondho rakhen)
+   --------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+    .st_panel {
+        animation: none;
+    }
+
     .st_back_ico,
-    .st_tabs .nav-link,
+    .st_tab,
+    .st_dd_btn,
+    .st_dd_btn svg,
     .st_logout_btn,
+    .st_chip,
+    .st_sel select,
+    .st_av_card,
     .st_track,
     .st_track::after,
-    .st_danger { transition: none; }
+    .st_contact,
+    .st_danger {
+        transition: none;
+    }
 }
 
 
@@ -9382,38 +10142,21 @@ button.dh_nav {
 
 
 
+/* ---------- Copyright bar: content kom hole bottom-e, beshi hole content-er niche ---------- */
+.content-scroll.st_scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
 
+.st_page {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.st_copy {
+    margin-top: auto;
+    padding-top: 40px;
+}
